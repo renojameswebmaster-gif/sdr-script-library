@@ -110,8 +110,9 @@ body {
 
 .scripts-container > .script-card.open {
   grid-column: 1 / -1;
-  width: min(75vw, 900px);
-  max-width: 75vw;
+  width: min(90vw, 1100px);
+  max-width: 90vw;
+  min-height: 72vh;
   margin: 0 auto;
 }
 
@@ -134,7 +135,7 @@ body {
 .script-card.open {
   border-color: var(--primary-blue);
   box-shadow: 0 8px 20px rgba(74, 159, 216, 0.3);
-  padding: 30px;
+  padding: 30px 34px;
 }
 
 .script-title {
@@ -277,6 +278,12 @@ body {
 
   .scripts-container {
     grid-template-columns: 1fr;
+  }
+
+  .scripts-container > .script-card.open {
+    width: 95vw;
+    max-width: 95vw;
+    min-height: auto;
   }
 
   .search-container {
