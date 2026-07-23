@@ -22,6 +22,15 @@
       <div id="result" class="result hidden"></div>
     </main>
 
+    <div id="alert-overlay" class="alert-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="alert-title" aria-describedby="alert-description">
+      <div class="alert-box">
+        <p class="alert-badge">🔔 CALL ALERT!</p>
+        <h2 id="alert-title">The customer's local time is between 12:00 PM to 12:30 PM.</h2>
+        <p id="alert-description">This is the best time to cold call because they are likely on their lunch break and more available. 📞 Call the customer now!</p>
+        <button id="alert-dismiss" class="btn btn-primary">Dismiss alert</button>
+      </div>
+    </div>
+
     <script src="script.js?v=5"></script>
   </body>
 </html>

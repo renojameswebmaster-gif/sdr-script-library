@@ -108,6 +108,150 @@ function displayError(message) {
   `;
 }
 
+let currentTimezone = null;
+const alertOverlay = document.getElementById('alert-overlay');
+const alertDismiss = document.getElementById('alert-dismiss');
+let alertTriggeredWindow = null;
+let alertAudioContext = null;
+let alertOscillator = null;
+let alertGain = null;
+let alertMonitorInterval = null;
+
+function initializeAlertAudio() {
+  if (alertAudioContext) return;
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContext) return;
+
+  alertAudioContext = new AudioContext();
+  alertGain = alertAudioContext.createGain();
+  alertGain.gain.value = 0.12;
+  alertGain.connect(alertAudioContext.destination);
+}
+
+function playAlertSound() {
+  if (!alertAudioContext) initializeAlertAudio();
+  if (!alertAudioContext || alertOscillator) return;
+
+  if (alertAudioContext.state === 'suspended') {
+    alertAudioContext.resume().catch(() => {});
+  }
+
+  alertOscillator = alertAudioContext.createOscillator();
+  alertOscillator.type = 'sine';
+  alertOscillator.frequency.value = 520;
+  alertOscillator.connect(alertGain);
+  alertOscillator.start();
+}
+
+function stopAlertSound() {
+  if (!alertOscillator) return;
+  try {
+    alertOscillator.stop();
+  } catch (error) {
+    // ignore
+  }
+  alertOscillator.disconnect();
+  alertOscillator = null;
+}
+
+function parseTimeZoneLocalTime(timezone) {
+  const now = new Date();
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: timezone,
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: false,
+  }).formatToParts(now);
+
+  const hour = parseInt(parts.find((part) => part.type === 'hour')?.value || '0', 10);
+  const minute = parseInt(parts.find((part) => part.type === 'minute')?.value || '0', 10);
+
+  return { hour, minute };
+}
+
+function isWithinLunchWindow(timezone) {
+  const { hour, minute } = parseTimeZoneLocalTime(timezone);
+  const totalMinutes = hour * 60 + minute;
+  return totalMinutes >= 12 * 60 && totalMinutes < 12 * 60 + 30;
+}
+
+function showCallAlert() {
+  if (!alertOverlay.classList.contains('hidden')) return;
+  alertOverlay.classList.remove('hidden');
+  alertOverlay.style.display = 'grid';
+  playAlertSound();
+}
+
+function hideCallAlert() {
+  alertOverlay.classList.add('hidden');
+  alertOverlay.style.display = 'none';
+  stopAlertSound();
+}
+
+function tryTriggerAlert(timezone) {
+  if (!timezone || alertTriggeredWindow === timezone) return;
+  if (isWithinLunchWindow(timezone)) {
+    alertTriggeredWindow = timezone;
+    showCallAlert();
+  }
+}
+
+function resetAlertWindowIfNeeded(timezone) {
+  if (!timezone) return;
+  if (!isWithinLunchWindow(timezone)) {
+    alertTriggeredWindow = null;
+    hideCallAlert();
+  }
+}
+
+function startAlertMonitor(timezone) {
+  if (!timezone) return;
+  currentTimezone = timezone;
+  resetAlertWindowIfNeeded(timezone);
+  tryTriggerAlert(timezone);
+
+  if (alertMonitorInterval) {
+    clearInterval(alertMonitorInterval);
+  }
+
+  alertMonitorInterval = setInterval(() => {
+    if (!currentTimezone) return;
+    if (isWithinLunchWindow(currentTimezone)) {
+      if (alertTriggeredWindow !== currentTimezone) {
+        alertTriggeredWindow = currentTimezone;
+        showCallAlert();
+      }
+    } else {
+      resetAlertWindowIfNeeded(currentTimezone);
+    }
+  }, 15000);
+}
+
+alertDismiss.addEventListener('click', () => {
+  hideCallAlert();
+});
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const address = addressInput.value.trim();
+
+  if (!address) {
+    displayError('Please enter an address.');
+    showMessage('Please enter an address.', true);
+    return;
+  }
+
+  try {
+    await lookupAddress(address);
+    if (currentTimezone) {
+      startAlertMonitor(currentTimezone);
+    }
+  } catch (error) {
+    displayError(error.message);
+    showMessage(error.message, true);
+  }
+});
+
 async function lookupAddress(address) {
   showMessage('Looking up the address...');
   result.classList.add('hidden');
@@ -135,6 +279,7 @@ async function lookupAddress(address) {
 
   const weatherData = await weatherResponse.json();
   const timezone = weatherData.timezone || 'Unknown';
+  currentTimezone = timezone;
   const matchedZone = zoneMap[timezone];
 
   const label = matchedZone ? matchedZone.label : `Detected IANA timezone: ${timezone}`;
@@ -150,21 +295,3 @@ async function lookupAddress(address) {
 
   showMessage('Done.');
 }
-
-form.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const address = addressInput.value.trim();
-
-  if (!address) {
-    displayError('Please enter an address.');
-    showMessage('Please enter an address.', true);
-    return;
-  }
-
-  try {
-    await lookupAddress(address);
-  } catch (error) {
-    displayError(error.message);
-    showMessage(error.message, true);
-  }
-});
