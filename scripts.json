@@ -12,8 +12,8 @@
       "id": "confirmation-steps",
       "title": "Confirmation Steps",
       "category": "Closing",
-      "content": "Thanks for your time today. Before we wrap up, I want to make sure I captured everything correctly. I’m going to send you a quick recap and follow up with the next steps so you have everything in one place.",
-      "keywords": ["confirmation", "wrap up", "next steps"],
+      "content": "Confirmation Steps\n\nSo just to confirm you’re the sole owner of the practice [Practice Name], right?\n\nOkay, and we’re going to send you a confirmation of the meeting via text. Is this the best number to send that to?\n\nOkay great, and after the interview, if you’re selected, we’re going to send you a confirmation email. What’s the best email to send that to?\n\nOkay great, and just so that we can share exactly what the initiative looks like, you’ll have access to a computer when we call, right?\n\nAwesome… and I’m putting you in my director’s calendar now. Can you do me a favor and put that in your calendar as well?\n\nOkay great, so I have you in my director’s calendar for [Day] [Time] [Time Zone]. Just be sure you’re by a computer. We’ll go through some questions, interview you about the practice, and see if you’ll be a good fit!",
+      "keywords": ["confirmation", "wrap up", "next steps", "calendar"],
       "favorite": false
     },
     {
@@ -28,8 +28,8 @@
       "id": "social-media-referral-network",
       "title": "Social Media Referral Network",
       "category": "Objections",
-      "content": "That makes sense. We’re not trying to replace anything you’re already doing. We’re simply offering another referral channel that can support your current efforts and add more visibility.",
-      "keywords": ["social media", "referral", "network"],
+      "content": "What’s the social media referral network?\n\nIt’s a referral network nationwide that utilizes social media platforms like Facebook and Instagram to allow patients to find the best in health and wellness. To do that, we need to make sure we’re only sending patients to the right practices. Does that make sense?",
+      "keywords": ["social media", "referral", "network", "facebook", "instagram"],
       "favorite": false
     },
     {
@@ -60,7 +60,7 @@
       "id": "not-doing-anything-until-you-send-something",
       "title": "I’m Not Doing Anything Until You Send Something",
       "category": "Objections",
-      "content": "That’s fair. I can send a short summary right away so you have something concrete to review and evaluate.",
+      "content": "I’m not doing anything until you send something.\n\nThat’s fair. I can send a short summary right away so you have something concrete to review and evaluate.",
       "keywords": ["send something", "summary", "review"],
       "favorite": false
     },
@@ -68,7 +68,7 @@
       "id": "office-manager",
       "title": "Office Manager",
       "category": "Objections",
-      "content": "Totally understand. If the office manager is the right point of contact, I’m happy to speak with them directly and keep it brief.",
+      "content": "Office Manager\n\nTotally understand. If the office manager is the right point of contact, I’m happy to speak with them directly and keep it brief.",
       "keywords": ["office manager", "contact", "brief"],
       "favorite": false
     },
@@ -76,7 +76,7 @@
       "id": "how-does-it-work",
       "title": "How Does It Work",
       "category": "Objections",
-      "content": "The process is pretty straightforward. We identify opportunities, make a light introduction, and then let the team decide if it’s a fit.",
+      "content": "How does it work?\n\nThe process is pretty straightforward. We identify opportunities, make a light introduction, and then let the team decide if it’s a fit.",
       "keywords": ["how does it work", "process", "straightforward"],
       "favorite": false
     },
@@ -84,7 +84,7 @@
       "id": "why-are-you-doing-this",
       "title": "Why Are You Doing This",
       "category": "Objections",
-      "content": "We’re reaching out because we help practices streamline outreach and create better conversations with patients and referral partners.",
+      "content": "Why are you doing this?\n\nWe’re reaching out because we help practices streamline outreach and create better conversations with patients and referral partners.",
       "keywords": ["why", "doing this", "reach out"],
       "favorite": false
     },
@@ -92,7 +92,7 @@
       "id": "how-did-you-select-me",
       "title": "How Did You Select Me",
       "category": "Objections",
-      "content": "We generally look for practices that are growing, have a strong patient base, and are open to exploring smarter ways to stay in front of new opportunities.",
+      "content": "How did you select me?\n\nWe generally look for practices that are growing, have a strong patient base, and are open to exploring smarter ways to stay in front of new opportunities.",
       "keywords": ["select me", "criteria", "growing"],
       "favorite": false
     },
@@ -100,7 +100,7 @@
       "id": "five-point-metric-system",
       "title": "5 Point Metric System",
       "category": "Objections",
-      "content": "We use a simple five-point metric system to measure fit and relevance so we only bring forward opportunities that make sense.",
+      "content": "5 Point Metric System\n\nWe use a simple five-point metric system to measure fit and relevance so we only bring forward opportunities that make sense.",
       "keywords": ["5 point", "metric", "system"],
       "favorite": false
     },
@@ -108,7 +108,7 @@
       "id": "cell-phone-number",
       "title": "Cell Phone Number",
       "category": "Objections",
-      "content": "I understand. I can send the information to your office number or direct it to the contact method you prefer.",
+      "content": "Cell Phone Number\n\nI understand. I can send the information to your office number or direct it to the contact method you prefer.",
       "keywords": ["cell phone", "number", "contact"],
       "favorite": false
     },
@@ -116,7 +116,7 @@
       "id": "already-have-facebook",
       "title": "I Already Have Facebook",
       "category": "Objections",
-      "content": "That’s great. We’re not trying to replace your current channels. We’re simply adding another layer of visibility and referral support.",
+      "content": "I already have Facebook.\n\nThat’s great. We’re not trying to replace your current channels. We’re simply adding another layer of visibility and referral support.",
       "keywords": ["facebook", "social", "visible"],
       "favorite": false
     },
@@ -124,7 +124,7 @@
       "id": "call-me-in-two-weeks",
       "title": "Call Me in Two Weeks",
       "category": "Objections",
-      "content": "That’s fair. I can circle back in two weeks and keep the conversation light. If it’s useful, I’ll check in then.",
+      "content": "Call me in two weeks.\n\nThat’s fair. I can circle back in two weeks and keep the conversation light. If it’s useful, I’ll check in then.",
       "keywords": ["two weeks", "call me back", "later"],
       "favorite": false
     },
@@ -132,7 +132,7 @@
       "id": "healthcare-research-division",
       "title": "Healthcare Research Division",
       "category": "Objections",
-      "content": "Understood. We work with practices and healthcare teams that want more efficient outreach and stronger visibility in the market.",
+      "content": "Healthcare Research Division\n\nUnderstood. We work with practices and healthcare teams that want more efficient outreach and stronger visibility in the market.",
       "keywords": ["healthcare", "research", "division"],
       "favorite": false
     },
@@ -140,7 +140,7 @@
       "id": "driving-during-interview",
       "title": "Driving During Interview",
       "category": "Objections",
-      "content": "I understand. I can keep this brief and send the information over so you can review it when it’s convenient.",
+      "content": "Driving during interview.\n\nI understand. I can keep this brief and send the information over so you can review it when it’s convenient.",
       "keywords": ["driving", "interview", "brief"],
       "favorite": false
     },
@@ -148,7 +148,7 @@
       "id": "are-you-facebook-or-third-party",
       "title": "Are You Facebook or Third Party",
       "category": "Objections",
-      "content": "We’re not a social media platform and we’re not a third-party lead vendor. We’re a service that helps practices improve outreach and conversion opportunities.",
+      "content": "Are you Facebook or third party?\n\nWe’re not a social media platform and we’re not a third-party lead vendor. We’re a service that helps practices improve outreach and conversion opportunities.",
       "keywords": ["facebook", "third party", "vendor"],
       "favorite": false
     },
@@ -156,7 +156,7 @@
       "id": "other-practices",
       "title": "Other Practices",
       "category": "Objections",
-      "content": "We work with many practices, but we always tailor the conversation based on your current goals and the opportunities you’re trying to unlock.",
+      "content": "Other practices.\n\nWe work with many practices, but we always tailor the conversation based on your current goals and the opportunities you’re trying to unlock.",
       "keywords": ["other practices", "tailored", "goals"],
       "favorite": false
     },
@@ -164,7 +164,7 @@
       "id": "how-do-you-make-money",
       "title": "How Do You Make Money",
       "category": "Objections",
-      "content": "We make money through a simple service model that aligns with the outcomes we help deliver. We’re focused on value and results, not pressure.",
+      "content": "How do you make money?\n\nWe make money through a simple service model that aligns with the outcomes we help deliver. We’re focused on value and results, not pressure.",
       "keywords": ["make money", "business model", "value"],
       "favorite": false
     },
@@ -172,7 +172,7 @@
       "id": "call-me-back",
       "title": "Call Me Back",
       "category": "Objections",
-      "content": "Absolutely. I’ll note your preference and follow up at the time you requested so it’s convenient for you.",
+      "content": "Call me back.\n\nAbsolutely. I’ll note your preference and follow up at the time you requested so it’s convenient for you.",
       "keywords": ["call me back", "follow up", "preference"],
       "favorite": false
     },
@@ -180,7 +180,7 @@
       "id": "purpose-of-the-call",
       "title": "Purpose of the Call",
       "category": "Opening",
-      "content": "The purpose of my call is simple: to introduce a service that helps practices improve visibility and reach prospects in a more effective way.",
+      "content": "Purpose of the call.\n\nThe purpose of my call is simple: to introduce a service that helps practices improve visibility and reach prospects in a more effective way.",
       "keywords": ["purpose", "call", "introduce"],
       "favorite": false
     },
@@ -188,7 +188,7 @@
       "id": "we-dont-accept-new-patients",
       "title": "We Don’t Accept New Patients",
       "category": "Objections",
-      "content": "Understood. In that case, this may not be the right fit. I appreciate your time and will leave you with the information we have available.",
+      "content": "We don’t accept new patients.\n\nUnderstood. In that case, this may not be the right fit. I appreciate your time and will leave you with the information we have available.",
       "keywords": ["new patients", "not a fit", "appreciate"],
       "favorite": false
     },
@@ -196,7 +196,7 @@
       "id": "how-patients-find-practices",
       "title": "How Patients Find Practices",
       "category": "Objections",
-      "content": "We help practices improve the way patients discover them and how they stay visible in a crowded market.",
+      "content": "How patients find practices.\n\nWe help practices improve the way patients discover them and how they stay visible in a crowded market.",
       "keywords": ["patients", "find", "discover"],
       "favorite": false
     },
@@ -204,7 +204,7 @@
       "id": "holiday-script",
       "title": "Holiday Script",
       "category": "Opening",
-      "content": "Hi Dr. [NAME], I wanted to reach out during the holiday season to introduce a simple idea that may be useful for your practice in the new year.",
+      "content": "Holiday Script\n\nHi Dr. [NAME], I wanted to reach out during the holiday season to introduce a simple idea that may be useful for your practice in the new year.",
       "keywords": ["holiday", "season", "new year"],
       "favorite": false
     },
@@ -212,7 +212,7 @@
       "id": "website",
       "title": "Website",
       "category": "Closing",
-      "content": "Absolutely, I can send you the website link directly so you can review it when you have a moment.",
+      "content": "Website\n\nAbsolutely, I can send you the website link directly so you can review it when you have a moment.",
       "keywords": ["website", "link", "review"],
       "favorite": false
     }
