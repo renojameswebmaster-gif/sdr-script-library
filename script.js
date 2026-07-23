@@ -5,6 +5,7 @@ const toast = document.getElementById("toast");
 const backTopBtn = document.getElementById("back-top");
 const copyToastBtn = document.getElementById("copy-toast");
 const voiceTriggerBtn = document.getElementById("voice-trigger");
+const systemAudioBtn = document.getElementById("system-audio");
 const voiceSuggestionsEl = document.getElementById("voice-suggestions");
 
 let state = {
@@ -18,6 +19,9 @@ let state = {
 };
 
 let recognition = null;
+let systemAudioStream = null;
+let systemAudioContext = null;
+let analyser = null;
 
 async function loadScripts() {
   try {
@@ -166,6 +170,46 @@ function openScriptByVoice(transcript) {
   renderVoiceSuggestions(matches);
 }
 
+async function setupSystemAudioCapture() {
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia) {
+    systemAudioBtn.disabled = true;
+    systemAudioBtn.title = "System audio capture is not supported in this browser";
+    return;
+  }
+
+  systemAudioBtn.addEventListener("click", async () => {
+    try {
+      const stream = await navigator.mediaDevices.getDisplayMedia({
+        video: true,
+        audio: true
+      });
+
+      systemAudioStream = stream;
+      systemAudioContext = new AudioContext();
+      analyser = systemAudioContext.createAnalyser();
+      const source = systemAudioContext.createMediaStreamSource(stream);
+      source.connect(analyser);
+
+      systemAudioBtn.classList.add("active");
+      showToast("System audio shared. Keep the call audio in the shared source, then use the mic to detect the question.");
+
+      stream.getVideoTracks().forEach((track) => {
+        track.addEventListener("ended", () => {
+          systemAudioBtn.classList.remove("active");
+          if (systemAudioContext) {
+            systemAudioContext.close();
+          }
+          systemAudioStream = null;
+          systemAudioContext = null;
+          analyser = null;
+        });
+      });
+    } catch (error) {
+      showToast("System audio sharing was cancelled or not available.");
+    }
+  });
+}
+
 function setupVoiceRecognition() {
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -184,6 +228,9 @@ function setupVoiceRecognition() {
   recognition.onstart = () => {
     state.isListening = true;
     voiceTriggerBtn.classList.add("active");
+    if (systemAudioStream) {
+      showToast("Listening with shared system audio source.");
+    }
   };
 
   recognition.onresult = (event) => {
@@ -322,6 +369,7 @@ function init() {
   loadScripts().then((scripts) => {
     state.scripts = scripts;
     renderScripts();
+    setupSystemAudioCapture();
     setupVoiceRecognition();
 
     // Search
