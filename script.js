@@ -5,6 +5,7 @@ const toast = document.getElementById("toast");
 const backTopBtn = document.getElementById("back-top");
 const copyToastBtn = document.getElementById("copy-toast");
 const voiceTriggerBtn = document.getElementById("voice-trigger");
+const voiceSuggestionsEl = document.getElementById("voice-suggestions");
 
 let state = {
   scripts: [],
@@ -12,7 +13,8 @@ let state = {
   selectedCategory: "all",
   openCardId: null,
   lastCopiedText: "",
-  isListening: false
+  isListening: false,
+  suggestions: []
 };
 
 let recognition = null;
@@ -34,6 +36,56 @@ function showToast(message) {
   toast.textContent = message;
   toast.classList.add("show");
   setTimeout(() => toast.classList.remove("show"), 2000);
+}
+
+function renderVoiceSuggestions(matches) {
+  state.suggestions = matches;
+
+  if (!matches.length) {
+    voiceSuggestionsEl.classList.add("hidden");
+    voiceSuggestionsEl.innerHTML = "";
+    return;
+  }
+
+  voiceSuggestionsEl.classList.remove("hidden");
+  voiceSuggestionsEl.innerHTML = matches
+    .map(
+      (match, index) => `
+        <button class="suggestion-item" data-id="${match.script.id}">
+          <span>${index + 1}.</span>
+          <strong>${match.script.title}</strong>
+        </button>
+      `
+    )
+    .join("");
+
+  voiceSuggestionsEl.querySelectorAll(".suggestion-item").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-id");
+      const script = state.scripts.find((item) => item.id === id);
+      if (script) {
+        state.openCardId = id;
+        renderScripts();
+        showToast("Opened: " + script.title);
+      }
+    });
+  });
+}
+
+function speakScript(script) {
+  if (!("speechSynthesis" in window)) {
+    showToast("Speech playback is not supported in this browser.");
+    return;
+  }
+
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(script.content);
+  utterance.rate = 1;
+  utterance.pitch = 1;
+  utterance.volume = 1;
+  utterance.onstart = () => showToast("Reading: " + script.title);
+  utterance.onend = () => showToast("Finished reading: " + script.title);
+  window.speechSynthesis.speak(utterance);
 }
 
 function normalizeVoiceText(text) {
@@ -129,6 +181,8 @@ function openScriptByVoice(transcript) {
   navButtons.forEach((b) => b.classList.toggle("active", b.getAttribute("data-category") === "all"));
 
   renderScripts();
+  renderVoiceSuggestions(matches);
+  speakScript(bestMatch.script);
   showToast("Opened: " + bestMatch.script.title);
 }
 
@@ -157,9 +211,7 @@ function setupVoiceRecognition() {
     const transcript = event.results[event.results.length - 1][0].transcript;
     const matched = findBestVoiceMatch(transcript);
 
-    if (matched.length) {
-      showToast("Likely match: " + matched[0].script.title);
-    }
+    renderVoiceSuggestions(matched);
 
     if (event.results[event.results.length - 1].isFinal) {
       openScriptByVoice(transcript);
@@ -223,6 +275,7 @@ function renderScripts() {
           <div class="script-category">${script.category}</div>
           <div class="script-content">${script.content}</div>
           <div class="script-actions">
+            <button class="action-btn read-btn" data-id="${script.id}">🔊 Read</button>
             <button class="action-btn copy-btn" data-id="${script.id}">📋 Copy</button>
             <button class="action-btn close-btn" data-id="${script.id}">✕ Close</button>
           </div>
@@ -260,6 +313,18 @@ function attachEventListeners() {
           state.openCardId = id; // This automatically closes any other open card
         }
         renderScripts();
+      }
+    });
+  });
+
+  // Read button
+  document.querySelectorAll(".read-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const id = btn.getAttribute("data-id");
+      const script = state.scripts.find((s) => s.id === id);
+      if (script) {
+        speakScript(script);
       }
     });
   });
