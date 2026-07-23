@@ -575,4 +575,3 @@ async function init() {
 }
 
 init();
-}
