@@ -4,7 +4,7 @@
       "id": "intro",
       "title": "INTRO",
       "category": "Opening",
-      "content": "Hey Dr. [NAME]?\n\nHey Dr. [NAME], this is Rose...\n\nI'm reaching out because we manage the Healthcare Research Division for FB and we're currently selecting TOP practices in (Area Ex. Phoenix area) for our network and we're considering the (name of the practice) to be part of it.\n\nSo, I need to schedule or coordinate a good time that works for you for a 45 minutes interview just in front of a computer.\n\nSo, my director can interview you about the practice and see if you would be a good fit.\n\nYou're the sole owner of the practice (name of the practice) Right?\n\nLooking at his calendar, I see he has an opening at [time] or [time] on [day], which time works best for you?\n\nSo for tomorrow, are you available in the morning or afternoon?",
+      "content": "Hey Dr. [NAME]? Hey Dr. [NAME] this is Rose... I''m reaching out because we manage the healthcare research Division, for FB and we''re currently selecting TOP practices in (Area Ex. Phoenix area) for our network and We''re considering the (name of the practice) to be part it. so, I need to schedule or coordinate a good time that works for you for a 45 minutes interview just in front of a computer. So, my director can interview you about the practice and see if you would be a good fit.\n\nYou''re the sole owner of the practice (name of the practice) Right?\n\nLooking at his calendar, I see he has an opening at [time] or [time] on [day], which time works best for you? so for tomorrow, are you available in the morning or afternoon?",
       "keywords": ["intro", "opening", "practice", "interview"],
       "favorite": false
     },
@@ -12,31 +12,31 @@
       "id": "confirmation-steps",
       "title": "CONFIRMATION STEPS",
       "category": "Closing",
-      "content": "So just to confirm you're the sole owner of the practice (name of practice), right?\n\nOk, and we're going to send you a confirmation of the meeting via text, is this the best number to send that to?\n\nOk great, and after the interview if you're selected, we're going to send you a confirmation email. What's the best email to send that to?\n\nOk great, and just so that we can share exactly what the initiative looks like... you'll have access to a computer when we call right?\n\nAwesome... and I'm putting you in my director's calendar now. Can you do me a favor and put that in your calendar as well?\n\nOk great, so I have you in my director's calendar for [Day] [Time] [Time Zone]. Just be sure you're by a computer, we'll go through some questions, interview you about the practice, and see if you'll be a good fit!",
+      "content": "So just to confirm you''re the sole owner of the practice (name of practice), right?\n\nOk, and we''re going to send you a confirmation of the meeting via text, is this the best number to send that to?\n\nOk great, and after the interview if you''re selected, we''re going to send you a confirmation email. What''s the best email to send that to?\n\nOk great, and just so that we can share exactly what the initiative looks like… you''ll have access to a computer when we call right?\n\nAwesome… and I''m putting you in my director''s calendar now. Can you do me a favor and put that in your calendar as well?\n\nOk great, so I have you in my director''s calendar for [Day] [Time] [Time Zone] just be sure you''re by a computer, we''ll go through some questions, interview you about the practice, and see if you''ll be a good fit!",
       "keywords": ["confirmation", "steps", "calendar"],
       "favorite": false
     },
     {
       "id": "not-interested",
-      "title": "I'M NOT INTERESTED",
+      "title": "I''M NOT INTERESTED",
       "category": "Objections",
-      "content": "Oh... So there's nothing to be interested in...\n\nAre you familiar with the social media referral network?\n\nNow, are you familiar at all with the social media referral network?\n\nOk, so currently, the only way to be found on social media is through paid ads, which are almost always funded by corporate practices.\n\nAnd unfortunately, many of these corporate practices provide subpar medical experiences to their patients.\n\nSo what we're doing is, we're building a referral network within social media platforms that allows patients to discover quality private practices near them based on merit, rather than just those investing in paid content.\n\nAnd that way, when patients search for a practice locally, it's someone that they're able to find based on a certain competence, a certain adequacy, and a certain distinction.\n\nBut does that clarify a little bit more about the significance of the call and what's going on?\n\nGreat, so the interview is going to be about 45 minutes; it's over the phone... What I wanted to do is coordinate a good time that works for you and my Director for sometime this week.\n\nAnd for tomorrow, are you better in the mornings or afternoons?",
+      "content": "Oh…So there''s nothing to be interested in… are you familiar with the social media referral network?\n\nNow, are you familiar at all with the social media referral network?\n\nOk, so currently, the only way to be found on social media is through paid ads, which are almost always funded by corporate practices.\n\nAnd unfortunately, many of these corporate practices provide subpar medical experiences to their patients.\n\nSo what we''re doing is, we''re building a referral network within social media platforms that allows patients to discover quality private practices near them based on merit, rather than just those investing in paid content.\n\nAnd that way, when patients search for a practice locally, it''s someone that they''re able to find based on a certain competence, a certain adequacy, and a certain distinction.\n\nBut does that clarify a little bit more about the significance of the call and what''s going on?\n\nGreat, so the interview is going to be about 45 minutes; it''s over the phone… What I wanted to do is coordinate a good time that works for you and my Director for sometime this week.\n\nAnd for tomorrow, are you better in the mornings or afternoons?",
       "keywords": ["not interested", "objection"],
       "favorite": false
     },
     {
       "id": "social-media-network",
-      "title": "WHAT'S THE SOCIAL MEDIA REFERRAL NETWORK?",
+      "title": "WHAT''S THE SOCIAL MEDIA REFERRAL NETWORK?",
       "category": "Objections",
-      "content": "It's a referral network nationwide that utilizes social media platforms like Facebook and Instagram to allow patients to find the best in health and wellness.\n\nTo do that, we need to make sure we're only sending patients to the right practices, does that make sense?",
+      "content": "It''s a referral network nationwide that utilizes social media platforms like Facebook and Instagram to allow patients to find the best in health and wellness. To do that, we need to make sure we''re only sending patients to the right practices, does that make sense?",
       "keywords": ["social media", "referral", "network"],
       "favorite": false
     },
     {
       "id": "not-interested-second",
-      "title": "I'M NOT INTERESTED (SECOND OR THIRD TIME)",
+      "title": "I''M NOT INTERESTED (SECOND OR THIRD TIME)",
       "category": "Objections",
-      "content": "Got it. So, let me clarify because I'm sensing the caliber of the call isn't fully being understood:\n\nRight now, if you've noticed when you search online, the only medical offices that come up when a patient searches locally are corporate run practices, not privately held practices such as yours. Right?\n\nThe problem is that those corporate run practices are usually a factory and leave patients with a sour taste in their mouth.\n\nBut, ironically, these same patients actually never end up at private practice with a much better experience because the search engines and social media brands have essentially sold themselves off to whoever is willing to pay.\n\nSo now, because there have been so many complaints about this issue from both Doctors AND patients, the social media referral network was created so that only the top practices that actually do qualitative work, will be seen when patients are searching.\n\nDoes that clarify a little bit more about the significance of the call?",
+      "content": "Got it. So, let me clarify because I''m sensing the caliber of the call isn''t fully being understood: Right now, if you''ve noticed when you search online, the only medical offices that come up when a patient searches locally, are corporate run practices, not privately held practices such as yours. Right?\n\nThe problem is that those corporate run practices are usually a factory and leave patients with a sour taste in their mouth. But, ironically, these same patients actually never end up at private practice with a much better experience because the search engines and social media brands have essentially sold themselves off to whoever is willing to pay.\n\nSo now, because there have been so many complaints about this issue from both Doctors AND patients, the social media referral network was created so that only the top practices that actually do qualitative work, will be seen when patients are searching. Does that clarify a little bit more about the significance of the call?",
       "keywords": ["not interested", "second", "third"],
       "favorite": false
     },
@@ -44,7 +44,7 @@
       "id": "paid-thing",
       "title": "IS THIS A PAID THING? HOW MUCH DOES THIS COST?",
       "category": "Objections",
-      "content": "Oh, so this isn't a marketing or paid advertising thing, it's just an interview so that we can refer patients to the right practices.\n\nNow to just confirm, you're the sole owner of the practice right?",
+      "content": "Oh, so this isn''t a marketing or paid advertising thing, it''s just an interview so that we can refer patients to the right practices. Now to just confirm, you''re the sole owner of the practice right?",
       "keywords": ["paid", "cost", "price"],
       "favorite": false
     },
@@ -52,15 +52,15 @@
       "id": "send-email",
       "title": "SEND ME AN EMAIL",
       "category": "Objections",
-      "content": "Oh, this isn't like an advertising thing, so I don't actually have a proposal or anything to send... it's an interview and my style of interview is very organic so I don't send pre-formulated questions or anything like that.\n\nThe interview will be more of an organic conversation exactly how you and I are talking right now.\n\nSo, all I need to do is set up a time with you when you have 40-50 minutes, and could be in front of the computer, so I could learn a bit more about you guys and see if you would be a good fit...\n\nSo for tomorrow, are you available in the morning or afternoon? / You know what I mean?",
+      "content": "Oh, this isn''t like an advertising thing, so I don''t actually have a proposal or anything to send … it''s an interview and my style of interview is very organic so I don''t send pre-formulated questions or anything like that. The interview will be more of an organic conversation exactly how you and I are talking right now. So, all I need to do is set up a time with you when you have 40-50 minutes, and could be in front of the computer, so I could learn a bit more about you guys and see if you would be a good fit…so for tomorrow, are you available in the morning or afternoon? / you know what I mean?",
       "keywords": ["email", "send", "proposal"],
       "favorite": false
     },
     {
       "id": "not-doing-anything",
-      "title": "I'M NOT DOING ANYTHING UNTIL YOU SEND ME SOMETHING",
+      "title": "I''M NOT DOING ANYTHING UNTIL YOU SEND ME SOMETHING",
       "category": "Objections",
-      "content": "I don't have a proposal or flyer to send over... you can google 'Facebook Healthcare' if you want to learn more in the meantime, but the truth is the interview is the best way for us to understand your practice and see if this is a good fit.",
+      "content": "I don''t have a proposal or flyer to send over…. you can google \"Facebook Healthcare\" and see exactly what the initiative is. It outlines how patients discover doctors on Facebook, and how the recommendation process works… and we need a practice in [CITY] to be listed as a recommended practice… so that''s why I''m reaching out to you guys specifically… does that make sense?\n\nI''ve heard things like this and there''s always a price at the end…\n\nRight, listen - I know you guys get a lot of calls for a lot of different things and I know that can be frustrating for you, but it''s equally frustrating for me to be bundled up with those calls…. so that''s why I''m trying to clarify what''s going on since it''s a very big deal but, this is just an interview. So, are mornings or afternoons better for you?",
       "keywords": ["send", "something"],
       "favorite": false
     },
@@ -68,7 +68,7 @@
       "id": "office-manager",
       "title": "YOU NEED TO SPEAK WITH MY OFFICE MANAGER",
       "category": "Objections",
-      "content": "That makes sense. If the office manager is the right point of contact, I'm happy to speak with them directly and keep it brief. Would they be available?",
+      "content": "So I wish I could.. It would make my life a lot easier if we could just speak with the front desk or office manager as opposed to the Doctor,.. But because it''s a Doctor referral network, and the interview is going to be much more clinically and medically focused, the interview obviously needs to be Doctor verified. Does that make sense?",
       "keywords": ["office manager", "contact"],
       "favorite": false
     },
@@ -76,7 +76,7 @@
       "id": "how-does-it-work",
       "title": "HOW DOES IT WORK? WHAT HAPPENS AFTER?",
       "category": "Objections",
-      "content": "The process is pretty straightforward. We identify opportunities, make a light introduction, and then let the team decide if it's a fit.",
+      "content": "So, we''re going to do the interview with you, review it with our team, compare it to the other 4 practices we are considering in the area, and if you are selected, we''ll let you know. And then, when patients search for a top Doctor in your area, you will be the one that appears. does that make sense?",
       "keywords": ["how", "work", "process"],
       "favorite": false
     },
@@ -84,7 +84,7 @@
       "id": "why-doing-this",
       "title": "WHY ARE YOU DOING THIS? WHAT ARE YOU SELECTING ME FOR?",
       "category": "Objections",
-      "content": "We're reaching out because we help practices streamline outreach and create better conversations with patients and referral partners.",
+      "content": "Yeah, so the reason we are actually setting up a call as opposed to blindly selecting practices, is because we want to make sure all of the providers that we include, are of a certain competence, caliber, and distinction. Does that make sense?",
       "keywords": ["why", "doing", "selecting"],
       "favorite": false
     },
@@ -92,7 +92,7 @@
       "id": "how-select-me",
       "title": "HOW DID YOU SELECT ME? / HOW DID YOU FIND ME? / WHY ARE YOU SELECTING ME?",
       "category": "Objections",
-      "content": "We generally look for practices that are growing, have a strong patient base, and are open to exploring smarter ways to stay in front of new opportunities.",
+      "content": "We have a team of research analysts who use a 5 point metric system to determine who we ultimately reach out to. Obviously, I don''t want to waste your time or my time so, before we ever reach out to a practice, we will do a tremendous amount of research on our end. Does that make sense?",
       "keywords": ["select", "find", "criteria"],
       "favorite": false
     },
@@ -100,7 +100,7 @@
       "id": "five-point-metric",
       "title": "WHAT DID YOU LOOK AT EXACTLY? HOW IS THE 5 POINT METRIC SYSTEM CALCULATED?",
       "category": "Objections",
-      "content": "We use a simple five-point metric system to measure fit and relevance so we only bring forward opportunities that make sense.",
+      "content": "Great question, so we actually look at a bunch of different things like speaking to different doctors in the area, going to different conferences, looking at patient review sites to compile what we believe to be the higher end practices in each area… However we don''t want to believe everything we read online, so we interview to validate that you are who we''ve learnt you to be.. Does that make sense??",
       "keywords": ["5 point", "metric", "system"],
       "favorite": false
     },
@@ -108,7 +108,7 @@
       "id": "cell-phone",
       "title": "HOW DID YOU GET MY CELL PHONE NUMBER?",
       "category": "Objections",
-      "content": "I understand. I can send the information to your office number or direct it to the contact method you prefer.",
+      "content": "My assistant Alyssa Rose had this listed as your business contact.. So I''m looking at the calendar now. Does [Time and day] or [Time and day] work better?",
       "keywords": ["cell phone", "number"],
       "favorite": false
     },
@@ -116,23 +116,23 @@
       "id": "facebook",
       "title": "I ALREADY HAVE A FACEBOOK",
       "category": "Objections",
-      "content": "That's great. We're not trying to replace your current channels. We're simply adding another layer of visibility and referral support.",
+      "content": "Yeah, of course, everyone has Facebook. The point here though is not whether you have or use social media, the point is that there are patients actively searching for the top practices in the area and we''re selecting 1 of 5 practices to determine who is ultimately going to be the practice that we select. So just confirm, you''re the sole owner of the practice right?",
       "keywords": ["facebook", "social", "channel"],
       "favorite": false
     },
     {
       "id": "two-weeks",
-      "title": "SO LET'S DO THIS IN 2 WEEKS OR SOMETHING LIKE THAT",
+      "title": "SO LET''S DO THIS IN 2 WEEKS OR SOMETHING LIKE THAT",
       "category": "Objections",
-      "content": "That's fair. I can circle back in two weeks and keep the conversation light. If it's useful, I'll check in then.",
+      "content": "So because it''s an exclusive initiative, we''re wrapping up the entire area by the end of the week next week, so I''m looking at my calendar now, what time do you usually finish seeing patients?",
       "keywords": ["2 weeks", "later", "call back"],
       "favorite": false
     },
     {
       "id": "healthcare-division",
-      "title": "WHAT'S THE HEALTHCARE RESEARCH DIVISION?",
+      "title": "WHAT''S THE HEALTHCARE RESEARCH DIVISION?",
       "category": "Objections",
-      "content": "We work with practices and healthcare teams that want more efficient outreach and stronger visibility in the market.",
+      "content": "It''s a referral network nationwide for patients to be able to find the best in health and wellness, and to do that, we need to make sure we have highly qualified doctors to refer to… so I need to schedule a 45 minute interview with you to see if you''d be a good fit… I have an opening tomorrow at 3 or Friday at 5. Which of those two times works best for you?",
       "keywords": ["healthcare", "division", "research"],
       "favorite": false
     },
@@ -140,7 +140,7 @@
       "id": "driving",
       "title": "I WILL BE DRIVING DURING THE INTERVIEW / CAN I DO THIS WHILE DRIVING?",
       "category": "Objections",
-      "content": "I understand. I can keep this brief and send the information over so you can review it when it's convenient.",
+      "content": "Because of liability in different states, unfortunately we cannot do the interview while you are driving. What time will you be stationed up back at home or at your office?",
       "keywords": ["driving", "interview"],
       "favorite": false
     },
@@ -148,23 +148,23 @@
       "id": "facebook-or-third",
       "title": "ARE YOU GUYS FROM FACEBOOK OR ARE YOU A THIRD PARTY MARKETING COMPANY?",
       "category": "Objections",
-      "content": "We're not a social media platform and we're not a third-party lead vendor. We're a service that helps practices improve outreach and conversion opportunities.",
+      "content": "So to be clear, the healthcare research division is actually a consortium (Kon-Sore-Shee-Um) of all the major social media platforms. It was actually created to address this issue of patients complaining about getting subpar medical experiences from these corporate practices. As these complaints have reached high enough up in the rankings, this initiative was formed by all of the major social media platforms. You''re actually 1 of 5 practices that we are considering for it which is why I am trying to get something scheduled this week or next. So, for tomorrow, are you better in the morning or afternoon?",
       "keywords": ["facebook", "third party", "marketing"],
       "favorite": false
     },
     {
       "id": "other-practices",
-      "title": "WHO ARE THE OTHER PRACTICES THAT YOU'RE SELECTING FOR THIS?",
+      "title": "WHO ARE THE OTHER PRACTICES THAT YOU''RE SELECTING FOR THIS?",
       "category": "Objections",
-      "content": "We work with many practices, but we always tailor the conversation based on your current goals and the opportunities you're trying to unlock.",
+      "content": "Great question. Once we decide who we select, we then will release it to the public. We don''t share who we are interviewing so that we don''t skew the results. Just to confirm, you''re the owner of the practice, right?",
       "keywords": ["other practices", "practices", "selecting"],
       "favorite": false
     },
     {
       "id": "make-money",
-      "title": "HOW DO YOU GUYS MAKE YOUR MONEY IF IT'S NOT PAID ADVERTISING?",
+      "title": "HOW DO YOU GUYS MAKE YOUR MONEY IF IT''S NOT PAID ADVERTISING?",
       "category": "Objections",
-      "content": "We make money through a simple service model that aligns with the outcomes we help deliver. We're focused on value and results, not pressure.",
+      "content": "Great question... have you ever heard of the attention economy before? No, I haven''t. Ok. the reason why social media platforms don''t charge you to create an account is because they are incentivized by your usage. The more users that are using the platform, the more money they make from third party advertisers. For that reason, we are creating a doctor referral network nationwide that''s based off of a highly vetted interview process, so that it creates more value for our users. Does that make sense?",
       "keywords": ["money", "make", "business model"],
       "favorite": false
     },
@@ -172,23 +172,23 @@
       "id": "call-back",
       "title": "CAN YOU CALL ME BACK TO CHECK MY SCHEDULE?",
       "category": "Objections",
-      "content": "Absolutely. I'll note your preference and follow up at the time you requested so it's convenient for you.",
+      "content": "So, my director schedule fills up very quickly that''s why I just want to get you in the schedule. So, because it''s an exclusive initiative, we''re wrapping up the entire area by the end of the week next week, so I''m looking at my calendar now, what time do you usually finish seeing patients?",
       "keywords": ["call back", "schedule"],
       "favorite": false
     },
     {
       "id": "purpose-call",
-      "title": "WHAT'S THE PURPOSE OF THIS CALL / IN REGARDS TO?",
+      "title": "WHAT''S THE PURPOSE OF THIS CALL / IN REGARDS TO?",
       "category": "Opening",
-      "content": "The purpose of my call is simple: to introduce a service that helps practices improve visibility and reach prospects in a more effective way.",
+      "content": "So, the purpose is to make a reliable network where patients can find practices based on merit as opposed to just the corporate practices who are, paying the most to be found and end up giving patients a sour taste in their mouth. So that''s the reason we''re doing this. Yeah, so the reason we are actually setting up a call as opposed to blindly selecting practices, is because we want to make sure all of the providers that we include, are of a certain competence, caliber, and distinction.",
       "keywords": ["purpose", "call"],
       "favorite": false
     },
     {
       "id": "busy-practice",
-      "title": "WE ARE A BUSY PRACTICE / WE DON'T ACCEPT NEW PATIENTS / WE DON'T NEED REFERRALS",
+      "title": "WE ARE A BUSY PRACTICE / WE DON''T ACCEPT NEW PATIENTS / WE DON''T NEED REFERRALS",
       "category": "Objections",
-      "content": "I understand. In that case, this may not be a fit for you right now. I appreciate your time, and if your situation changes down the road, feel free to reach out.",
+      "content": "Of course! That''s actually why we''re reaching out. We''re interviewing some of the top doctors in the community, and we know that the best doctors, like yourself, usually aren''t accepting new patients because you''re already so busy with your existing ones. You''ve earned your stripes, and that''s exactly why you''re one of the five practices we''re considering for this initiative. We want to learn more about you and see if you''d be a great fit. For Friday, would you prefer the morning or afternoon?",
       "keywords": ["busy", "new patients", "referrals"],
       "favorite": false
     },
@@ -196,7 +196,7 @@
       "id": "discover-practices",
       "title": "HOW WOULD PATIENTS DISCOVER QUALITY PRIVATE PRACTICES NEAR THEM?",
       "category": "Objections",
-      "content": "We help practices improve the way patients discover them and how they stay visible in a crowded market.",
+      "content": "Great question, Doctor! So, what we''re doing is, we''re building a referral network within social media platforms that allows patients to discover quality private practices near them based on merit, rather than just those investing in paid content. And that way, when patients search for a practice locally, it''s someone that they''re able to find based on a certain competence, a certain adequacy, and a certain distinction. So, we''re going to do the interview with you, review it with our team, compare it to the other 4 practices we are considering in the area, and if you are selected, we''ll let you know. And then, when patients search for a top Doctor in your area, you will be the one that appears on Social media like Facebook and Instagram.",
       "keywords": ["discover", "patients", "private practices"],
       "favorite": false
     },
@@ -204,15 +204,15 @@
       "id": "holiday-script",
       "title": "HOLIDAY SCRIPT",
       "category": "Opening",
-      "content": "Hi Dr. [NAME], I wanted to reach out during the holiday season to introduce a simple idea that may be useful for your practice in the new year.",
+      "content": "I know your vacationing, but most practices during this time of the year they actually will do the interview during their vacation time. Usually in the morning before the rest of the family gets up. Because they''re able to spotlight the practice much better than the mist of their day were they''re running around. So, i would recommend that we do it when your vacationing?",
       "keywords": ["holiday", "season", "year"],
       "favorite": false
     },
     {
       "id": "website",
-      "title": "WHAT'S YOUR WEBSITE?",
+      "title": "WHAT''S YOUR WEBSITE?",
       "category": "Closing",
-      "content": "Absolutely, I can send you the website link directly so you can review it when you have a moment.",
+      "content": "We use to have a website, you know, online, for everyone to see but we are getting calls from subpar medical practices trying to get involve. So we just want to keep this exclusive to the practices that are actually doing qualitative work.",
       "keywords": ["website", "link"],
       "favorite": false
     }
