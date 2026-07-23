@@ -15,7 +15,7 @@ let state = {
 
 async function loadScripts() {
   try {
-    const response = await fetch("./scripts.json");
+    const response = await fetch("./scripts.json?v=1");
     if (!response.ok) throw new Error("Failed to load scripts");
     const data = await response.json();
     return data.scripts || [];
