@@ -187,7 +187,9 @@ input:focus {
 .zone-card.eastern .card-header {
   background: #25b3a5;
 }
-
+.zone-card.default .card-header {
+  background: #475569;
+}
 .result-summary {
   margin-top: 22px;
   padding: 18px 20px;

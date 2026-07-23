@@ -4,18 +4,31 @@ const status = document.getElementById('status');
 const result = document.getElementById('result');
 
 const zoneMap = {
-  'America/Los_Angeles': { label: 'Pacific Time', detail: 'UTC−8 / UTC−7 during daylight saving' },
-  'America/Denver': { label: 'Mountain Time', detail: 'UTC−7 / UTC−6 during daylight saving' },
-  'America/Chicago': { label: 'Central Time', detail: 'UTC−6 / UTC−5 during daylight saving' },
-  'America/New_York': { label: 'Eastern Time', detail: 'UTC−5 / UTC−4 during daylight saving' },
+  'America/Los_Angeles': {
+    title: 'Pacific time',
+    theme: 'pacific',
+    label: 'Pacific Time',
+    detail: 'UTC−8 / UTC−7 during daylight saving',
+  },
+  'America/Denver': {
+    title: 'Mountain time',
+    theme: 'mountain',
+    label: 'Mountain Time',
+    detail: 'UTC−7 / UTC−6 during daylight saving',
+  },
+  'America/Chicago': {
+    title: 'Central time',
+    theme: 'central',
+    label: 'Central Time',
+    detail: 'UTC−6 / UTC−5 during daylight saving',
+  },
+  'America/New_York': {
+    title: 'Eastern time',
+    theme: 'eastern',
+    label: 'Eastern Time',
+    detail: 'UTC−5 / UTC−4 during daylight saving',
+  },
 };
-
-const snapshotZones = [
-  { title: 'Pacific time', timezone: 'America/Los_Angeles', theme: 'pacific' },
-  { title: 'Mountain time', timezone: 'America/Denver', theme: 'mountain' },
-  { title: 'Central time', timezone: 'America/Chicago', theme: 'central' },
-  { title: 'Eastern time', timezone: 'America/New_York', theme: 'eastern' },
-];
 
 function showMessage(message, isError = false) {
   status.textContent = message;
@@ -64,13 +77,17 @@ function buildZoneCard(zone) {
   `;
 }
 
-function displayResult({ label, detail, placeName, coordinates }) {
-  const cards = snapshotZones.map(buildZoneCard).join('');
+function displayResult({ label, detail, timezone, placeName, coordinates }) {
+  const zone = zoneMap[timezone] || {
+    title: timezone,
+    theme: 'default',
+  };
+  const card = buildZoneCard({ ...zone, timezone });
 
   result.classList.remove('hidden', 'error');
   result.innerHTML = `
     <div class="result-row">
-      ${cards}
+      ${card}
     </div>
     <div class="result-summary">
       <p class="result-summary-title">Detected timezone: <strong>${label}</strong></p>
@@ -126,6 +143,7 @@ async function lookupAddress(address) {
   displayResult({
     label,
     detail,
+    timezone,
     placeName: place.display_name,
     coordinates: `${lat}, ${lon}`,
   });
