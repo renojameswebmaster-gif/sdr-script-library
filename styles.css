@@ -110,9 +110,9 @@ body {
 
 .scripts-container > .script-card.open {
   grid-column: 1 / -1;
-  max-width: 700px;
+  width: min(75vw, 900px);
+  max-width: 75vw;
   margin: 0 auto;
-  width: 100%;
 }
 
 /* Script Card */
@@ -164,8 +164,8 @@ body {
   color: var(--text-light);
   white-space: pre-wrap;
   word-wrap: break-word;
-  text-align: center;
-  text-justify: auto;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .script-card.open .script-content {
