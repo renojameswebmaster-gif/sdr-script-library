@@ -47,17 +47,15 @@ function renderVoiceSuggestions(matches) {
     return;
   }
 
+  const [topMatch] = matches;
+
   voiceSuggestionsEl.classList.remove("hidden");
-  voiceSuggestionsEl.innerHTML = matches
-    .map(
-      (match, index) => `
-        <button class="suggestion-item" data-id="${match.script.id}">
-          <span>${index + 1}.</span>
-          <strong>${match.script.title}</strong>
-        </button>
-      `
-    )
-    .join("");
+  voiceSuggestionsEl.innerHTML = `
+    <button class="suggestion-item compact" data-id="${topMatch.script.id}">
+      <span class="suggestion-label">Top Match</span>
+      <strong>${topMatch.script.title}</strong>
+    </button>
+  `;
 
   voiceSuggestionsEl.querySelectorAll(".suggestion-item").forEach((btn) => {
     btn.addEventListener("click", () => {
