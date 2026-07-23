@@ -75,7 +75,7 @@ function renderScripts() {
 }
 
 function attachEventListeners() {
-  // Card click to open
+  // Card click to open - ONLY ONE AT A TIME
   document.querySelectorAll(".script-card").forEach((card) => {
     card.addEventListener("click", (e) => {
       if (
@@ -84,7 +84,12 @@ function attachEventListeners() {
         !e.target.closest(".close-btn")
       ) {
         const id = card.getAttribute("data-id");
-        state.openCardId = state.openCardId === id ? null : id;
+        // If clicking same card, close it; otherwise close all and open new one
+        if (state.openCardId === id) {
+          state.openCardId = null;
+        } else {
+          state.openCardId = id; // This automatically closes any other open card
+        }
         renderScripts();
       }
     });
