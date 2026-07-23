@@ -70,22 +70,6 @@ function renderVoiceSuggestions(matches) {
   });
 }
 
-function speakScript(script) {
-  if (!("speechSynthesis" in window)) {
-    showToast("Speech playback is not supported in this browser.");
-    return;
-  }
-
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(script.content);
-  utterance.rate = 1;
-  utterance.pitch = 1;
-  utterance.volume = 1;
-  utterance.onstart = () => showToast("Reading: " + script.title);
-  utterance.onend = () => showToast("Finished reading: " + script.title);
-  window.speechSynthesis.speak(utterance);
-}
-
 function normalizeVoiceText(text) {
   return text
     .toLowerCase()
@@ -180,7 +164,6 @@ function openScriptByVoice(transcript) {
 
   renderScripts();
   renderVoiceSuggestions(matches);
-  speakScript(bestMatch.script);
   showToast("Opened: " + bestMatch.script.title);
 }
 
@@ -273,7 +256,6 @@ function renderScripts() {
           <div class="script-category">${script.category}</div>
           <div class="script-content">${script.content}</div>
           <div class="script-actions">
-            <button class="action-btn read-btn" data-id="${script.id}">🔊 Read</button>
             <button class="action-btn copy-btn" data-id="${script.id}">📋 Copy</button>
             <button class="action-btn close-btn" data-id="${script.id}">✕ Close</button>
           </div>
@@ -311,18 +293,6 @@ function attachEventListeners() {
           state.openCardId = id; // This automatically closes any other open card
         }
         renderScripts();
-      }
-    });
-  });
-
-  // Read button
-  document.querySelectorAll(".read-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const id = btn.getAttribute("data-id");
-      const script = state.scripts.find((s) => s.id === id);
-      if (script) {
-        speakScript(script);
       }
     });
   });
