@@ -172,7 +172,7 @@ function parseTimeZoneLocalTime(timezone) {
 function isWithinLunchWindow(timezone) {
   const { hour, minute } = parseTimeZoneLocalTime(timezone);
   const totalMinutes = hour * 60 + minute;
-  return totalMinutes >= 12 * 60 && totalMinutes < 12 * 60 + 30;
+  return totalMinutes >= 12 * 60 && totalMinutes < 12 * 60 + 45;
 }
 
 function showCallAlert() {
