@@ -37,65 +37,99 @@ function showToast(message) {
 }
 
 function normalizeVoiceText(text) {
-  return text.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+  return text
+    .toLowerCase()
+    .replace(/\bim\b/g, "i am")
+    .replace(/\bwhat's\b/g, "what is")
+    .replace(/\bwho's\b/g, "who is")
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function buildPhraseAliases() {
+  return {
+    "not interested": ["i'm not interested", "not interested", "not interested second third time"],
+    "how much": ["how much does this cost", "paid thing", "cost", "price"],
+    "website": ["what's your website", "website"],
+    "send me an email": ["send me an email", "email"],
+    "facebook": ["facebook"],
+    "office manager": ["office manager"],
+    "schedule": ["call me back", "schedule"],
+    "social media referral network": ["social media referral network", "referral network"]
+  };
+}
+
+function scoreVoiceMatch(script, transcript) {
+  const title = normalizeVoiceText(script.title);
+  const content = normalizeVoiceText(script.content);
+  const keywords = normalizeVoiceText(script.keywords.join(" "));
+  const category = normalizeVoiceText(script.category);
+  const transcriptText = normalizeVoiceText(transcript);
+
+  let score = 0;
+
+  if (!transcriptText) return 0;
+
+  const aliases = buildPhraseAliases();
+
+  Object.entries(aliases).forEach(([aliasKeyword, patterns]) => {
+    if (patterns.some((pattern) => transcriptText.includes(pattern))) {
+      if (title.includes(aliasKeyword) || title.includes(patterns[0])) score += 25;
+      if (keywords.includes(aliasKeyword)) score += 18;
+      if (content.includes(aliasKeyword)) score += 10;
+    }
+  });
+
+  if (title.includes(transcriptText)) score += 40;
+  if (keywords.includes(transcriptText)) score += 25;
+  if (content.includes(transcriptText)) score += 12;
+  if (category.includes(transcriptText)) score += 8;
+
+  const transcriptWords = transcriptText.split(" ");
+  const titleWords = title.split(" ");
+  const keywordWords = keywords.split(" ");
+
+  transcriptWords.forEach((word) => {
+    if (word.length < 3) return;
+    if (titleWords.includes(word)) score += 5;
+    if (keywordWords.includes(word)) score += 3;
+    if (content.includes(word)) score += 1;
+  });
+
+  return score;
 }
 
 function findBestVoiceMatch(transcript) {
   const normalizedTranscript = normalizeVoiceText(transcript);
-  if (!normalizedTranscript) return null;
+  if (!normalizedTranscript) return [];
 
-  let bestMatch = null;
-  let bestScore = 0;
+  const rankedMatches = state.scripts
+    .map((script) => ({ script, score: scoreVoiceMatch(script, normalizedTranscript) }))
+    .filter((entry) => entry.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
 
-  state.scripts.forEach((script) => {
-    const title = normalizeVoiceText(script.title);
-    const content = normalizeVoiceText(script.content);
-    const keywords = normalizeVoiceText(script.keywords.join(" "));
-    const category = normalizeVoiceText(script.category);
-
-    let score = 0;
-
-    if (title.includes(normalizedTranscript)) score += 20;
-    if (content.includes(normalizedTranscript)) score += 12;
-    if (keywords.includes(normalizedTranscript)) score += 10;
-    if (category.includes(normalizedTranscript)) score += 6;
-
-    const transcriptWords = normalizedTranscript.split(" ");
-    const titleWords = title.split(" ");
-    const keywordWords = keywords.split(" ");
-
-    transcriptWords.forEach((word) => {
-      if (word.length < 3) return;
-      if (titleWords.includes(word)) score += 4;
-      if (keywordWords.includes(word)) score += 3;
-      if (content.includes(word)) score += 1;
-    });
-
-    if (score > bestScore) {
-      bestScore = score;
-      bestMatch = script;
-    }
-  });
-
-  return bestScore > 0 ? bestMatch : null;
+  return rankedMatches;
 }
 
 function openScriptByVoice(transcript) {
-  const match = findBestVoiceMatch(transcript);
+  const matches = findBestVoiceMatch(transcript);
 
-  if (!match) {
+  if (!matches.length) {
     showToast("No matching script found.");
     return;
   }
 
+  const [bestMatch] = matches;
   state.searchQuery = "";
   state.selectedCategory = "all";
-  state.openCardId = match.id;
+  state.openCardId = bestMatch.script.id;
 
   navButtons.forEach((b) => b.classList.toggle("active", b.getAttribute("data-category") === "all"));
 
   renderScripts();
-  showToast("Opened: " + match.title);
+  showToast("Opened: " + bestMatch.script.title);
 }
 
 function setupVoiceRecognition() {
@@ -109,8 +143,9 @@ function setupVoiceRecognition() {
 
   recognition = new SpeechRecognition();
   recognition.lang = "en-US";
-  recognition.interimResults = false;
-  recognition.maxAlternatives = 1;
+  recognition.interimResults = true;
+  recognition.maxAlternatives = 3;
+  recognition.continuous = true;
 
   recognition.onstart = () => {
     state.isListening = true;
@@ -119,8 +154,16 @@ function setupVoiceRecognition() {
   };
 
   recognition.onresult = (event) => {
-    const transcript = event.results[0][0].transcript;
-    openScriptByVoice(transcript);
+    const transcript = event.results[event.results.length - 1][0].transcript;
+    const matched = findBestVoiceMatch(transcript);
+
+    if (matched.length) {
+      showToast("Likely match: " + matched[0].script.title);
+    }
+
+    if (event.results[event.results.length - 1].isFinal) {
+      openScriptByVoice(transcript);
+    }
   };
 
   recognition.onerror = () => {
