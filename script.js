@@ -15,7 +15,8 @@ let state = {
 
 async function loadScripts() {
   try {
-    const response = await fetch("./scripts.json?v=1");
+    const timestamp = Math.floor(Date.now() / 1000);
+    const response = await fetch(`./scripts.json?t=${timestamp}`);
     if (!response.ok) throw new Error("Failed to load scripts");
     const data = await response.json();
     return data.scripts || [];
