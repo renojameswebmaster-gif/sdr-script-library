@@ -14,7 +14,8 @@ let state = {
   openCardId: null,
   lastCopiedText: "",
   isListening: false,
-  suggestions: []
+  suggestions: [],
+  autoListen: false
 };
 
 let recognition = null;
@@ -140,7 +141,7 @@ function findBestVoiceMatch(transcript) {
 
   const rankedMatches = state.scripts
     .map((script) => ({ script, score: scoreVoiceMatch(script, normalizedTranscript) }))
-    .filter((entry) => entry.score > 0)
+    .filter((entry) => entry.score >= 20)
     .sort((a, b) => b.score - a.score)
     .slice(0, 3);
 
@@ -183,6 +184,7 @@ function setupVoiceRecognition() {
 
   recognition.onstart = () => {
     state.isListening = true;
+    state.autoListen = true;
     voiceTriggerBtn.classList.add("active");
   };
 
@@ -198,19 +200,30 @@ function setupVoiceRecognition() {
   };
 
   recognition.onerror = () => {
+    if (state.autoListen && state.isListening) {
+      recognition.start();
+    }
   };
 
   recognition.onend = () => {
-    state.isListening = false;
     voiceTriggerBtn.classList.remove("active");
+    if (state.autoListen && state.isListening) {
+      recognition.start();
+    } else {
+      state.isListening = false;
+    }
   };
 
   voiceTriggerBtn.addEventListener("click", () => {
     if (state.isListening) {
+      state.autoListen = false;
+      state.isListening = false;
       recognition.stop();
       return;
     }
 
+    state.autoListen = true;
+    state.isListening = true;
     recognition.start();
   });
 }
