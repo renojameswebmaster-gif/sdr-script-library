@@ -4,14 +4,18 @@ const navButtons = document.querySelectorAll(".nav-btn");
 const toast = document.getElementById("toast");
 const backTopBtn = document.getElementById("back-top");
 const copyToastBtn = document.getElementById("copy-toast");
+const voiceTriggerBtn = document.getElementById("voice-trigger");
 
 let state = {
   scripts: [],
   searchQuery: "",
   selectedCategory: "all",
   openCardId: null,
-  lastCopiedText: ""
+  lastCopiedText: "",
+  isListening: false
 };
+
+let recognition = null;
 
 async function loadScripts() {
   try {
@@ -30,6 +34,112 @@ function showToast(message) {
   toast.textContent = message;
   toast.classList.add("show");
   setTimeout(() => toast.classList.remove("show"), 2000);
+}
+
+function normalizeVoiceText(text) {
+  return text.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function findBestVoiceMatch(transcript) {
+  const normalizedTranscript = normalizeVoiceText(transcript);
+  if (!normalizedTranscript) return null;
+
+  let bestMatch = null;
+  let bestScore = 0;
+
+  state.scripts.forEach((script) => {
+    const title = normalizeVoiceText(script.title);
+    const content = normalizeVoiceText(script.content);
+    const keywords = normalizeVoiceText(script.keywords.join(" "));
+    const category = normalizeVoiceText(script.category);
+
+    let score = 0;
+
+    if (title.includes(normalizedTranscript)) score += 20;
+    if (content.includes(normalizedTranscript)) score += 12;
+    if (keywords.includes(normalizedTranscript)) score += 10;
+    if (category.includes(normalizedTranscript)) score += 6;
+
+    const transcriptWords = normalizedTranscript.split(" ");
+    const titleWords = title.split(" ");
+    const keywordWords = keywords.split(" ");
+
+    transcriptWords.forEach((word) => {
+      if (word.length < 3) return;
+      if (titleWords.includes(word)) score += 4;
+      if (keywordWords.includes(word)) score += 3;
+      if (content.includes(word)) score += 1;
+    });
+
+    if (score > bestScore) {
+      bestScore = score;
+      bestMatch = script;
+    }
+  });
+
+  return bestScore > 0 ? bestMatch : null;
+}
+
+function openScriptByVoice(transcript) {
+  const match = findBestVoiceMatch(transcript);
+
+  if (!match) {
+    showToast("No matching script found.");
+    return;
+  }
+
+  state.searchQuery = "";
+  state.selectedCategory = "all";
+  state.openCardId = match.id;
+
+  navButtons.forEach((b) => b.classList.toggle("active", b.getAttribute("data-category") === "all"));
+
+  renderScripts();
+  showToast("Opened: " + match.title);
+}
+
+function setupVoiceRecognition() {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!SpeechRecognition) {
+    voiceTriggerBtn.disabled = true;
+    voiceTriggerBtn.title = "Voice search not supported in this browser";
+    return;
+  }
+
+  recognition = new SpeechRecognition();
+  recognition.lang = "en-US";
+  recognition.interimResults = false;
+  recognition.maxAlternatives = 1;
+
+  recognition.onstart = () => {
+    state.isListening = true;
+    voiceTriggerBtn.classList.add("active");
+    showToast("Listening for a script...");
+  };
+
+  recognition.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    openScriptByVoice(transcript);
+  };
+
+  recognition.onerror = () => {
+    showToast("Voice search failed. Try again.");
+  };
+
+  recognition.onend = () => {
+    state.isListening = false;
+    voiceTriggerBtn.classList.remove("active");
+  };
+
+  voiceTriggerBtn.addEventListener("click", () => {
+    if (state.isListening) {
+      recognition.stop();
+      return;
+    }
+
+    recognition.start();
+  });
 }
 
 function filterScripts() {
@@ -139,6 +249,7 @@ function init() {
   loadScripts().then((scripts) => {
     state.scripts = scripts;
     renderScripts();
+    setupVoiceRecognition();
 
     // Search
     searchInput.addEventListener("input", (e) => {

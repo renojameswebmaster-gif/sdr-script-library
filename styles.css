@@ -236,6 +236,16 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+.fab.active {
+  background: #2f7fb0;
+  transform: scale(1.08);
+}
+
+.fab:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* Toast */
 .toast {
   position: fixed;
