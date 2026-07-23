@@ -3,34 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>US Time Zone Checker</title>
-    <link rel="stylesheet" href="styles.css?v=5" />
+    <meta name="description" content="Professional SDR cold-call script library with search, favorites, copy, and dark mode." />
+    <title>SDR Script Library</title>
+    <link rel="stylesheet" href="styles.css?v=6" />
   </head>
   <body>
-    <main class="container">
-      <h1>US Time Zone Checker</h1>
-      <p>Paste an address and this tool will identify whether it falls in Pacific, Mountain, Central, or Eastern Time.</p>
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark">SDR</div>
+        <div>
+          <h1>Script Library</h1>
+          <p>Fast cold-call reference for live conversations</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle dark mode">☀️</button>
+        <button id="favorites-pill" class="icon-btn pill-btn" type="button">⭐ Favorites</button>
+      </div>
+    </header>
 
-      <form id="address-form" class="card">
-        <label for="address">Address</label>
-        <input id="address" name="address" type="text" placeholder="e.g. 1600 Amphitheatre Parkway, Mountain View, CA" required />
-        <button type="submit" class="btn btn-primary">Check Time Zone</button>
-      </form>
+    <nav id="category-nav" class="category-nav" aria-label="Script categories"></nav>
 
-      <p class="info-link"><a href="README.md" target="_blank" rel="noreferrer noopener">View project README and deploy instructions</a></p>
-      <div id="status" class="status" aria-live="polite"></div>
-      <div id="result" class="result hidden"></div>
+    <main class="page-shell">
+      <section class="hero-card">
+        <div class="hero-copy">
+          <p class="eyebrow">Live cold call support</p>
+          <h2>Search objections, open scripts, and copy fast</h2>
+          <p>Use this clean reference during calls to stay sharp, calm, and consistent.</p>
+        </div>
+
+        <div class="hero-tools">
+          <label class="search-box" for="search-input">
+            <span class="search-icon">🔍</span>
+            <input id="search-input" type="search" placeholder="Search objection, keyword, or script..." autocomplete="off" />
+          </label>
+
+          <div class="recent-wrap">
+            <p class="section-label">Recently opened</p>
+            <div id="recent-list" class="chip-row"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="script-list" class="script-list" aria-live="polite"></section>
     </main>
 
-    <div id="alert-overlay" class="alert-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="alert-title" aria-describedby="alert-description" aria-hidden="true">
-      <div class="alert-box">
-        <p class="alert-badge">🔔 CALL ALERT!</p>
-        <h2 id="alert-title">The customer's local time is between 12:00 PM to 12:45 PM.</h2>
-        <p id="alert-description">This is the best time to cold call because they are likely on their lunch break and more available. 📞 Call the customer now!</p>
-        <button id="alert-dismiss" class="btn btn-primary">Dismiss alert</button>
-      </div>
+    <div class="floating-actions">
+      <button id="back-top" class="fab" type="button" title="Back to top">⬆</button>
+      <button id="favorites-fab" class="fab" type="button" title="Favorites">⭐</button>
     </div>
 
-    <script src="script.js?v=5"></script>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js?v=6"></script>
   </body>
 </html>

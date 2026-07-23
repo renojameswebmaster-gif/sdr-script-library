@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>US Time Zone Checker</title>
+    <link rel="stylesheet" href="styles.css?v=5" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>US Time Zone Checker</h1>
+      <p>Paste an address and this tool will identify whether it falls in Pacific, Mountain, Central, or Eastern Time.</p>
+
+      <form id="address-form" class="card">
+        <label for="address">Address</label>
+        <input id="address" name="address" type="text" placeholder="e.g. 1600 Amphitheatre Parkway, Mountain View, CA" required />
+        <button type="submit" class="btn btn-primary">Check Time Zone</button>
+      </form>
+
+      <p class="info-link"><a href="README.md" target="_blank" rel="noreferrer noopener">View project README and deploy instructions</a></p>
+      <div id="status" class="status" aria-live="polite"></div>
+      <div id="result" class="result hidden"></div>
+    </main>
+
+    <div id="alert-overlay" class="alert-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="alert-title" aria-describedby="alert-description" aria-hidden="true">
+      <div class="alert-box">
+        <p class="alert-badge">🔔 CALL ALERT!</p>
+        <h2 id="alert-title">The customer's local time is between 12:00 PM to 12:45 PM.</h2>
+        <p id="alert-description">This is the best time to cold call because they are likely on their lunch break and more available. 📞 Call the customer now!</p>
+        <button id="alert-dismiss" class="btn btn-primary">Dismiss alert</button>
+      </div>
+    </div>
+
+    <script src="script.js?v=5"></script>
+  </body>
+</html>

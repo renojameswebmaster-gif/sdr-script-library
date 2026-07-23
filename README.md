@@ -1,6 +1,6 @@
-# US Time Zone Checker
+# SDR Script Library
 
-A simple static website that accepts an address, looks up its location, and identifies whether it falls in Pacific, Mountain, Central, or Eastern Time.
+A professional, responsive static website for SDR cold-call scripts. It supports instant search, accordion navigation, favorites, copy-to-clipboard, dark mode, and recent script tracking.
 
 ## Deploy to GitHub Pages
 
@@ -9,7 +9,8 @@ A simple static website that accepts an address, looks up its location, and iden
    - index.html
    - styles.css
    - script.js
-3. In GitHub, open the repository and go to Settings → Pages.
+   - scripts.json
+3. Open the repository in GitHub and go to Settings → Pages.
 4. Under Source, choose Deploy from a branch.
 5. Select the main branch and save.
 6. GitHub Pages will provide a public URL for your site.
