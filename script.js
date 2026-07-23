@@ -8,28 +8,75 @@ const zoneMap = {
   'America/Denver': { label: 'Mountain Time', detail: 'UTC−7 / UTC−6 during daylight saving' },
   'America/Chicago': { label: 'Central Time', detail: 'UTC−6 / UTC−5 during daylight saving' },
   'America/New_York': { label: 'Eastern Time', detail: 'UTC−5 / UTC−4 during daylight saving' },
-  'America/Phoenix': { label: 'Mountain Standard Time', detail: 'Arizona does not observe daylight saving' },
-  'America/Boise': { label: 'Mountain Time', detail: 'Mountain Time' },
-  'America/Detroit': { label: 'Eastern Time', detail: 'Eastern Time' },
-  'America/Indianapolis': { label: 'Eastern Time', detail: 'Eastern Time' },
-  'America/Anchorage': { label: 'Alaska Time', detail: 'Alaska Time' },
-  'Pacific/Honolulu': { label: 'Hawaii Time', detail: 'Hawaii Time' },
 };
+
+const snapshotZones = [
+  { title: 'Pacific time', timezone: 'America/Los_Angeles', theme: 'pacific' },
+  { title: 'Mountain time', timezone: 'America/Denver', theme: 'mountain' },
+  { title: 'Central time', timezone: 'America/Chicago', theme: 'central' },
+  { title: 'Eastern time', timezone: 'America/New_York', theme: 'eastern' },
+];
 
 function showMessage(message, isError = false) {
   status.textContent = message;
   status.style.color = isError ? '#b91c1c' : '#475569';
 }
 
-function displayResult({ label, detail, timezone, localTime, placeName, coordinates }) {
+function formatZoneTime(timezone) {
+  const now = new Date();
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: timezone,
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+  }).formatToParts(now);
+
+  const hour = parts.find((part) => part.type === 'hour')?.value || '';
+  const minute = parts.find((part) => part.type === 'minute')?.value || '';
+  const ampm = parts.find((part) => part.type === 'dayPeriod')?.value || '';
+  const weekday = parts.find((part) => part.type === 'weekday')?.value || '';
+  const month = parts.find((part) => part.type === 'month')?.value || '';
+  const day = parts.find((part) => part.type === 'day')?.value || '';
+
+  return {
+    time: `${hour}:${minute}`,
+    ampm,
+    date: `${weekday} ${month} ${day}`,
+  };
+}
+
+function buildZoneCard(zone) {
+  const zoneTime = formatZoneTime(zone.timezone);
+  return `
+    <article class="zone-card ${zone.theme}">
+      <div class="card-header">
+        <span>${zone.title}</span>
+      </div>
+      <div class="card-body">
+        <p class="zone-clock">${zoneTime.time}<span class="zone-ampm">${zoneTime.ampm}</span></p>
+        <p class="zone-date">${zoneTime.date}</p>
+      </div>
+      <div class="card-footer">Current local time</div>
+    </article>
+  `;
+}
+
+function displayResult({ label, detail, placeName, coordinates }) {
+  const cards = snapshotZones.map(buildZoneCard).join('');
+
   result.classList.remove('hidden', 'error');
   result.innerHTML = `
-    <h2>${label}</h2>
-    <p class="meta"><strong>Detected timezone:</strong> ${timezone}</p>
-    <p class="meta"><strong>Location:</strong> ${placeName}</p>
-    <p class="meta"><strong>Coordinates:</strong> ${coordinates}</p>
-    <p class="meta"><strong>Current local time:</strong> ${localTime}</p>
-    <p class="meta">${detail}</p>
+    <div class="result-row">
+      ${cards}
+    </div>
+    <div class="result-summary">
+      <p class="result-summary-title">Detected timezone: <strong>${label}</strong></p>
+      <p class="result-summary-detail">${detail}</p>
+      <p class="result-summary-meta">Location: ${placeName} • Coordinates: ${coordinates}</p>
+    </div>
   `;
 }
 
@@ -37,8 +84,10 @@ function displayError(message) {
   result.classList.remove('hidden');
   result.classList.add('error');
   result.innerHTML = `
-    <h2>Could not determine the time zone</h2>
-    <p class="meta">${message}</p>
+    <div class="result-summary">
+      <p class="result-summary-title">Unable to determine timezone</p>
+      <p class="result-summary-detail">${message}</p>
+    </div>
   `;
 }
 
@@ -47,18 +96,16 @@ async function lookupAddress(address) {
   result.classList.add('hidden');
 
   const geocodeUrl = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=${encodeURIComponent(address)}`;
-
   const geocodeResponse = await fetch(geocodeUrl, {
     headers: {
-      'Accept': 'application/json',
-      'Accept-Language': 'en'
-    }
+      Accept: 'application/json',
+      'Accept-Language': 'en',
+    },
   });
 
   if (!geocodeResponse.ok) throw new Error('The address lookup failed. Please try a different address.');
 
   const geocodeData = await geocodeResponse.json();
-
   if (!geocodeData.length) throw new Error('No matching location was found. Please try a more specific address.');
 
   const place = geocodeData[0];
@@ -67,30 +114,20 @@ async function lookupAddress(address) {
 
   const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m&timezone=auto`;
   const weatherResponse = await fetch(weatherUrl);
-
   if (!weatherResponse.ok) throw new Error('The timezone lookup failed. Please try again in a moment.');
 
   const weatherData = await weatherResponse.json();
-
   const timezone = weatherData.timezone || 'Unknown';
   const matchedZone = zoneMap[timezone];
 
-  const label = matchedZone ? matchedZone.label : 'Outside the four main U.S. time zones';
+  const label = matchedZone ? matchedZone.label : `Detected IANA timezone: ${timezone}`;
   const detail = matchedZone ? matchedZone.detail : `The detected IANA timezone is ${timezone}.`;
-
-  const localTime = new Date().toLocaleString('en-US', {
-    timeZone: timezone,
-    dateStyle: 'full',
-    timeStyle: 'long'
-  });
 
   displayResult({
     label,
     detail,
-    timezone,
-    localTime,
     placeName: place.display_name,
-    coordinates: `${lat}, ${lon}`
+    coordinates: `${lat}, ${lon}`,
   });
 
   showMessage('Done.');

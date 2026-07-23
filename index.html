@@ -4,36 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>US Time Zone Checker</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=4" />
   </head>
   <body>
     <main class="container">
       <h1>US Time Zone Checker</h1>
-      <p>
-        Paste an address and this tool will identify whether it falls in
-        Pacific, Mountain, Central, or Eastern Time.
-      </p>
+      <p>Paste an address and this tool will identify whether it falls in Pacific, Mountain, Central, or Eastern Time.</p>
 
       <form id="address-form" class="card">
         <label for="address">Address</label>
-        <input
-          id="address"
-          name="address"
-          type="text"
-          placeholder="e.g. 1600 Amphitheatre Parkway, Mountain View, CA"
-          required
-        />
-        <button type="submit">Check Time Zone</button>
+        <input id="address" name="address" type="text" placeholder="e.g. 1600 Amphitheatre Parkway, Mountain View, CA" required />
+        <button type="submit" class="btn btn-primary">Check Time Zone</button>
       </form>
 
-      <p class="info-link">
-        <a href="README.md" target="_blank" rel="noreferrer noopener">View project README and deploy instructions</a>
-      </p>
-
+      <p class="info-link"><a href="README.md" target="_blank" rel="noreferrer noopener">View project README and deploy instructions</a></p>
       <div id="status" class="status" aria-live="polite"></div>
       <div id="result" class="result hidden"></div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
   </body>
 </html>
