@@ -4,8 +4,8 @@
       "id": "intro",
       "title": "Intro",
       "category": "Opening",
-      "content": "Hey Dr. [NAME]?\n\nHey Dr. [NAME], this is Rose, and I’m calling from [COMPANY]. I’m reaching out because we work with practices to improve the way they connect with prospects and keep their outreach organized. I wanted to see if this is something your team might be open to exploring.",
-      "keywords": ["intro", "doctor", "practice", "call"],
+      "content": "INTRO\n\nHey Dr. [NAME]?\n\nHey Dr. [NAME], this is Rose, and I’m reaching out because we manage the Healthcare Research Division for Facebook and we’re currently selecting top practices in the Phoenix area for our network. We’re considering the [Practice Name] to be part of it.\n\nSo, I need to schedule or coordinate a good time that works for you for a 45-minute interview just in front of a computer. My director can interview you about the practice and see if you would be a good fit.\n\nYou’re the sole owner of the practice, [Practice Name], right?\n\nLooking at his calendar, I see he has an opening at [time] or [time] on [day]. Which time works best for you?\n\nSo for tomorrow, are you available in the morning or afternoon?\n\nConfirmation Steps\n\nSo just to confirm, you’re the sole owner of the practice, [Practice Name], right?\n\nOkay, and we’re going to send you a confirmation of the meeting via text. Is this the best number to send that to?\n\nOkay great, and after the interview, if you’re selected, we’re going to send you a confirmation email. What’s the best email to send that to?\n\nOkay great, and just so that we can share exactly what the initiative looks like, you’ll have access to a computer when we call, right?\n\nAwesome… and I’m putting you in my director’s calendar now. Can you do me a favor and put that in your calendar as well?\n\nOkay great, so I have you in my director’s calendar for [Day] [Time] [Time Zone]. Just be sure you’re by a computer. We’ll go through some questions, interview you about the practice, and see if you’ll be a good fit!",
+      "keywords": ["intro", "doctor", "practice", "call", "confirmation", "interview"],
       "favorite": false
     },
     {
@@ -20,8 +20,8 @@
       "id": "im-not-interested",
       "title": "I’m Not Interested",
       "category": "Objections",
-      "content": "I understand. I’m not trying to force anything. I’m simply reaching out because we help practices improve their process and stay more consistent with outbound outreach. If it becomes relevant later, I’d be happy to revisit it.",
-      "keywords": ["not interested", "revisit", "later"],
+      "content": "I’m not interested\n\nOh… so there’s nothing to be interested in… are you familiar with the social media referral network?\n\nNow, are you familiar at all with the social media referral network?\n\nOkay, so currently, the only way to be found on social media is through paid ads, which are almost always funded by corporate practices.\n\nAnd unfortunately, many of these corporate practices provide subpar medical experiences to their patients.\n\nSo what we’re doing is, we’re building a referral network within social media platforms that allows patients to discover quality private practices near them based on merit, rather than just those investing in paid content.\n\nAnd that way, when patients search for a practice locally, it’s someone that they’re able to find based on a certain competence, a certain adequacy, and a certain distinction.\n\nBut does that clarify a little bit more about the significance of the call and what’s going on?\n\nGreat, so the interview is going to be about 45 minutes; it’s over the phone. What I wanted to do is coordinate a good time that works for you and my Director for sometime this week.\n\nAnd for tomorrow, are you better in the mornings or afternoons?\n\nWhat’s the social media referral network?\n\nIt’s a referral network nationwide that utilizes social media platforms like Facebook and Instagram to allow patients to find the best in health and wellness. To do that, we need to make sure we’re only sending patients to the right practices. Does that make sense?",
+      "keywords": ["not interested", "social media", "referral network", "clarify"],
       "favorite": false
     },
     {
@@ -36,24 +36,24 @@
       "id": "im-not-interested-2",
       "title": "I’m Not Interested (Second Time)",
       "category": "Objections",
-      "content": "I hear you. I’ll leave it there for now. If your priorities change down the road, feel free to reach out and I’ll be happy to share more information.",
-      "keywords": ["second time", "leave it there", "future"],
+      "content": "No, that still does not make sense / I’m not interested (for the second or third time)\n\nGot it. So, let me clarify because I’m sensing the caliber of the call isn’t fully being understood.\n\nRight now, if you’ve noticed when you search online, the only medical offices that come up when a patient searches locally are corporate-run practices, not privately held practices such as yours, right?\n\nThe problem is that those corporate-run practices are usually a factory and leave patients with a sour taste in their mouth. But, ironically, these same patients actually never end up at private practice with a much better experience because the search engines and social media brands have essentially sold themselves off to whoever is willing to pay.\n\nSo now, because there have been so many complaints about this issue from both doctors and patients, the social media referral network was created so that only the top practices that actually do qualitative work will be seen when patients are searching. Does that clarify a little bit more about the significance of the call?",
+      "keywords": ["second time", "clarify", "social media", "referral network"],
       "favorite": false
     },
     {
       "id": "paid-thing",
-      "title": "Paid Thing",
+      "title": "Is This a Paid Thing?",
       "category": "Objections",
-      "content": "I understand. We do not ask for any upfront payment or long-term commitment to get started. We simply want to show you the value first and let you decide if it’s a fit.",
-      "keywords": ["paid", "cost", "upfront"],
+      "content": "Is this a paid thing? How much does this cost?\n\nOh, so this isn’t a marketing or paid advertising thing, it’s just an interview so that we can refer patients to the right practices. Now to just confirm, you’re the sole owner of the practice right?",
+      "keywords": ["paid", "cost", "advertising", "interview"],
       "favorite": false
     },
     {
       "id": "send-me-an-email",
       "title": "Send Me an Email",
       "category": "Objections",
-      "content": "Absolutely, I can send over a short overview. I’ll send it to you now so you can review it at your convenience.",
-      "keywords": ["email", "send", "overview"],
+      "content": "Send me an email:\n\nOh, this isn’t like an advertising thing, so I don’t actually have a proposal or anything to send. It’s an interview and my style of interview is very organic, so I don’t send pre-formulated questions or anything like that. The interview will be more of an organic conversation exactly how you and I are talking right now. So, all I need to do is set up a time with you when you have 40-50 minutes and could be in front of the computer, so I could learn a bit more about you guys and see if you would be a good fit. So, for tomorrow, are you available in the morning or afternoon? You know what I mean?",
+      "keywords": ["email", "proposal", "organic", "interview"],
       "favorite": false
     },
     {
