@@ -179,17 +179,19 @@ function showCallAlert() {
   if (!alertOverlay.classList.contains('hidden')) return;
   alertOverlay.classList.remove('hidden');
   alertOverlay.style.display = 'grid';
+  alertOverlay.setAttribute('aria-hidden', 'false');
   playAlertSound();
 }
 
 function hideCallAlert() {
   alertOverlay.classList.add('hidden');
   alertOverlay.style.display = 'none';
+  alertOverlay.setAttribute('aria-hidden', 'true');
   stopAlertSound();
 }
 
 function tryTriggerAlert(timezone) {
-  if (!timezone || alertTriggeredWindow === timezone) return;
+  if (!timezone) return;
   if (isWithinLunchWindow(timezone)) {
     alertTriggeredWindow = timezone;
     showCallAlert();
