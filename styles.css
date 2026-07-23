@@ -108,6 +108,12 @@ body {
   gap: 20px;
 }
 
+.scripts-container.focused {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .scripts-container > .script-card.open {
   grid-column: 1 / -1;
   width: min(90vw, 1100px);

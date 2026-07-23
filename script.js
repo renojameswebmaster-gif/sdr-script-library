@@ -55,7 +55,13 @@ function renderScripts() {
     return;
   }
 
-  scriptContainer.innerHTML = filtered
+  const visibleScripts = state.openCardId
+    ? filtered.filter((script) => script.id === state.openCardId)
+    : filtered;
+
+  scriptContainer.classList.toggle("focused", Boolean(state.openCardId));
+
+  scriptContainer.innerHTML = visibleScripts
     .map((script) => {
       const isOpen = state.openCardId === script.id;
       return `
@@ -74,7 +80,6 @@ function renderScripts() {
 
   attachEventListeners();
 
-  // Scroll opened card into view and center it
   if (state.openCardId) {
     setTimeout(() => {
       const openCard = document.querySelector(`.script-card.open`);
