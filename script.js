@@ -164,7 +164,6 @@ function openScriptByVoice(transcript) {
 
   renderScripts();
   renderVoiceSuggestions(matches);
-  showToast("Opened: " + bestMatch.script.title);
 }
 
 function setupVoiceRecognition() {
@@ -185,7 +184,6 @@ function setupVoiceRecognition() {
   recognition.onstart = () => {
     state.isListening = true;
     voiceTriggerBtn.classList.add("active");
-    showToast("Listening for a script...");
   };
 
   recognition.onresult = (event) => {
@@ -200,7 +198,6 @@ function setupVoiceRecognition() {
   };
 
   recognition.onerror = () => {
-    showToast("Voice search failed. Try again.");
   };
 
   recognition.onend = () => {
