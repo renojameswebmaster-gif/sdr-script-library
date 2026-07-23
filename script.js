@@ -245,6 +245,8 @@ form.addEventListener('submit', async (event) => {
 
   try {
     await lookupAddress(address);
+    alertTriggeredWindow = null;
+    hideCallAlert();
     if (currentTimezone) {
       startAlertMonitor(currentTimezone);
     }
