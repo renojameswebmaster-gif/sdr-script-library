@@ -72,6 +72,16 @@ function renderScripts() {
     .join("");
 
   attachEventListeners();
+
+  // Scroll opened card into view and center it
+  if (state.openCardId) {
+    setTimeout(() => {
+      const openCard = document.querySelector(`.script-card.open`);
+      if (openCard) {
+        openCard.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 0);
+  }
 }
 
 function attachEventListeners() {
