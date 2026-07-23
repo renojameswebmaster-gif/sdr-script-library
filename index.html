@@ -1,60 +1,52 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Professional SDR cold-call script library with search, favorites, copy, and dark mode." />
+    <meta name="description" content="Professional SDR cold-call script library for sales teams." />
     <title>SDR Script Library</title>
-    <link rel="stylesheet" href="styles.css?v=7" />
+    <link rel="stylesheet" href="styles.css?v=8" />
   </head>
   <body>
-    <header class="topbar">
-      <div class="brand-wrap">
-        <div class="brand-mark">SDR</div>
-        <div>
-          <h1>Script Library</h1>
-          <p>Fast cold-call reference for live conversations</p>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-container">
+        <div class="header-logo">
+          <div class="logo-text">SDR Scripts</div>
         </div>
-      </div>
-      <div class="topbar-actions">
-        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle dark mode">☀️</button>
-        <button id="favorites-pill" class="icon-btn pill-btn" type="button">⭐ Favorites</button>
+        <nav class="header-nav">
+          <button class="nav-btn active" data-category="all">All Scripts</button>
+          <button class="nav-btn" data-category="Opening">Opening</button>
+          <button class="nav-btn" data-category="Objections">Objections</button>
+          <button class="nav-btn" data-category="Closing">Closing</button>
+        </nav>
       </div>
     </header>
 
-    <nav id="category-nav" class="category-nav" aria-label="Script categories"></nav>
-
-    <main class="page-shell">
-      <section class="hero-card">
-        <div class="hero-copy">
-          <p class="eyebrow">Live cold call support</p>
-          <h2>Search objections, open scripts, and copy fast</h2>
-          <p>Use this clean reference during calls to stay sharp, calm, and consistent.</p>
-        </div>
-
-        <div class="hero-tools">
-          <label class="search-box" for="search-input">
-            <span class="search-icon">🔍</span>
-            <input id="search-input" type="search" placeholder="Search objection, keyword, or script..." autocomplete="off" />
-          </label>
-
-          <div class="recent-wrap">
-            <p class="section-label">Recently opened</p>
-            <div id="recent-list" class="chip-row"></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="script-list" class="script-list" aria-live="polite"></section>
-    </main>
-
-    <div class="floating-actions">
-      <button id="back-top" class="fab" type="button" title="Back to top">⬆</button>
-      <button id="favorites-fab" class="fab" type="button" title="Favorites">⭐</button>
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input 
+        id="search-input" 
+        type="search" 
+        placeholder="Search scripts by keyword..." 
+        autocomplete="off" 
+      />
     </div>
 
+    <!-- Main Content -->
+    <main class="content">
+      <div id="scripts-container" class="scripts-container"></div>
+    </main>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+      <button id="copy-toast" class="fab" title="Last action">📋</button>
+      <button id="back-top" class="fab" title="Back to top">⬆</button>
+    </div>
+
+    <!-- Toast Notification -->
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-    <script src="script.js?v=7"></script>
+    <script src="script.js?v=8"></script>
   </body>
 </html>
