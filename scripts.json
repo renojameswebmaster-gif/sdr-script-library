@@ -10,90 +10,210 @@
     },
     {
       "id": "confirmation-steps",
-      "title": "Confirmation Steps",
+      "title": "CONFIRMATION STEPS",
       "category": "Closing",
       "content": "So just to confirm you're the sole owner of the practice (name of practice), right?\n\nOk, and we're going to send you a confirmation of the meeting via text, is this the best number to send that to?\n\nOk great, and after the interview if you're selected, we're going to send you a confirmation email. What's the best email to send that to?\n\nOk great, and just so that we can share exactly what the initiative looks like... you'll have access to a computer when we call right?\n\nAwesome... and I'm putting you in my director's calendar now. Can you do me a favor and put that in your calendar as well?\n\nOk great, so I have you in my director's calendar for [Day] [Time] [Time Zone]. Just be sure you're by a computer, we'll go through some questions, interview you about the practice, and see if you'll be a good fit!",
-      "keywords": ["confirmation", "wrap up", "calendar", "steps"],
+      "keywords": ["confirmation", "steps", "calendar"],
       "favorite": false
     },
     {
       "id": "not-interested",
-      "title": "I'm Not Interested",
+      "title": "I'M NOT INTERESTED",
       "category": "Objections",
-      "content": "Oh... So there's nothing to be interested in... are you familiar with the social media referral network?\n\nNow, are you familiar at all with the social media referral network?\n\nOk, so currently, the only way to be found on social media is through paid ads, which are almost always funded by corporate practices.\n\nAnd unfortunately, many of these corporate practices provide subpar medical experiences to their patients.\n\nSo what we're doing is, we're building a referral network within social media platforms that allows patients to discover quality private practices near them based on merit, rather than just those investing in paid content.\n\nAnd that way, when patients search for a practice locally, it's someone that they're able to find based on a certain competence, a certain adequacy, and a certain distinction.\n\nBut does that clarify a little bit more about the significance of the call and what's going on?\n\nGreat, so the interview is going to be about 45 minutes; it's over the phone... What I wanted to do is coordinate a good time that works for you and my Director for sometime this week.\n\nAnd for tomorrow, are you better in the mornings or afternoons?",
-      "keywords": ["not interested", "objection", "social media", "referral"],
+      "content": "Oh... So there's nothing to be interested in...\n\nAre you familiar with the social media referral network?\n\nNow, are you familiar at all with the social media referral network?\n\nOk, so currently, the only way to be found on social media is through paid ads, which are almost always funded by corporate practices.\n\nAnd unfortunately, many of these corporate practices provide subpar medical experiences to their patients.\n\nSo what we're doing is, we're building a referral network within social media platforms that allows patients to discover quality private practices near them based on merit, rather than just those investing in paid content.\n\nAnd that way, when patients search for a practice locally, it's someone that they're able to find based on a certain competence, a certain adequacy, and a certain distinction.\n\nBut does that clarify a little bit more about the significance of the call and what's going on?\n\nGreat, so the interview is going to be about 45 minutes; it's over the phone... What I wanted to do is coordinate a good time that works for you and my Director for sometime this week.\n\nAnd for tomorrow, are you better in the mornings or afternoons?",
+      "keywords": ["not interested", "objection"],
       "favorite": false
     },
     {
-      "id": "social-media-referral-network",
-      "title": "What's the Social Media Referral Network?",
+      "id": "social-media-network",
+      "title": "WHAT'S THE SOCIAL MEDIA REFERRAL NETWORK?",
       "category": "Objections",
       "content": "It's a referral network nationwide that utilizes social media platforms like Facebook and Instagram to allow patients to find the best in health and wellness.\n\nTo do that, we need to make sure we're only sending patients to the right practices, does that make sense?",
-      "keywords": ["social media", "referral", "network", "facebook", "instagram"],
+      "keywords": ["social media", "referral", "network"],
       "favorite": false
     },
     {
-      "id": "not-interested-second-time",
-      "title": "No, That Still Does Not Make Sense (Second or Third Time)",
+      "id": "not-interested-second",
+      "title": "I'M NOT INTERESTED (SECOND OR THIRD TIME)",
       "category": "Objections",
       "content": "Got it. So, let me clarify because I'm sensing the caliber of the call isn't fully being understood:\n\nRight now, if you've noticed when you search online, the only medical offices that come up when a patient searches locally are corporate run practices, not privately held practices such as yours. Right?\n\nThe problem is that those corporate run practices are usually a factory and leave patients with a sour taste in their mouth.\n\nBut, ironically, these same patients actually never end up at private practice with a much better experience because the search engines and social media brands have essentially sold themselves off to whoever is willing to pay.\n\nSo now, because there have been so many complaints about this issue from both Doctors AND patients, the social media referral network was created so that only the top practices that actually do qualitative work, will be seen when patients are searching.\n\nDoes that clarify a little bit more about the significance of the call?",
-      "keywords": ["not interested", "second", "clarify", "corporate"],
+      "keywords": ["not interested", "second", "third"],
       "favorite": false
     },
     {
       "id": "paid-thing",
-      "title": "Is This a Paid Thing? How Much Does This Cost?",
+      "title": "IS THIS A PAID THING? HOW MUCH DOES THIS COST?",
       "category": "Objections",
       "content": "Oh, so this isn't a marketing or paid advertising thing, it's just an interview so that we can refer patients to the right practices.\n\nNow to just confirm, you're the sole owner of the practice right?",
-      "keywords": ["paid", "cost", "money", "price"],
+      "keywords": ["paid", "cost", "price"],
       "favorite": false
     },
     {
       "id": "send-email",
-      "title": "Send Me an Email",
+      "title": "SEND ME AN EMAIL",
       "category": "Objections",
       "content": "Oh, this isn't like an advertising thing, so I don't actually have a proposal or anything to send... it's an interview and my style of interview is very organic so I don't send pre-formulated questions or anything like that.\n\nThe interview will be more of an organic conversation exactly how you and I are talking right now.\n\nSo, all I need to do is set up a time with you when you have 40-50 minutes, and could be in front of the computer, so I could learn a bit more about you guys and see if you would be a good fit...\n\nSo for tomorrow, are you available in the morning or afternoon? / You know what I mean?",
-      "keywords": ["email", "send", "proposal", "interview"],
+      "keywords": ["email", "send", "proposal"],
       "favorite": false
     },
     {
-      "id": "not-doing-anything-until-send",
-      "title": "I'm Not Doing Anything Until You Send Me Something",
+      "id": "not-doing-anything",
+      "title": "I'M NOT DOING ANYTHING UNTIL YOU SEND ME SOMETHING",
       "category": "Objections",
       "content": "I don't have a proposal or flyer to send over... you can google 'Facebook Healthcare' if you want to learn more in the meantime, but the truth is the interview is the best way for us to understand your practice and see if this is a good fit.",
-      "keywords": ["send", "proposal", "something"],
+      "keywords": ["send", "something"],
       "favorite": false
     },
     {
       "id": "office-manager",
-      "title": "Let Me Talk to Our Office Manager",
+      "title": "YOU NEED TO SPEAK WITH MY OFFICE MANAGER",
       "category": "Objections",
-      "content": "That makes sense. If the office manager handles these types of decisions, I'm happy to speak with them. I can keep it brief and make sure they understand the opportunity. Would they be available?",
-      "keywords": ["office manager", "manager", "contact"],
+      "content": "That makes sense. If the office manager is the right point of contact, I'm happy to speak with them directly and keep it brief. Would they be available?",
+      "keywords": ["office manager", "contact"],
       "favorite": false
     },
     {
-      "id": "we-already-have",
-      "title": "We Already Have Something Like This",
+      "id": "how-does-it-work",
+      "title": "HOW DOES IT WORK? WHAT HAPPENS AFTER?",
       "category": "Objections",
-      "content": "That's great that you already have referral channels in place. We're not looking to replace anything - we're adding another layer of visibility and opportunity. Since you're already investing in growth, this complements that effort and gets your practice in front of more qualified patients.",
-      "keywords": ["already have", "existing", "similar"],
+      "content": "The process is pretty straightforward. We identify opportunities, make a light introduction, and then let the team decide if it's a fit.",
+      "keywords": ["how", "work", "process"],
       "favorite": false
     },
     {
-      "id": "call-me-later",
-      "title": "Call Me Back Later",
+      "id": "why-doing-this",
+      "title": "WHY ARE YOU DOING THIS? WHAT ARE YOU SELECTING ME FOR?",
       "category": "Objections",
-      "content": "Absolutely, I can follow up at a time that works better for you. When would be a good time? I want to make sure we catch you when you have a moment to discuss this properly.",
-      "keywords": ["call back", "later", "time", "reschedule"],
+      "content": "We're reaching out because we help practices streamline outreach and create better conversations with patients and referral partners.",
+      "keywords": ["why", "doing", "selecting"],
       "favorite": false
     },
     {
-      "id": "no-new-patients",
-      "title": "We Don't Accept New Patients",
+      "id": "how-select-me",
+      "title": "HOW DID YOU SELECT ME? / HOW DID YOU FIND ME? / WHY ARE YOU SELECTING ME?",
+      "category": "Objections",
+      "content": "We generally look for practices that are growing, have a strong patient base, and are open to exploring smarter ways to stay in front of new opportunities.",
+      "keywords": ["select", "find", "criteria"],
+      "favorite": false
+    },
+    {
+      "id": "five-point-metric",
+      "title": "WHAT DID YOU LOOK AT EXACTLY? HOW IS THE 5 POINT METRIC SYSTEM CALCULATED?",
+      "category": "Objections",
+      "content": "We use a simple five-point metric system to measure fit and relevance so we only bring forward opportunities that make sense.",
+      "keywords": ["5 point", "metric", "system"],
+      "favorite": false
+    },
+    {
+      "id": "cell-phone",
+      "title": "HOW DID YOU GET MY CELL PHONE NUMBER?",
+      "category": "Objections",
+      "content": "I understand. I can send the information to your office number or direct it to the contact method you prefer.",
+      "keywords": ["cell phone", "number"],
+      "favorite": false
+    },
+    {
+      "id": "facebook",
+      "title": "I ALREADY HAVE A FACEBOOK",
+      "category": "Objections",
+      "content": "That's great. We're not trying to replace your current channels. We're simply adding another layer of visibility and referral support.",
+      "keywords": ["facebook", "social", "channel"],
+      "favorite": false
+    },
+    {
+      "id": "two-weeks",
+      "title": "SO LET'S DO THIS IN 2 WEEKS OR SOMETHING LIKE THAT",
+      "category": "Objections",
+      "content": "That's fair. I can circle back in two weeks and keep the conversation light. If it's useful, I'll check in then.",
+      "keywords": ["2 weeks", "later", "call back"],
+      "favorite": false
+    },
+    {
+      "id": "healthcare-division",
+      "title": "WHAT'S THE HEALTHCARE RESEARCH DIVISION?",
+      "category": "Objections",
+      "content": "We work with practices and healthcare teams that want more efficient outreach and stronger visibility in the market.",
+      "keywords": ["healthcare", "division", "research"],
+      "favorite": false
+    },
+    {
+      "id": "driving",
+      "title": "I WILL BE DRIVING DURING THE INTERVIEW / CAN I DO THIS WHILE DRIVING?",
+      "category": "Objections",
+      "content": "I understand. I can keep this brief and send the information over so you can review it when it's convenient.",
+      "keywords": ["driving", "interview"],
+      "favorite": false
+    },
+    {
+      "id": "facebook-or-third",
+      "title": "ARE YOU GUYS FROM FACEBOOK OR ARE YOU A THIRD PARTY MARKETING COMPANY?",
+      "category": "Objections",
+      "content": "We're not a social media platform and we're not a third-party lead vendor. We're a service that helps practices improve outreach and conversion opportunities.",
+      "keywords": ["facebook", "third party", "marketing"],
+      "favorite": false
+    },
+    {
+      "id": "other-practices",
+      "title": "WHO ARE THE OTHER PRACTICES THAT YOU'RE SELECTING FOR THIS?",
+      "category": "Objections",
+      "content": "We work with many practices, but we always tailor the conversation based on your current goals and the opportunities you're trying to unlock.",
+      "keywords": ["other practices", "practices", "selecting"],
+      "favorite": false
+    },
+    {
+      "id": "make-money",
+      "title": "HOW DO YOU GUYS MAKE YOUR MONEY IF IT'S NOT PAID ADVERTISING?",
+      "category": "Objections",
+      "content": "We make money through a simple service model that aligns with the outcomes we help deliver. We're focused on value and results, not pressure.",
+      "keywords": ["money", "make", "business model"],
+      "favorite": false
+    },
+    {
+      "id": "call-back",
+      "title": "CAN YOU CALL ME BACK TO CHECK MY SCHEDULE?",
+      "category": "Objections",
+      "content": "Absolutely. I'll note your preference and follow up at the time you requested so it's convenient for you.",
+      "keywords": ["call back", "schedule"],
+      "favorite": false
+    },
+    {
+      "id": "purpose-call",
+      "title": "WHAT'S THE PURPOSE OF THIS CALL / IN REGARDS TO?",
+      "category": "Opening",
+      "content": "The purpose of my call is simple: to introduce a service that helps practices improve visibility and reach prospects in a more effective way.",
+      "keywords": ["purpose", "call"],
+      "favorite": false
+    },
+    {
+      "id": "busy-practice",
+      "title": "WE ARE A BUSY PRACTICE / WE DON'T ACCEPT NEW PATIENTS / WE DON'T NEED REFERRALS",
       "category": "Objections",
       "content": "I understand. In that case, this may not be a fit for you right now. I appreciate your time, and if your situation changes down the road, feel free to reach out.",
-      "keywords": ["new patients", "not accepting", "full"],
+      "keywords": ["busy", "new patients", "referrals"],
+      "favorite": false
+    },
+    {
+      "id": "discover-practices",
+      "title": "HOW WOULD PATIENTS DISCOVER QUALITY PRIVATE PRACTICES NEAR THEM?",
+      "category": "Objections",
+      "content": "We help practices improve the way patients discover them and how they stay visible in a crowded market.",
+      "keywords": ["discover", "patients", "private practices"],
+      "favorite": false
+    },
+    {
+      "id": "holiday-script",
+      "title": "HOLIDAY SCRIPT",
+      "category": "Opening",
+      "content": "Hi Dr. [NAME], I wanted to reach out during the holiday season to introduce a simple idea that may be useful for your practice in the new year.",
+      "keywords": ["holiday", "season", "year"],
+      "favorite": false
+    },
+    {
+      "id": "website",
+      "title": "WHAT'S YOUR WEBSITE?",
+      "category": "Closing",
+      "content": "Absolutely, I can send you the website link directly so you can review it when you have a moment.",
+      "keywords": ["website", "link"],
       "favorite": false
     }
   ]
