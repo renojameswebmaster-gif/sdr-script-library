@@ -1,10 +1,10 @@
-﻿{
+﻿    {
   "scripts": [
     {
       "id": "intro",
       "title": "INTRO",
       "category": "Opening",
-      "content": "Hey Dr. [NAME]? Hey Dr. [NAME] this is Rose... I''m reaching out because we manage the healthcare research Division, for FB and we''re currently selecting TOP practices in (Area Ex. Phoenix area) for our network and We''re considering the (name of the practice) to be part it. so, I need to schedule or coordinate a good time that works for you for a 45 minutes interview just in front of a computer. So, my director can interview you about the practice and see if you would be a good fit.\n\nYou''re the sole owner of the practice (name of the practice) Right?\n\nLooking at his calendar, I see he has an opening at [time] or [time] on [day], which time works best for you? so for tomorrow, are you available in the morning or afternoon?",
+      "content": "Hey Dr. [NAME]? Hey Dr. [NAME] this is [SDR NAME]... I''m reaching out because we manage the healthcare research Division, for FB and we''re currently selecting TOP practices in (Area Ex. Phoenix area) for our network and We''re considering the (name of the practice) to be part it. so, I need to schedule or coordinate a good time that works for you for a 45 minutes interview just in front of a computer. So, my director can interview you about the practice and see if you would be a good fit.\n\nYou''re the sole owner of the practice (name of the practice) Right?\n\nLooking at his calendar, I see he has an opening at [time] or [time] on [day], which time works best for you? so for tomorrow, are you available in the morning or afternoon?",
       "keywords": ["intro", "opening", "practice", "interview"],
       "favorite": false
     },
