@@ -4,16 +4,24 @@
       "id": "intro",
       "title": "INTRO",
       "category": "Opening",
-      "content": "Hey Dr. [NAME]? Hey Dr. [NAME] this is [SDR NAME]... I''m reaching out because we manage the healthcare research Division, for Facebook and we''re currently selecting [Vertical Practices] in (Area Ex. Phoenix area) for our network and We''re considering the (name of the practice) to be part it. so, I need to schedule or coordinate a good time that works for you for a 45 minutes interview just in front of a computer. So, my director can interview you about the practice and see if you would be a good fit.\n\nYou''re the sole owner of the practice (name of the practice) Right?\n\nLooking at his calendar, I see he has an opening at [time] or [time] on [day], which time works best for you? so for tomorrow, are you available in the morning or afternoon?",
+      "content": "Hey Dr. [NAME]? Hey Dr. [NAME] this is [SDR NAME]... I''m reaching out because we manage the healthcare research Division, for Facebook and we''re currently selecting [Vertical Practices] in (Area Ex. Phoenix area) for our network and We''re considering the (name of the practice) to be part it. so, I need to schedule or coordinate a good time that works for you for a 45 minutes interview just in front of a computer. So, my director can interview you about the practice and see if you would be a good fit.\n\nYou''re the sole owner of the practice (name of the practice) Right?\n\nLooking at his calendar, I see he has an opening at [time] or [time] on [day], which time works best for you? so for tomorrow, are you available in the morning or afternoon?\n\nSo just to confirm you''re the sole owner of the practice (name of practice), right?\n\nOk, and we''re going to send you a confirmation of the meeting via text, is this the best number to send that to?\n\nOk great, and after the interview if you''re selected, we''re going to send you a confirmation email. What''s the best email to send that to?\n\nOk great, and just so that we can share exactly what the initiative looks like… you''ll have access to a computer when we call right?\n\nAwesome… and I''m putting you in my director''s calendar now. Can you do me a favor and put that in your calendar as well?\n\nOk great, so I have you in my director''s calendar for [Day] [Time] [Time Zone] just be sure you''re by a computer, we''ll go through some questions, interview you about the practice, and see if you''ll be a good fit!",
       "keywords": ["intro", "opening", "practice", "interview"],
       "favorite": false
     },
     {
-      "id": "confirmation-steps",
-      "title": "CONFIRMATION STEPS",
-      "category": "Closing",
-      "content": "So just to confirm you''re the sole owner of the practice (name of practice), right?\n\nOk, and we''re going to send you a confirmation of the meeting via text, is this the best number to send that to?\n\nOk great, and after the interview if you''re selected, we''re going to send you a confirmation email. What''s the best email to send that to?\n\nOk great, and just so that we can share exactly what the initiative looks like… you''ll have access to a computer when we call right?\n\nAwesome… and I''m putting you in my director''s calendar now. Can you do me a favor and put that in your calendar as well?\n\nOk great, so I have you in my director''s calendar for [Day] [Time] [Time Zone] just be sure you''re by a computer, we''ll go through some questions, interview you about the practice, and see if you''ll be a good fit!",
-      "keywords": ["confirmation", "steps", "calendar"],
+      "id": "pay-for-interview",
+      "title": "WILL YOU PAY ME FOR THE INTERVIEW?",
+      "category": "Objections",
+      "content": "Will you pay me for the interview?\n\nMaybe there''s a little bit of a confusion regarding what''s going on. So, you''re not doing me a favor by doing the interview. I''m doing you a favor by doing the interview. You''re one of five practices we''re considering for this. Most people, most doctors don''t ask to be paid because they understand the nature of the call. If you feel that you need to be reimbursed for this, so I would put your best foot forward for the interview and ensure that you''re doing your best to be selected because that''ll be the best repayment that you can get.\n\nWe understand your time is valuable. While the interview is free, it offers a great opportunity to learn more about your practice and you''ll help us identify the best practices to refer patients to, including your own.",
+      "keywords": ["pay", "interview", "reimbursement"],
+      "favorite": false
+    },
+    {
+      "id": "not-sole-owner",
+      "title": "NOT THE SOLE OWNER / MULTIPLE OWNERS",
+      "category": "Objections",
+      "content": "Doctor: \"My wife and I own the practice.\"\n\nSDR: \"Got it! Just to confirm, are you able to make the final decision for the practice?\"\n\n- Yes: Proceed with the call.\n- No: \"No problem. Can your wife join the interview as well? May I also get her name?\"\n\nDoctor: \"There are multiple owners.\"\n\nSDR: \"Thanks for letting me know. Are you the final decision-maker for the practice?\"\n\n- Yes: Proceed with the call.\n- No: \"No problem. Can the other owner(s) join the interview as well? May I get their names?\"",
+      "keywords": ["multiple owners", "sole owner", "decision maker"],
       "favorite": false
     },
     {
