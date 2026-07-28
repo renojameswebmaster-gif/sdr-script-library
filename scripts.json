@@ -9,14 +9,6 @@
       "favorite": false
     },
     {
-      "id": "pay-for-interview",
-      "title": "WILL YOU PAY ME FOR THE INTERVIEW?",
-      "category": "Objections",
-      "content": "Will you pay me for the interview?\n\nMaybe there''s a little bit of a confusion regarding what''s going on. So, you''re not doing me a favor by doing the interview. I''m doing you a favor by doing the interview. You''re one of five practices we''re considering for this. Most people, most doctors don''t ask to be paid because they understand the nature of the call. If you feel that you need to be reimbursed for this, so I would put your best foot forward for the interview and ensure that you''re doing your best to be selected because that''ll be the best repayment that you can get.\n\nWe understand your time is valuable. While the interview is free, it offers a great opportunity to learn more about your practice and you''ll help us identify the best practices to refer patients to, including your own.",
-      "keywords": ["pay", "interview", "reimbursement"],
-      "favorite": false
-    },
-    {
       "id": "not-sole-owner",
       "title": "NOT THE SOLE OWNER / MULTIPLE OWNERS",
       "category": "Objections",
@@ -198,6 +190,14 @@
       "category": "Objections",
       "content": "Great question, Doctor! So, what we''re doing is, we''re building a referral network within social media platforms that allows patients to discover quality private practices near them based on merit, rather than just those investing in paid content. And that way, when patients search for a practice locally, it''s someone that they''re able to find based on a certain competence, a certain adequacy, and a certain distinction. So, we''re going to do the interview with you, review it with our team, compare it to the other 4 practices we are considering in the area, and if you are selected, we''ll let you know. And then, when patients search for a top Doctor in your area, you will be the one that appears on Social media like Facebook and Instagram.",
       "keywords": ["discover", "patients", "private practices"],
+      "favorite": false
+    },
+    {
+      "id": "pay-for-interview",
+      "title": "WILL YOU PAY ME FOR THE INTERVIEW?",
+      "category": "Objections",
+      "content": "Will you pay me for the interview?\n\nMaybe there''s a little bit of a confusion regarding what''s going on. So, you''re not doing me a favor by doing the interview. I''m doing you a favor by doing the interview. You''re one of five practices we''re considering for this. Most people, most doctors don''t ask to be paid because they understand the nature of the call. If you feel that you need to be reimbursed for this, so I would put your best foot forward for the interview and ensure that you''re doing your best to be selected because that''ll be the best repayment that you can get.\n\nWe understand your time is valuable. While the interview is free, it offers a great opportunity to learn more about your practice and you''ll help us identify the best practices to refer patients to, including your own.",
+      "keywords": ["pay", "interview", "reimbursement"],
       "favorite": false
     },
     {
