@@ -14,6 +14,9 @@ const timezoneSection = document.getElementById("timezone-checker");
 const ringcentralTriggerBtn = document.getElementById("ringcentral-trigger");
 const ringcentralCloseBtn = document.getElementById("ringcentral-close");
 const ringcentralSection = document.getElementById("ringcentral");
+const slackTriggerBtn = document.getElementById("slack-trigger");
+const slackCloseBtn = document.getElementById("slack-close");
+const slackSection = document.getElementById("slack");
 
 let state = {
   scripts: [],
@@ -357,6 +360,7 @@ function init() {
   appointmentTriggerBtn.addEventListener("click", () => {
     timezoneSection.classList.add("hidden");
     ringcentralSection.classList.add("hidden");
+    slackSection.classList.add("hidden");
     appointmentSection.classList.remove("hidden");
     appointmentSection.scrollTop = 0;
   });
@@ -368,6 +372,7 @@ function init() {
   timezoneTriggerBtn.addEventListener("click", () => {
     appointmentSection.classList.add("hidden");
     ringcentralSection.classList.add("hidden");
+    slackSection.classList.add("hidden");
     timezoneSection.classList.remove("hidden");
     timezoneSection.scrollTop = 0;
   });
@@ -379,12 +384,25 @@ function init() {
   ringcentralTriggerBtn.addEventListener("click", () => {
     appointmentSection.classList.add("hidden");
     timezoneSection.classList.add("hidden");
+    slackSection.classList.add("hidden");
     ringcentralSection.classList.remove("hidden");
     ringcentralSection.scrollTop = 0;
   });
 
   ringcentralCloseBtn.addEventListener("click", () => {
     ringcentralSection.classList.add("hidden");
+  });
+
+  slackTriggerBtn.addEventListener("click", () => {
+    appointmentSection.classList.add("hidden");
+    timezoneSection.classList.add("hidden");
+    ringcentralSection.classList.add("hidden");
+    slackSection.classList.remove("hidden");
+    slackSection.scrollTop = 0;
+  });
+
+  slackCloseBtn.addEventListener("click", () => {
+    slackSection.classList.add("hidden");
   });
 
   loadScripts().then((scripts) => {

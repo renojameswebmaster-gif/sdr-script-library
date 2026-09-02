@@ -355,6 +355,9 @@ body {
   bottom: 20px;
   left: 20px;
   z-index: 15;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .ringcentral-trigger {
@@ -363,6 +366,40 @@ body {
 
 .ringcentral-trigger:hover {
   background: #164574;
+}
+
+.slack-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: min(100%, 620px);
+  height: 100vh;
+  padding: 24px;
+  overflow-y: auto;
+  background: var(--white);
+  box-shadow: 8px 0 28px rgba(0, 0, 0, 0.18);
+}
+
+.slack-section.hidden {
+  display: none;
+}
+
+.slack-frame {
+  display: block;
+  width: 100%;
+  height: 700px;
+  border: 1px solid #c8e5f3;
+  border-radius: 0 0 8px 8px;
+  background: var(--white);
+}
+
+.slack-trigger {
+  background: #4a154b;
+}
+
+.slack-trigger:hover {
+  background: #351037;
 }
 
 .appointment-heading {
@@ -553,6 +590,15 @@ body {
   }
 
   .ringcentral-frame {
+    height: 680px;
+  }
+
+  .slack-section {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .slack-frame {
     height: 680px;
   }
 
