@@ -36,6 +36,7 @@
           <button class="nav-btn" data-category="Interviews">Interviews</button>
           <button class="nav-btn" data-category="Voicemail">Voicemail</button>
           <button class="nav-btn" data-category="Closing">Closing</button>
+          <a class="nav-btn appointment-tab" href="#appointment">Appointment</a>
         </nav>
       </div>
     </header>
@@ -51,6 +52,18 @@
     </div>
 
     <div id="voice-suggestions" class="voice-suggestions hidden" aria-live="polite"></div>
+
+    <section id="appointment" class="appointment-section" aria-labelledby="appointment-title">
+      <div class="appointment-heading">
+        <div>
+          <p class="appointment-kicker">Featured booking</p>
+          <h1 id="appointment-title">Schedule your interview</h1>
+          <p class="appointment-subtitle">Choose a convenient date and time for your interview.</p>
+        </div>
+        <a class="appointment-fallback" href="https://calendly.com/d/29t-x6c-278/schedule-your-interview" target="_blank" rel="noopener noreferrer">Open Calendly</a>
+      </div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/d/29t-x6c-278/schedule-your-interview?hide_gdpr_banner=1" aria-label="Calendly interview scheduler"></div>
+    </section>
 
     <!-- Main Content -->
     <main class="content">
@@ -68,5 +81,6 @@
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
     <script src="script.js?v=23"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   </body>
 </html>

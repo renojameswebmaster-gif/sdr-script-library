@@ -280,6 +280,73 @@ body {
   display: none;
 }
 
+/* Appointment booking */
+.appointment-section {
+  max-width: 1200px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+  scroll-margin-top: 150px;
+}
+
+.appointment-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 26px 28px 20px;
+  background: #eaf6fc;
+  border: 1px solid #c8e5f3;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+}
+
+.appointment-kicker {
+  margin-bottom: 4px;
+  color: #2f7fb0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.appointment-heading h1 {
+  color: #1f506d;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.appointment-subtitle {
+  margin-top: 6px;
+  color: #527184;
+  font-size: 14px;
+}
+
+.appointment-fallback {
+  flex: 0 0 auto;
+  padding: 10px 16px;
+  border: 1px solid #2f7fb0;
+  border-radius: 4px;
+  color: #2f7fb0;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--white);
+}
+
+.appointment-fallback:hover {
+  color: var(--white);
+  background: #2f7fb0;
+}
+
+.calendly-inline-widget {
+  min-width: 320px;
+  height: 760px;
+  overflow: hidden;
+  border: 1px solid #c8e5f3;
+  border-radius: 0 0 8px 8px;
+  background: var(--white);
+}
+
 .suggestion-item {
   background: var(--white);
   border: 1px solid var(--border-color);
@@ -364,5 +431,28 @@ body {
 
   .search-container {
     padding: 10px 20px;
+  }
+
+  .appointment-section {
+    padding: 0 12px;
+  }
+
+  .appointment-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 22px 18px 16px;
+  }
+
+  .appointment-heading h1 {
+    font-size: 24px;
+  }
+
+  .appointment-fallback {
+    width: 100%;
+    text-align: center;
+  }
+
+  .calendly-inline-widget {
+    height: 720px;
   }
 }
