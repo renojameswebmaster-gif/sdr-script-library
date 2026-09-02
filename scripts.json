@@ -4,7 +4,7 @@
       "id": "intro-mirror",
       "title": "INTRO - Mirror and Match",
       "category": "Intro & Confirmation",
-      "content": "Hey Dr. [NAME]? Hey Dr. [NAME] It’s [SDR].... I was actually reaching out because I manage the entire healthcare research division for ChatGPT and we’re currently selecting some of the top [vertical] practices in [location] to be featured on ChatGPT’s health network and, you’re actually one of the practices that we’re considering for it… so I need to schedule a time when you had 45 minutes and could be in front of the computer so I can interview you, learn a little bit more about you guys, and see if you would be a good fit. Now, for tomorrow are you better in the mornings or afternoon?",
+      "content": "Hey Dr. [NAME]? Hey Dr. [NAME] It’s [SDR].... I am actually reaching out because I manage the entire healthcare research division for ChatGPT and were currently selecting some of the top [vertical] practices in [location] to be featured on ChatGPT’s health network and, you’re actually one of the top practices that we’re considering for it… so I need to schedule a time when you have about 45 minutes and could be in front of the computer so we can interview you, learn a little bit more about you guys, and see if you would be a good fit. Now, for tomorrow are you better in the morning or afternoon?",
       "keywords": ["intro", "opening", "mirror", "schedule", "interview"],
       "favorite": false
     },
@@ -20,7 +20,7 @@
       "id": "obj-not-interested",
       "title": "I’m not interested",
       "category": "Not Interested",
-      "content": "Oh… so there’s nothing not to be interested in… this isn’t like an advertising or marketing proposal… are you familiar with ChatGPT’s practice referral network?\n\nNow, are you familiar at all with ChatGPT’s practice referral network?\n\nOk, so currently, there is no structured way to be found on ChatGPT, which is causing a lot of subpar medical practices to be recommended. So what we’re doing is, we’re building a referral network within ChatGPT that allows patients to discover quality private practices near them based on merit, rather than just those investing in paid content.\n\nAnd that way, when patients search for a practice locally through AI, it’s someone that they’re able to find based on a certain competence, a certain adequacy, and a certain distinction. But does that clarify a little bit more about the significance of the call and what’s going on?\n\nGreat, so the interview is going to be about 45 minutes; it’s over the phone… What I wanted to do is coordinate a good time that works for you and my Director for sometime this week. And for tomorrow, are you better in the mornings or afternoons?",
+      "content": "There's nothing to be interested in, it's just an interview to make sure that we have highly qualified doctors to refer to.\n\nYou're actually 1 of the top 5 practices that we were considering in the area, so before we reach out to you we do a tremendous amount of research on our end.\n\nThat's why we want to interview you to validate that you are who we've learnt you to be. And we need a practice in (City) area to be listed as a recommended practice that's why we are reaching out to you specifically.\n\nOh…So there’s nothing not to be interested in… this isn’t like an advertising or marketing proposal… are you familiar with ChatGPT’s practice referral network?\n\nIt’s a referral network nationwide that utilizes AI platforms like ChatGPT and Claude to allow patients to find the best in health and wellness. To do that, we need to make sure we’re only sending patients to the right practices, does that make sense?\n\nNow, are you familiar at all with ChatGPT’s practice referral network?\n\nOk, so currently, there is no structured way to be found on ChatGPT, which is causing a lot of subpar medical practices to be recommended.So what we're doing is, we're building a referral network within ChatGPT that allows patients to discover quality private practices near them based on merit, rather than just those investing in paid content.\n\nAnd that way, when patients search for a practice locally through the AI, it’s someone that they’re able to find based on a certain competence, a certain adequacy, and a certain distinction.But does that clarify a little bit more about the significance of the call and what’s going on? Great, so the interview is going to be about 45 minutes; it’s over the phone… What I wanted to do is coordinate a good time that works for you and my Director for sometime this week. And for tomorrow, are you better in the morning or afternoon?",
       "keywords": ["not interested", "objection", "network", "interview"],
       "favorite": false
     },
@@ -38,6 +38,14 @@
       "category": "Paid / Cost",
       "content": "Ohhhh, so this isn’t a marketing or paid advertising thing, it’s just an interview so that we can refer patients to the right practices. Now to just confirm, you’re the sole owner of the practice right?",
       "keywords": ["paid", "cost", "price", "advertising"],
+      "favorite": false
+    },
+    {
+      "id": "obj-pay-interview",
+      "title": "Will you pay me for the interview?",
+      "category": "Paid / Cost",
+      "content": "Maybe there's a little bit of confusion regarding what's going on. So, you're not doing us a favor by doing the interview. We’re doing you a favor by doing the interview. You're one of five practices we're considering for this. Most people, most doctors don't ask to be paid because they understand the nature of the call. If you feel that you need to be reimbursed for this, I would put your best foot forward for the interview and ensure that you're doing your best to be selected because that'll be the best repayment that you can get. We understand your time is valuable. While the interview is free, it offers a great opportunity to learn more about your practice and you'll help us identify the best practices to refer patients to, including your own.",
+      "keywords": ["pay", "reimburse", "interview", "free"],
       "favorite": false
     },
     {
@@ -60,7 +68,7 @@
       "id": "obj-no-send",
       "title": "I’m not doing anything until you send me something",
       "category": "Paid / Cost",
-      "content": "I don’t have a proposal or flyer to send over…. you can google “ChatGPT healthcare” and see exactly what the initiative is. It outlines how patients discover doctors on ChatGPT, and how the recommendation process works… and we need a practice in [CITY] to be listed as a recommended practice… so that’s why I’m reaching out to you guys specifically… Does that make sense?",
+      "content": "I don’t have a proposal or flyer to send over…. you can google “ChatGPT healthcare” and see exactly what the initiative is. It outlines how patients discover doctors on ChatGPT, and how the recommendation process works… and we need a practice in [CITY] to be listed as a recommended practice… so that’s why I’m reaching out to you guys specifically… Does that make sense?\n\nIf you have a chance, Google ChatGPT Health Network. You’ll see some articles explaining how patients are using ChatGPT for health-related questions, navigating their care, and discovering top doctors in their area. It’ll give you a better idea of what we’re talking about.",
       "keywords": ["send", "proposal", "google", "initiative"],
       "favorite": false
     },
@@ -76,7 +84,7 @@
       "id": "obj-openai-yes-no",
       "title": "Are you from OpenAI/ChatGPT Yes or no??",
       "category": "ChatGPT",
-      "content": "As I mentioned I manage the entire healthcare research division for ChatGPT, and look, I know you guys get a lot of calls for a lot of different things and I know that can be frustrating for you, but it’s equally frustrating for me to be bundled up with those calls… so that’s why I’m trying to clarify what’s going on since it’s a very big deal but, this is just an interview. So, are mornings or afternoons better for you?",
+      "content": "As I mentioned I manage the entire healthcare research division for ChatGPT, and look, I know you guys get a lot of calls for a lot of different things and I know that can be frustrating for you, but it’s equally frustrating for me to be bundled up with those calls…. so that’s why I’m trying to clarify what’s going on since it’s a very big deal but, this is just an interview. So, are mornings or afternoons better for you?",
       "keywords": ["openai", "chatgpt", "yes or no", "clarify"],
       "favorite": false
     },
@@ -148,7 +156,7 @@
       "id": "obj-openai-third-party",
       "title": "Are you guys from OpenAI/ChatGPT or are you a third party marketing company?",
       "category": "ChatGPT",
-      "content": "So to be clear, the healthcare research division is actually a consortium (Kon-Sore-Shee-Um) of all the major AI search platforms. It was actually created to address this issue of patients complaining about getting subpar medical experiences from these corporate practices. As these complaints have reached high enough up in the rankings, this initiative was formed by all of the major social media platforms.",
+      "content": "So to be clear, the healthcare research division is actually a consortium (Kon-Sore-Shee-Um) of all the major AI search platforms. It was actually created to address this issue of patients complaining about getting subpar medical experiences from these corporate practices. As these complaints have reached high enough up in the rankings, this initiative was formed by all of the major AI platforms. You’re actually 1 of 5 practices that we are considering for it which is why I am trying to get something scheduled this week or next. So, for tomorrow, are you better in the morning or afternoon?",
       "keywords": ["openai", "chatgpt", "third party", "marketing"],
       "favorite": false
     },
@@ -172,16 +180,24 @@
       "id": "obj-emergency-medicine",
       "title": "I work in emergency medicine and don't need referrals",
       "category": "Other: Emergency Medicine",
-      "content": "So to be clear, this isn’t about new referrals. This is about the fact that right now what we found from the data is that when people are searching for an emergency doctor, they need the information, and they need it very, very quickly and they make very rush decisions. And when they make those rush decisions, they sometimes fall into the hands of practices that are not relevant for them. So that’s what we’re doing is we’re choosing one practice in each region to select who is the practice that we’re gonna be selecting. So when someone immediately runs to their computer to figure out where they will be seeking emergency care local to them, it’s not going to present an entire list. It’s going to present one high value, high quality practice that can be relied upon. And that’s why we’re interviewing. We’re keenly aware how emergency practices work. Now, does that clarify a little bit more of why I’m reaching out to you now?",
+      "content": "So to be clear, this isn't about new referrals. This is about the fact that right now what we found from the data is that when people are searching for an emergency doctor, they need the information, and they need it very, very quickly and they make very rush decisions. And when they make those rush decisions, they sometimes fall into the hands of practices that are not relevant for them. So what we're doing is we're choosing one practice in each region to select who is the practice that we're gonna be selecting. So when someone immediately runs to their computer to figure out where they will be seeking emergency care local to them, it's not going to present an entire list. It's going to present one high value, high quality practice that can be relied upon. And that's why we're interviewing. We're keenly aware how emergency practices work. Now, does that clarify a little bit more of why I'm reaching out to you now? But does that clarify the benefit specifically for you guys?",
       "keywords": ["emergency", "referrals", "local care", "high value"],
       "favorite": false
     },
     {
       "id": "obj-callback-confusion",
-      "title": "I get a call back and have no idea who’s calling me. Asking who’s calling me is also not a good look",
+      "title": "I get a call back and have no idea who's calling me. Try to reference the lead sheet but it's borderline impossible while I'm trying to stay talking on the phone - Asking who's calling me is also not a good look",
       "category": "Other: Callback",
       "content": "I get a lot of inbound calls from a lot of people wanting to do an interview with us, and unfortunately I have to screen these calls somehow. You know, like, take that approach where it’s more like, look, I get a lot of calls from a lot of junior practices wanting to do an interview with me, and I’m not sure exactly who this is, and I just been fooled by a lot of different practices that I didn’t personally call. And then, you know, I’m spending time with the practice that I have no interest in speaking to. So I’d appreciate it if you let me know who you are so I can know if you’re the right person that I called earlier today. What’s your name?",
       "keywords": ["who is calling", "screening calls", "lead sheet", "identity"],
+      "favorite": false
+    },
+    {
+      "id": "obj-practice-already-listed",
+      "title": "My practice is already listed in the top five",
+      "category": "Other: Practice Already Listed",
+      "content": "Right, Doctor, and that’s actually something we hear from time to time. Your ChatGPT experience can be personalized based on your account activity and previous conversations. So seeing your own practice in your results doesn’t necessarily mean a brand-new patient searching from a different account is seeing the same recommendation. What we’re interested in is how your practice is represented when someone who doesn’t already know you is looking for a provider in your area. The interview gives us an opportunity to learn more about the practice. It’s only about 45 minutes—would 3:00 or 4:00 be easier for you?",
+      "keywords": ["already listed", "top five", "search", "recommendation"],
       "favorite": false
     },
     {
@@ -204,7 +220,7 @@
       "id": "interview-how-money",
       "title": "How are you making money? / How do you monetize? What’s the catch?",
       "category": "Paid / Cost",
-      "content": "Great question… have you ever heard of the attention economy before?\n\nNo I haven’t.\n\nOk… the reason why social media platforms don’t charge you to create an account is because they are incentivized by your usage. The more users that are using the platform, the more money they make from third party advertisers. For that reason, we are creating a doctor referral network nationwide that’s based off of a highly vetted interview process, so that it creates more value for our users. Does that make sense?",
+      "content": "Great question.. have you ever heard of the attention economy before?\n\nNo I haven't.\n\nOk.. the reason why AI platforms don't charge you to create an account is because they are incentivized by your usage. The more users that are using the platform, the more money they make from third party advertisers. For that reason, we are creating a doctor referral network nationwide that's based off of a highly vetted interview process, so that it creates more value for our users. Does that make sense?\n\nOf course. A lot of doctors ask us the same thing, like, What's the catch? Have you heard of the attention economy before? Basically, it's similar to how platforms like Youtube, Instagram and Tiktok make money. A lot of it is based on traffic, engagement, and the amount of time people spend on the platform, along with ads.\n\nFor us, the more people use the platform and come to it to discover and connect with Doctors, the more value the platform generates. That's how the platform makes money.\n\nBut that's really just a small part of what the interview is about. The interview itself is simply an organic conversation where we learn more about you and your practice.",
       "keywords": ["money", "attention economy", "advertisers", "value"],
       "favorite": false
     },
@@ -220,7 +236,7 @@
       "id": "voicemail",
       "title": "Voicemail",
       "category": "Voicemail",
-      "content": "Hi [DOCTOR NAME], this is [FIRST NAME]… I had a quick question for you, please give me a call back as soon as you get this. In case you need it, my number is [646]... Thanks, talk to you soon!",
+      "content": "Hi [DR. NAME], This is [NAME], I hate to bother you while you’re with patients but can you please just give me a call when you get this? I have a quick question for you. Please reach me at my cell [XXX-XXX-XXXX]. Thanks, talk to you soon.",
       "keywords": ["voicemail", "callback", "phone", "doctor"],
       "favorite": false
     },
@@ -228,7 +244,7 @@
       "id": "office-line",
       "title": "Office line script",
       "category": "Voicemail",
-      "content": "Hey this is [FIRST NAME], I’m calling for [DR.NAME]. They’re with patients / What’s this about? / Are they expecting your call? It’s regarding the ChatGPT Request for Change [STFU].\n\nOkay… this is time sensitive… I don’t want to rush them… but whenever [DR.NAME] is finished with whatever they’re doing… can you let them know I’m on hold [STFU].\n\nSince we’ve been backed up with calls… the wait time on our 1-800 number is about an hour and a half… so instead of [him/her] calling back and waiting all that time… I’ll hold [STFU].",
+      "content": "Hey this is [FIRST NAME], I’m calling for [DR.NAME].\n\nThey’re with patients / What’s this about? / Are they expecting your call?\n\nIt’s regarding the ChatGPT Request for Change [STFU].\n\nDid they request a call from you?\n\nI just got the notification to call… I’m not sure if it was them or us who reached out first…. [STFU]\n\nIt’s going to be over an hour, 30+ minutes, etc.\n\nIt’s no problem… whenever [he/she] finishes… I can hold [STFU].\n\nWhat’s ChatGPT?\n\nChatGPT is the world's largest AI platform where patients are now going to find the best in health and wellness [STFU].\n\nCall back later: It’s actually time sensitive… so I won’t be able to call back… I can hold while they finish whatever they’re doing to get on the line [STFU].\n\nSend an Email: This isn’t any type of advertising… so I don’t have a proposal to send… if you can just let [DR. NAME] know it’s [FIRST NAME] [LAST NAME] on the line [STFU].\n\nWhat is the request for change? It’s actually specific to [DR. NAME]... if you can just let them know it’s [FIRST NAME] [LAST NAME] regarding the ChatGPT/OpenAI request for change [STFU].\n\nThey’ll call you back / I can’t leave you hold / you will back up our phone line: Since we’ve been backed up with calls… the wait time on our 1-800 number is about an hour and a half… so instead of [him/her] calling back and waiting all that time… I’ll hold [STFU].\n\nThey don’t have any idea what this is about: Okay…that’s interesting… should be quick then… if you can… just put [him/her] on the line and we can find out if this was a mistake or not… [STFU].\n\nIf no: Great, like I said, my name is [FIRST NAME]. Calling in regards to ChatGPT. My direct line is [646…]. Awesome, when do you think I should expect a call back from [DR. NAME]? Great...and if you can do me a favor… we’re finishing all of [CITY/STATE] by the end of the week, so if you can make sure [DR.NAME] gets back to me today that would be great. [STFU- WAIT FOR RESPONSE] Thanks for your help. And what’s your name? Thanks [NAME]!",
       "keywords": ["office line", "front desk", "callback", "hold"],
       "favorite": false
     },
