@@ -12,6 +12,8 @@ let state = {
   searchQuery: "",
   selectedCategory: "all",
   openCardId: null,
+  expandAll: false,
+  collapsedIds: new Set(),
   lastCopiedText: "",
   isListening: false,
   suggestions: [],
@@ -251,15 +253,18 @@ function renderScripts() {
     return;
   }
 
-  const visibleScripts = state.openCardId
+  const visibleScripts = state.openCardId && !state.expandAll
     ? filtered.filter((script) => script.id === state.openCardId)
     : filtered;
 
   scriptContainer.classList.toggle("focused", Boolean(state.openCardId));
+  scriptContainer.classList.toggle("all-open", state.expandAll);
 
   scriptContainer.innerHTML = visibleScripts
     .map((script) => {
-      const isOpen = state.openCardId === script.id;
+      const isOpen = state.expandAll
+        ? !state.collapsedIds.has(script.id)
+        : state.openCardId === script.id;
       return `
         <div class="script-card ${isOpen ? "open" : ""}" data-id="${script.id}">
           <div class="script-title">${script.title}</div>
@@ -297,10 +302,14 @@ function attachEventListeners() {
       ) {
         const id = card.getAttribute("data-id");
         // If clicking same card, close it; otherwise close all and open new one
-        if (state.openCardId === id) {
-          state.openCardId = null;
+        if (state.expandAll) {
+          if (state.collapsedIds.has(id)) {
+            state.collapsedIds.delete(id);
+          } else {
+            state.collapsedIds.add(id);
+          }
         } else {
-          state.openCardId = id; // This automatically closes any other open card
+          state.openCardId = state.openCardId === id ? null : id;
         }
         renderScripts();
       }
@@ -325,7 +334,12 @@ function attachEventListeners() {
   document.querySelectorAll(".close-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
-      state.openCardId = null;
+      const id = btn.getAttribute("data-id");
+      if (state.expandAll) {
+        state.collapsedIds.add(id);
+      } else {
+        state.openCardId = null;
+      }
       renderScripts();
     });
   });
@@ -351,6 +365,8 @@ function init() {
         btn.classList.add("active");
         state.selectedCategory = btn.getAttribute("data-category");
         state.openCardId = null;
+        state.expandAll = state.selectedCategory !== "all";
+        state.collapsedIds.clear();
         renderScripts();
       });
     });

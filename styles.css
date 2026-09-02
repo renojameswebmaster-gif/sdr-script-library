@@ -125,6 +125,17 @@ body {
   align-items: flex-start;
 }
 
+.scripts-container.all-open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.scripts-container.all-open .script-card {
+  width: min(100%, 900px);
+}
+
 .scripts-container > .script-card.open {
   grid-column: 1 / -1;
   width: min(90vw, 1100px);
