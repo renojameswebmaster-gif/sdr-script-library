@@ -396,10 +396,11 @@ body {
   background: #2f7fb0;
 }
 
-.calendly-inline-widget {
+.calendly-frame {
+  display: block;
   min-width: 320px;
   height: 760px;
-  overflow: hidden;
+  width: 100%;
   border: 1px solid #c8e5f3;
   border-radius: 0 0 8px 8px;
   background: var(--white);
@@ -520,7 +521,7 @@ body {
     text-align: center;
   }
 
-  .calendly-inline-widget {
+  .calendly-frame {
     height: 720px;
   }
 }
