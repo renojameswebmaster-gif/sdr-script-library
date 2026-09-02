@@ -9,6 +9,9 @@ const voiceSuggestionsEl = document.getElementById("voice-suggestions");
 const appointmentTriggerBtn = document.getElementById("appointment-trigger");
 const appointmentCloseBtn = document.getElementById("appointment-close");
 const appointmentSection = document.getElementById("appointment");
+const timezoneTriggerBtn = document.getElementById("timezone-trigger");
+const timezoneCloseBtn = document.getElementById("timezone-close");
+const timezoneSection = document.getElementById("timezone-checker");
 
 let state = {
   scripts: [],
@@ -350,12 +353,23 @@ function attachEventListeners() {
 
 function init() {
   appointmentTriggerBtn.addEventListener("click", () => {
+    timezoneSection.classList.add("hidden");
     appointmentSection.classList.remove("hidden");
     appointmentSection.scrollTop = 0;
   });
 
   appointmentCloseBtn.addEventListener("click", () => {
     appointmentSection.classList.add("hidden");
+  });
+
+  timezoneTriggerBtn.addEventListener("click", () => {
+    appointmentSection.classList.add("hidden");
+    timezoneSection.classList.remove("hidden");
+    timezoneSection.scrollTop = 0;
+  });
+
+  timezoneCloseBtn.addEventListener("click", () => {
+    timezoneSection.classList.add("hidden");
   });
 
   loadScripts().then((scripts) => {

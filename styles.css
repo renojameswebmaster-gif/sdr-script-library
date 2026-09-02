@@ -298,6 +298,32 @@ body {
   display: none;
 }
 
+.timezone-section {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  width: min(100%, 620px);
+  height: 100vh;
+  padding: 24px;
+  overflow-y: auto;
+  background: var(--white);
+  box-shadow: -8px 0 28px rgba(0, 0, 0, 0.18);
+}
+
+.timezone-section.hidden {
+  display: none;
+}
+
+.timezone-frame {
+  display: block;
+  width: 100%;
+  height: 700px;
+  border: 1px solid #c8e5f3;
+  border-radius: 0 0 8px 8px;
+  background: var(--white);
+}
+
 .appointment-heading {
   position: relative;
   display: flex;
@@ -468,6 +494,15 @@ body {
   .appointment-section {
     width: 100%;
     padding: 12px;
+  }
+
+  .timezone-section {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .timezone-frame {
+    height: 680px;
   }
 
   .appointment-heading {
