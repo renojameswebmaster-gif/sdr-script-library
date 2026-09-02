@@ -43,7 +43,7 @@
     {
       "id": "obj-email",
       "title": "Send me an email",
-      "category": "Other Objections",
+      "category": "Other: Email",
       "content": "Ohhh, this isn’t like an advertising or marketing proposal, so I don’t have a proposal or a flyer to send… it’s an interview… Are you familiar with the social media referral network at all? / so for tomorrow, are you available in the morning or afternoon?",
       "keywords": ["email", "proposal", "interview"],
       "favorite": false
@@ -83,7 +83,7 @@
     {
       "id": "obj-office-manager",
       "title": "You need to speak with my office manager",
-      "category": "Other Objections",
+      "category": "Other: Office Manager",
       "content": "So I wish I could.. It would make my life a lot easier if we could just speak with the front desk or office manager as opposed to the Doctor, but because it’s a Doctor referral network, the interview obviously needs to be Doctor verified. Does that make sense?",
       "keywords": ["office manager", "doctor", "verified"],
       "favorite": false
@@ -91,7 +91,7 @@
     {
       "id": "obj-how-work",
       "title": "How does it work? So, you’re going to interview me… what happens after?",
-      "category": "Other Objections",
+      "category": "Other: How It Works",
       "content": "So, we’re going to do the interview with you, review it with our team, compare it to the other 4 practices we are considering in the area, and if you are selected, we’ll let you know. And then, when patients search for a top Doctor in your area, you will be the one that appears. Does that make sense?",
       "keywords": ["how it works", "process", "selected"],
       "favorite": false
@@ -99,7 +99,7 @@
     {
       "id": "obj-why-selecting",
       "title": "Why are you doing this? What are you selecting me for?",
-      "category": "Other Objections",
+      "category": "Other: Why Selecting",
       "content": "Yeah, so the reason we are actually setting up a call as opposed to blindly selecting practices, is because we want to make sure all of the providers that we include, are of a certain competence, caliber, and distinction. Does that make sense?",
       "keywords": ["why", "selecting", "competence"],
       "favorite": false
@@ -107,7 +107,7 @@
     {
       "id": "obj-how-select-me",
       "title": "How did you select me? / How did you find me? / Why are you selecting me?",
-      "category": "Other Objections",
+      "category": "Other: How Selected",
       "content": "We have a team of research analysts who use a 5 point metric system to determine who we ultimately reach out to. Obviously, I don’t want to waste your time or my time so, before we ever reach out to a practice, we will do a tremendous amount of research on our end. Does that make sense?",
       "keywords": ["select me", "find me", "five point", "metric"],
       "favorite": false
@@ -115,7 +115,7 @@
     {
       "id": "obj-five-point",
       "title": "What did you look at exactly? How is the 5 point metric system calculated?",
-      "category": "Other Objections",
+      "category": "Other: 5 Point Metric",
       "content": "Great question, so we actually look at a bunch of different things like speaking to different doctors in the area, going to different conferences, looking at patient review sites to compile what we believe to be the higher end practices in each area… However we don’t want to believe everything we read online, so we interview to validate that you are who we’ve learnt you to be. Does that make sense?",
       "keywords": ["5 point", "metric", "reviews", "research"],
       "favorite": false
@@ -123,7 +123,7 @@
     {
       "id": "obj-phone-number",
       "title": "How did you get my cell phone number?",
-      "category": "Other Objections",
+      "category": "Other: Phone Number",
       "content": "My assistant Alyssa Rose had this listed as your business contact.. So I’m looking at the calendar now. Does [Time and day] or [Time and day] work better?",
       "keywords": ["cell phone", "number", "assistant"],
       "favorite": false
@@ -139,7 +139,7 @@
     {
       "id": "obj-two-weeks",
       "title": "So let’s do this in 2 weeks or something like that",
-      "category": "Other Objections",
+      "category": "Other: Two Weeks",
       "content": "So because it’s an exclusive initiative, we’re wrapping up the entire area by the end of the week next week, so I’m looking at my calendar now, what time do you usually finish seeing patients?",
       "keywords": ["2 weeks", "exclusive", "schedule"],
       "favorite": false
@@ -155,7 +155,7 @@
     {
       "id": "obj-other-practices",
       "title": "Who are the other practices that you’re selecting for this?",
-      "category": "Other Objections",
+      "category": "Other: Other Practices",
       "content": "Great question. Once we decide who we select, we then will release it to the public. We don’t share who we are interviewing so that we don’t skew the results. Just to confirm, you’re the owner of the practice, right?",
       "keywords": ["other practices", "selected", "results"],
       "favorite": false
@@ -163,7 +163,7 @@
     {
       "id": "obj-driving",
       "title": "I will be driving during the interview / Can I do this while driving?",
-      "category": "Other Objections",
+      "category": "Other: Driving",
       "content": "Because of liability in different states, unfortunately we cannot do the interview while you are driving. What time will you be stationed up back at home or at your office?",
       "keywords": ["driving", "liability", "interview"],
       "favorite": false
@@ -171,7 +171,7 @@
     {
       "id": "obj-emergency-medicine",
       "title": "I work in emergency medicine and don't need referrals",
-      "category": "Other Objections",
+      "category": "Other: Emergency Medicine",
       "content": "So to be clear, this isn’t about new referrals. This is about the fact that right now what we found from the data is that when people are searching for an emergency doctor, they need the information, and they need it very, very quickly and they make very rush decisions. And when they make those rush decisions, they sometimes fall into the hands of practices that are not relevant for them. So that’s what we’re doing is we’re choosing one practice in each region to select who is the practice that we’re gonna be selecting. So when someone immediately runs to their computer to figure out where they will be seeking emergency care local to them, it’s not going to present an entire list. It’s going to present one high value, high quality practice that can be relied upon. And that’s why we’re interviewing. We’re keenly aware how emergency practices work. Now, does that clarify a little bit more of why I’m reaching out to you now?",
       "keywords": ["emergency", "referrals", "local care", "high value"],
       "favorite": false
@@ -179,7 +179,7 @@
     {
       "id": "obj-callback-confusion",
       "title": "I get a call back and have no idea who’s calling me. Asking who’s calling me is also not a good look",
-      "category": "Other Objections",
+      "category": "Other: Callback",
       "content": "I get a lot of inbound calls from a lot of people wanting to do an interview with us, and unfortunately I have to screen these calls somehow. You know, like, take that approach where it’s more like, look, I get a lot of calls from a lot of junior practices wanting to do an interview with me, and I’m not sure exactly who this is, and I just been fooled by a lot of different practices that I didn’t personally call. And then, you know, I’m spending time with the practice that I have no interest in speaking to. So I’d appreciate it if you let me know who you are so I can know if you’re the right person that I called earlier today. What’s your name?",
       "keywords": ["who is calling", "screening calls", "lead sheet", "identity"],
       "favorite": false
