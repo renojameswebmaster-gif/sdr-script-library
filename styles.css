@@ -282,13 +282,24 @@ body {
 
 /* Appointment booking */
 .appointment-section {
-  max-width: 1200px;
-  margin: 24px auto 0;
-  padding: 0 20px;
-  scroll-margin-top: 150px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  width: min(100%, 620px);
+  height: 100vh;
+  padding: 24px;
+  overflow-y: auto;
+  background: var(--white);
+  box-shadow: -8px 0 28px rgba(0, 0, 0, 0.18);
+}
+
+.appointment-section.hidden {
+  display: none;
 }
 
 .appointment-heading {
+  position: relative;
   display: flex;
   align-items: end;
   justify-content: space-between;
@@ -298,6 +309,27 @@ body {
   border: 1px solid #c8e5f3;
   border-bottom: 0;
   border-radius: 8px 8px 0 0;
+  padding-right: 56px;
+}
+
+.appointment-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #c8e5f3;
+  border-radius: 50%;
+  color: #2f7fb0;
+  background: var(--white);
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.appointment-close:hover {
+  color: var(--white);
+  background: #2f7fb0;
 }
 
 .appointment-kicker {
@@ -434,7 +466,8 @@ body {
   }
 
   .appointment-section {
-    padding: 0 12px;
+    width: 100%;
+    padding: 12px;
   }
 
   .appointment-heading {

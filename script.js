@@ -6,6 +6,9 @@ const backTopBtn = document.getElementById("back-top");
 const copyToastBtn = document.getElementById("copy-toast");
 const voiceTriggerBtn = document.getElementById("voice-trigger");
 const voiceSuggestionsEl = document.getElementById("voice-suggestions");
+const appointmentTriggerBtn = document.getElementById("appointment-trigger");
+const appointmentCloseBtn = document.getElementById("appointment-close");
+const appointmentSection = document.getElementById("appointment");
 
 let state = {
   scripts: [],
@@ -346,6 +349,15 @@ function attachEventListeners() {
 }
 
 function init() {
+  appointmentTriggerBtn.addEventListener("click", () => {
+    appointmentSection.classList.remove("hidden");
+    appointmentSection.scrollTop = 0;
+  });
+
+  appointmentCloseBtn.addEventListener("click", () => {
+    appointmentSection.classList.add("hidden");
+  });
+
   loadScripts().then((scripts) => {
     state.scripts = scripts;
     renderScripts();

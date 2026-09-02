@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Professional SDR cold-call script library for sales teams." />
     <title>SDR Script Library</title>
-    <link rel="stylesheet" href="styles.css?v=23" />
+    <link rel="stylesheet" href="styles.css?v=24" />
   </head>
   <body>
     <!-- Header -->
@@ -36,7 +36,6 @@
           <button class="nav-btn" data-category="Interviews">Interviews</button>
           <button class="nav-btn" data-category="Voicemail">Voicemail</button>
           <button class="nav-btn" data-category="Closing">Closing</button>
-          <a class="nav-btn appointment-tab" href="#appointment">Appointment</a>
         </nav>
       </div>
     </header>
@@ -53,7 +52,7 @@
 
     <div id="voice-suggestions" class="voice-suggestions hidden" aria-live="polite"></div>
 
-    <section id="appointment" class="appointment-section" aria-labelledby="appointment-title">
+    <section id="appointment" class="appointment-section hidden" aria-labelledby="appointment-title">
       <div class="appointment-heading">
         <div>
           <p class="appointment-kicker">Featured booking</p>
@@ -61,6 +60,7 @@
           <p class="appointment-subtitle">Choose a convenient date and time for your interview.</p>
         </div>
         <a class="appointment-fallback" href="https://calendly.com/d/29t-x6c-278/schedule-your-interview" target="_blank" rel="noopener noreferrer">Open Calendly</a>
+        <button id="appointment-close" class="appointment-close" type="button" aria-label="Close appointment scheduler">&times;</button>
       </div>
       <div class="calendly-inline-widget" data-url="https://calendly.com/d/29t-x6c-278/schedule-your-interview?hide_gdpr_banner=1" aria-label="Calendly interview scheduler"></div>
     </section>
@@ -72,6 +72,7 @@
 
     <!-- Floating Action Buttons -->
     <div class="floating-actions">
+      <button id="appointment-trigger" class="fab appointment-trigger" title="Schedule an interview" aria-label="Open appointment scheduler">📅</button>
       <button id="voice-trigger" class="fab" title="Voice script search">🎙️</button>
       <button id="copy-toast" class="fab" title="Last action">📋</button>
       <button id="back-top" class="fab" title="Back to top">⬆</button>
@@ -80,7 +81,7 @@
     <!-- Toast Notification -->
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-    <script src="script.js?v=23"></script>
+    <script src="script.js?v=24"></script>
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   </body>
 </html>
