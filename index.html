@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Professional SDR cold-call script library for sales teams." />
     <title>SDR Script Library</title>
-    <link rel="stylesheet" href="styles.css?v=30" />
+    <link rel="stylesheet" href="styles.css?v=31" />
   </head>
   <body>
     <!-- Header -->
@@ -87,7 +87,12 @@
         </div>
         <button id="ringcentral-close" class="appointment-close" type="button" aria-label="Close RingCentral">&times;</button>
       </div>
-      <iframe class="ringcentral-frame" src="https://app.ringcentral.com/" title="RingCentral workspace" loading="lazy"></iframe>
+      <div class="blocked-app-card">
+        <div class="blocked-app-icon">☎</div>
+        <h2>RingCentral is ready</h2>
+        <p>RingCentral does not allow its workspace to be embedded inside another website. Open it in this same tab to continue securely.</p>
+        <a class="same-tab-launch ringcentral-launch" href="https://app.ringcentral.com/">Continue to RingCentral</a>
+      </div>
     </section>
 
     <section id="slack" class="slack-section hidden" aria-labelledby="slack-title">
@@ -99,7 +104,12 @@
         </div>
         <button id="slack-close" class="appointment-close" type="button" aria-label="Close Slack">&times;</button>
       </div>
-      <iframe class="slack-frame" src="https://app.slack.com/client/" title="Slack workspace" loading="lazy"></iframe>
+      <div class="blocked-app-card">
+        <div class="blocked-app-icon slack-card-icon">S</div>
+        <h2>Slack is ready</h2>
+        <p>Slack does not allow its workspace to be embedded inside another website. Open it in this same tab to continue securely.</p>
+        <a class="same-tab-launch slack-launch" href="https://app.slack.com/client/">Continue to Slack</a>
+      </div>
     </section>
 
     <!-- Main Content -->
@@ -122,6 +132,6 @@
     <!-- Toast Notification -->
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-    <script src="script.js?v=30"></script>
+    <script src="script.js?v=31"></script>
   </body>
 </html>
