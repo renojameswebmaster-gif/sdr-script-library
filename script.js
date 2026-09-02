@@ -2,7 +2,6 @@
 const scriptContainer = document.getElementById("scripts-container");
 const navButtons = document.querySelectorAll(".nav-btn");
 const toast = document.getElementById("toast");
-const backTopBtn = document.getElementById("back-top");
 const copyToastBtn = document.getElementById("copy-toast");
 const voiceTriggerBtn = document.getElementById("voice-trigger");
 const voiceSuggestionsEl = document.getElementById("voice-suggestions");
@@ -411,11 +410,6 @@ function init() {
         state.collapsedIds.clear();
         renderScripts();
       });
-    });
-
-    // Back to top
-    backTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
     // Copy toast button shows last copied
