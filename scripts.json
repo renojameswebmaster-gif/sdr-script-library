@@ -3,7 +3,7 @@
     {
       "id": "intro-mirror",
       "title": "INTRO - Mirror and Match",
-      "category": "Opening",
+      "category": "Intro & Confirmation",
       "content": "Hey Dr. [NAME]? Hey Dr. [NAME] It’s [SDR].... I was actually reaching out because I manage the entire healthcare research division for ChatGPT and we’re currently selecting some of the top [vertical] practices in [location] to be featured on ChatGPT’s health network and, you’re actually one of the practices that we’re considering for it… so I need to schedule a time when you had 45 minutes and could be in front of the computer so I can interview you, learn a little bit more about you guys, and see if you would be a good fit. Now, for tomorrow are you better in the mornings or afternoon?",
       "keywords": ["intro", "opening", "mirror", "schedule", "interview"],
       "favorite": false
@@ -11,7 +11,7 @@
     {
       "id": "intro-chatgpt-referral",
       "title": "What’s ChatGPT’s practice referral network?",
-      "category": "Opening",
+      "category": "Not Interested",
       "content": "It’s a referral network nationwide that utilizes AI platforms like ChatGPT and Claude to allow patients to find the best in health and wellness. To do that, we need to make sure we’re only sending patients to the right practices, does that make sense?",
       "keywords": ["chatgpt", "referral network", "ai", "patients"],
       "favorite": false
@@ -19,7 +19,7 @@
     {
       "id": "obj-not-interested",
       "title": "I’m not interested",
-      "category": "Objections",
+      "category": "Not Interested",
       "content": "Oh… so there’s nothing not to be interested in… this isn’t like an advertising or marketing proposal… are you familiar with ChatGPT’s practice referral network?\n\nNow, are you familiar at all with ChatGPT’s practice referral network?\n\nOk, so currently, there is no structured way to be found on ChatGPT, which is causing a lot of subpar medical practices to be recommended. So what we’re doing is, we’re building a referral network within ChatGPT that allows patients to discover quality private practices near them based on merit, rather than just those investing in paid content.\n\nAnd that way, when patients search for a practice locally through AI, it’s someone that they’re able to find based on a certain competence, a certain adequacy, and a certain distinction. But does that clarify a little bit more about the significance of the call and what’s going on?\n\nGreat, so the interview is going to be about 45 minutes; it’s over the phone… What I wanted to do is coordinate a good time that works for you and my Director for sometime this week. And for tomorrow, are you better in the mornings or afternoons?",
       "keywords": ["not interested", "objection", "network", "interview"],
       "favorite": false
@@ -27,7 +27,7 @@
     {
       "id": "obj-second-third",
       "title": "I’m not interested (second or third time)",
-      "category": "Objections",
+      "category": "Not Interested",
       "content": "Got it. So, let me clarify because I’m sensing the caliber of the call isn’t fully being understood: Right now, if you’ve noticed when you search on AI, the only medical offices that come up when a patient searches locally, are corporate run practices or subpar practices not privately held practices such as yours. Right? The problem is that those corporate run practices are usually a factory and leave patients with a sour taste in their mouth. But, ironically, these same patients actually never end up at private practice with a much better experience because the search engines and social media brands have essentially sold themselves off to whoever is willing to pay.\n\nSo now, because there have been so many complaints about this issue from both Doctors AND patients, the practice referral network was created so that only the top practices that actually do qualitative work, will be seen when patients are searching. Does that clarify a little bit more about the significance of the call?",
       "keywords": ["not interested", "second", "third", "clarify"],
       "favorite": false
@@ -35,7 +35,7 @@
     {
       "id": "obj-paid",
       "title": "Is this a paid thing? How much does this cost?",
-      "category": "Objections",
+      "category": "Paid / Cost",
       "content": "Ohhhh, so this isn’t a marketing or paid advertising thing, it’s just an interview so that we can refer patients to the right practices. Now to just confirm, you’re the sole owner of the practice right?",
       "keywords": ["paid", "cost", "price", "advertising"],
       "favorite": false
@@ -43,7 +43,7 @@
     {
       "id": "obj-email",
       "title": "Send me an email",
-      "category": "Objections",
+      "category": "Other Objections",
       "content": "Ohhh, this isn’t like an advertising or marketing proposal, so I don’t have a proposal or a flyer to send… it’s an interview… Are you familiar with the social media referral network at all? / so for tomorrow, are you available in the morning or afternoon?",
       "keywords": ["email", "proposal", "interview"],
       "favorite": false
@@ -51,7 +51,7 @@
     {
       "id": "obj-no-personal-info",
       "title": "I don’t want to give personal information about the practice",
-      "category": "Objections",
+      "category": "Paid / Cost",
       "content": "My style of interview is very organic so I don’t send pre-formulated questions or anything like that. The interview will be more of an organic conversation exactly how you and I are talking right now. So, all I need to do is set up a time with you when you have 40-50 minutes, and could be in front of the computer, so I could learn a bit more about you guys and see if you would be a good fit… so for tomorrow, are you available in the morning or afternoon? / you know what I mean?",
       "keywords": ["personal information", "practice", "interview", "organic"],
       "favorite": false
@@ -59,7 +59,7 @@
     {
       "id": "obj-no-send",
       "title": "I’m not doing anything until you send me something",
-      "category": "Objections",
+      "category": "Paid / Cost",
       "content": "I don’t have a proposal or flyer to send over…. you can google “ChatGPT healthcare” and see exactly what the initiative is. It outlines how patients discover doctors on ChatGPT, and how the recommendation process works… and we need a practice in [CITY] to be listed as a recommended practice… so that’s why I’m reaching out to you guys specifically… Does that make sense?",
       "keywords": ["send", "proposal", "google", "initiative"],
       "favorite": false
@@ -67,7 +67,7 @@
     {
       "id": "obj-price-at-end",
       "title": "I’ve heard things like this and there’s always a price at the end…",
-      "category": "Objections",
+      "category": "Paid / Cost",
       "content": "Right, listen - I know you guys get a lot of calls for a lot of different things and I know that can be frustrating for you, but it’s equally frustrating for me to be bundled up with those calls… so that’s why I’m trying to clarify what’s going on since it’s a very big deal but, this is just an interview. So, are mornings or afternoons better for you?",
       "keywords": ["price", "at the end", "interview", "clarify"],
       "favorite": false
@@ -75,7 +75,7 @@
     {
       "id": "obj-openai-yes-no",
       "title": "Are you from OpenAI/ChatGPT Yes or no??",
-      "category": "Objections",
+      "category": "ChatGPT",
       "content": "As I mentioned I manage the entire healthcare research division for ChatGPT, and look, I know you guys get a lot of calls for a lot of different things and I know that can be frustrating for you, but it’s equally frustrating for me to be bundled up with those calls… so that’s why I’m trying to clarify what’s going on since it’s a very big deal but, this is just an interview. So, are mornings or afternoons better for you?",
       "keywords": ["openai", "chatgpt", "yes or no", "clarify"],
       "favorite": false
@@ -83,7 +83,7 @@
     {
       "id": "obj-office-manager",
       "title": "You need to speak with my office manager",
-      "category": "Objections",
+      "category": "Other Objections",
       "content": "So I wish I could.. It would make my life a lot easier if we could just speak with the front desk or office manager as opposed to the Doctor, but because it’s a Doctor referral network, the interview obviously needs to be Doctor verified. Does that make sense?",
       "keywords": ["office manager", "doctor", "verified"],
       "favorite": false
@@ -91,7 +91,7 @@
     {
       "id": "obj-how-work",
       "title": "How does it work? So, you’re going to interview me… what happens after?",
-      "category": "Objections",
+      "category": "Other Objections",
       "content": "So, we’re going to do the interview with you, review it with our team, compare it to the other 4 practices we are considering in the area, and if you are selected, we’ll let you know. And then, when patients search for a top Doctor in your area, you will be the one that appears. Does that make sense?",
       "keywords": ["how it works", "process", "selected"],
       "favorite": false
@@ -99,7 +99,7 @@
     {
       "id": "obj-why-selecting",
       "title": "Why are you doing this? What are you selecting me for?",
-      "category": "Objections",
+      "category": "Other Objections",
       "content": "Yeah, so the reason we are actually setting up a call as opposed to blindly selecting practices, is because we want to make sure all of the providers that we include, are of a certain competence, caliber, and distinction. Does that make sense?",
       "keywords": ["why", "selecting", "competence"],
       "favorite": false
@@ -107,7 +107,7 @@
     {
       "id": "obj-how-select-me",
       "title": "How did you select me? / How did you find me? / Why are you selecting me?",
-      "category": "Objections",
+      "category": "Other Objections",
       "content": "We have a team of research analysts who use a 5 point metric system to determine who we ultimately reach out to. Obviously, I don’t want to waste your time or my time so, before we ever reach out to a practice, we will do a tremendous amount of research on our end. Does that make sense?",
       "keywords": ["select me", "find me", "five point", "metric"],
       "favorite": false
@@ -115,7 +115,7 @@
     {
       "id": "obj-five-point",
       "title": "What did you look at exactly? How is the 5 point metric system calculated?",
-      "category": "Objections",
+      "category": "Other Objections",
       "content": "Great question, so we actually look at a bunch of different things like speaking to different doctors in the area, going to different conferences, looking at patient review sites to compile what we believe to be the higher end practices in each area… However we don’t want to believe everything we read online, so we interview to validate that you are who we’ve learnt you to be. Does that make sense?",
       "keywords": ["5 point", "metric", "reviews", "research"],
       "favorite": false
@@ -123,7 +123,7 @@
     {
       "id": "obj-phone-number",
       "title": "How did you get my cell phone number?",
-      "category": "Objections",
+      "category": "Other Objections",
       "content": "My assistant Alyssa Rose had this listed as your business contact.. So I’m looking at the calendar now. Does [Time and day] or [Time and day] work better?",
       "keywords": ["cell phone", "number", "assistant"],
       "favorite": false
@@ -131,7 +131,7 @@
     {
       "id": "obj-already-chatgpt",
       "title": "I already have ChatGPT",
-      "category": "Objections",
+      "category": "ChatGPT",
       "content": "Yeah, of course, everyone has access to ChatGPT. The point here though is not whether you have or use ChatGPT or AI, the point is that there are patients actively searching for the top practices in the area on AI Search platforms and we’re selecting 1 of 5 practices to determine who is ultimately going to be the practice that we select. So just confirm, you’re the sole owner of the practice right?",
       "keywords": ["chatgpt", "ai", "search", "practice"],
       "favorite": false
@@ -139,7 +139,7 @@
     {
       "id": "obj-two-weeks",
       "title": "So let’s do this in 2 weeks or something like that",
-      "category": "Objections",
+      "category": "Other Objections",
       "content": "So because it’s an exclusive initiative, we’re wrapping up the entire area by the end of the week next week, so I’m looking at my calendar now, what time do you usually finish seeing patients?",
       "keywords": ["2 weeks", "exclusive", "schedule"],
       "favorite": false
@@ -147,7 +147,7 @@
     {
       "id": "obj-openai-third-party",
       "title": "Are you guys from OpenAI/ChatGPT or are you a third party marketing company?",
-      "category": "Objections",
+      "category": "ChatGPT",
       "content": "So to be clear, the healthcare research division is actually a consortium (Kon-Sore-Shee-Um) of all the major AI search platforms. It was actually created to address this issue of patients complaining about getting subpar medical experiences from these corporate practices. As these complaints have reached high enough up in the rankings, this initiative was formed by all of the major social media platforms.",
       "keywords": ["openai", "chatgpt", "third party", "marketing"],
       "favorite": false
@@ -155,7 +155,7 @@
     {
       "id": "obj-other-practices",
       "title": "Who are the other practices that you’re selecting for this?",
-      "category": "Objections",
+      "category": "Other Objections",
       "content": "Great question. Once we decide who we select, we then will release it to the public. We don’t share who we are interviewing so that we don’t skew the results. Just to confirm, you’re the owner of the practice, right?",
       "keywords": ["other practices", "selected", "results"],
       "favorite": false
@@ -163,7 +163,7 @@
     {
       "id": "obj-driving",
       "title": "I will be driving during the interview / Can I do this while driving?",
-      "category": "Objections",
+      "category": "Other Objections",
       "content": "Because of liability in different states, unfortunately we cannot do the interview while you are driving. What time will you be stationed up back at home or at your office?",
       "keywords": ["driving", "liability", "interview"],
       "favorite": false
@@ -171,7 +171,7 @@
     {
       "id": "obj-emergency-medicine",
       "title": "I work in emergency medicine and don't need referrals",
-      "category": "Objections",
+      "category": "Other Objections",
       "content": "So to be clear, this isn’t about new referrals. This is about the fact that right now what we found from the data is that when people are searching for an emergency doctor, they need the information, and they need it very, very quickly and they make very rush decisions. And when they make those rush decisions, they sometimes fall into the hands of practices that are not relevant for them. So that’s what we’re doing is we’re choosing one practice in each region to select who is the practice that we’re gonna be selecting. So when someone immediately runs to their computer to figure out where they will be seeking emergency care local to them, it’s not going to present an entire list. It’s going to present one high value, high quality practice that can be relied upon. And that’s why we’re interviewing. We’re keenly aware how emergency practices work. Now, does that clarify a little bit more of why I’m reaching out to you now?",
       "keywords": ["emergency", "referrals", "local care", "high value"],
       "favorite": false
@@ -179,23 +179,15 @@
     {
       "id": "obj-callback-confusion",
       "title": "I get a call back and have no idea who’s calling me. Asking who’s calling me is also not a good look",
-      "category": "Objections",
+      "category": "Other Objections",
       "content": "I get a lot of inbound calls from a lot of people wanting to do an interview with us, and unfortunately I have to screen these calls somehow. You know, like, take that approach where it’s more like, look, I get a lot of calls from a lot of junior practices wanting to do an interview with me, and I’m not sure exactly who this is, and I just been fooled by a lot of different practices that I didn’t personally call. And then, you know, I’m spending time with the practice that I have no interest in speaking to. So I’d appreciate it if you let me know who you are so I can know if you’re the right person that I called earlier today. What’s your name?",
       "keywords": ["who is calling", "screening calls", "lead sheet", "identity"],
       "favorite": false
     },
     {
-      "id": "obj-chatgpt-healthcare-division",
-      "title": "What’s the ChatGPT healthcare division?",
-      "category": "Objections",
-      "content": "It’s a referral network nationwide for patients to be able to find the best in health and wellness, and to do that, we need to make sure we have highly qualified doctors to refer to… so I need to schedule a 45 minute interview with you to see if you’d be a good fit… I have an opening tomorrow at 3 or Friday at 5. Which of those two times works best for you?",
-      "keywords": ["chatgpt", "healthcare division", "referral", "doctors"],
-      "favorite": false
-    },
-    {
       "id": "confirm-steps",
       "title": "Confirmation Steps",
-      "category": "Confirmations",
+      "category": "Intro & Confirmation",
       "content": "So just to confirm you’re the primary doctor and sole owner of the practice right?\n\nOk, and we’re going to send you a confirmation of the meeting for [Day] [Time] via text, is this best number to send that to?\n\nOk great, and after the interview on [day and time] if you’re selected we’re going to send you a confirmation email. What’s the best email to send that to?\n\nAwesome… and I’m putting you in my director’s calendar now for [Day] [Time]. Can you do me a favor and put that in your calendar as well?\n\nOk Great, and just so that we can share exactly what the initiative looks like… you’ll have access to a computer when we call [Day] [Time] right?\n\nOk great, so I have you in my director’s calendar for [Day] [Time] just be sure you’re by a computer, we’ll go through some questions, interview you about the practice, and see if you’ll be a good fit!",
       "keywords": ["confirm", "calendar", "email", "computer"],
       "favorite": false
@@ -203,15 +195,15 @@
     {
       "id": "interview-benefit",
       "title": "What is the benefit for me?",
-      "category": "Interviews",
+      "category": "Paid / Cost",
       "content": "So the benefit is that right now, the whole model of people finding a practice that promotes itself, this pay-to-play model, is being completely eradicated. There is no option for that anymore because there have been too many people who have been ending up at subpar practices that are really just junior practices telling people that they’re the world just because they have a lot of money to do so. And what happens is that patients go there, they have a negative experience, and they blame us for that reason. So, we’re completely eliminating the model of you being able to pay. So now when someone is searching for someone locally, only the practices that we select are gonna be the ones that are discoverable. We’re interviewing five practices in each region, and you are one of five the practices that we’re considering for this. So to answer your question, the benefit is that when someone searches locally for a practice in whichever category they’re searching, the practice that we select is the one that’s gonna be discoverable. It’s a very, very big deal.",
       "keywords": ["benefit", "pay to play", "discoverable", "selected"],
       "favorite": false
     },
     {
       "id": "interview-how-money",
-      "title": "How are you making money?",
-      "category": "Interviews",
+      "title": "How are you making money? / How do you monetize? What’s the catch?",
+      "category": "Paid / Cost",
       "content": "Great question… have you ever heard of the attention economy before?\n\nNo I haven’t.\n\nOk… the reason why social media platforms don’t charge you to create an account is because they are incentivized by your usage. The more users that are using the platform, the more money they make from third party advertisers. For that reason, we are creating a doctor referral network nationwide that’s based off of a highly vetted interview process, so that it creates more value for our users. Does that make sense?",
       "keywords": ["money", "attention economy", "advertisers", "value"],
       "favorite": false
