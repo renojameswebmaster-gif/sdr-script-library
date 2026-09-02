@@ -324,6 +324,47 @@ body {
   background: var(--white);
 }
 
+.ringcentral-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: min(100%, 620px);
+  height: 100vh;
+  padding: 24px;
+  overflow-y: auto;
+  background: var(--white);
+  box-shadow: 8px 0 28px rgba(0, 0, 0, 0.18);
+}
+
+.ringcentral-section.hidden {
+  display: none;
+}
+
+.ringcentral-frame {
+  display: block;
+  width: 100%;
+  height: 700px;
+  border: 1px solid #c8e5f3;
+  border-radius: 0 0 8px 8px;
+  background: var(--white);
+}
+
+.left-floating-actions {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 15;
+}
+
+.ringcentral-trigger {
+  background: #205c9b;
+}
+
+.ringcentral-trigger:hover {
+  background: #164574;
+}
+
 .appointment-heading {
   position: relative;
   display: flex;
@@ -503,6 +544,15 @@ body {
   }
 
   .timezone-frame {
+    height: 680px;
+  }
+
+  .ringcentral-section {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .ringcentral-frame {
     height: 680px;
   }
 

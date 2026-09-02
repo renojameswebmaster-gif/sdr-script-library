@@ -12,6 +12,9 @@ const appointmentSection = document.getElementById("appointment");
 const timezoneTriggerBtn = document.getElementById("timezone-trigger");
 const timezoneCloseBtn = document.getElementById("timezone-close");
 const timezoneSection = document.getElementById("timezone-checker");
+const ringcentralTriggerBtn = document.getElementById("ringcentral-trigger");
+const ringcentralCloseBtn = document.getElementById("ringcentral-close");
+const ringcentralSection = document.getElementById("ringcentral");
 
 let state = {
   scripts: [],
@@ -354,6 +357,7 @@ function attachEventListeners() {
 function init() {
   appointmentTriggerBtn.addEventListener("click", () => {
     timezoneSection.classList.add("hidden");
+    ringcentralSection.classList.add("hidden");
     appointmentSection.classList.remove("hidden");
     appointmentSection.scrollTop = 0;
   });
@@ -364,12 +368,24 @@ function init() {
 
   timezoneTriggerBtn.addEventListener("click", () => {
     appointmentSection.classList.add("hidden");
+    ringcentralSection.classList.add("hidden");
     timezoneSection.classList.remove("hidden");
     timezoneSection.scrollTop = 0;
   });
 
   timezoneCloseBtn.addEventListener("click", () => {
     timezoneSection.classList.add("hidden");
+  });
+
+  ringcentralTriggerBtn.addEventListener("click", () => {
+    appointmentSection.classList.add("hidden");
+    timezoneSection.classList.add("hidden");
+    ringcentralSection.classList.remove("hidden");
+    ringcentralSection.scrollTop = 0;
+  });
+
+  ringcentralCloseBtn.addEventListener("click", () => {
+    ringcentralSection.classList.add("hidden");
   });
 
   loadScripts().then((scripts) => {
