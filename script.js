@@ -18,14 +18,6 @@ const spreadsheetFallback = document.getElementById("spreadsheet-fallback");
 const spreadsheetFrame = document.getElementById("spreadsheet-frame");
 const spreadsheetCloseBtn = document.getElementById("spreadsheet-close");
 const sheetLinks = document.querySelectorAll("[data-sheet-url]");
-const aiAssistantTriggerBtn = document.getElementById("ai-assistant-trigger");
-const aiAssistantCloseBtn = document.getElementById("ai-assistant-close");
-const aiAssistantSection = document.getElementById("ai-assistant");
-const aiChat = document.getElementById("ai-chat");
-const aiChatForm = document.getElementById("ai-chat-form");
-const aiChatInput = document.getElementById("ai-chat-input");
-const aiChatStatus = document.getElementById("ai-chat-status");
-const aiChatApiUrl = window.SDR_CHAT_API_URL || "";
 
 let state = {
   scripts: [],
@@ -457,7 +449,6 @@ function init() {
   appointmentTriggerBtn.addEventListener("click", () => {
     timezoneSection.classList.add("hidden");
     spreadsheetSection.classList.add("hidden");
-    aiAssistantSection.classList.add("hidden");
     appointmentSection.classList.remove("hidden");
     appointmentSection.scrollTop = 0;
   });
@@ -469,7 +460,6 @@ function init() {
   timezoneTriggerBtn.addEventListener("click", () => {
     appointmentSection.classList.add("hidden");
     spreadsheetSection.classList.add("hidden");
-    aiAssistantSection.classList.add("hidden");
     timezoneSection.classList.remove("hidden");
     timezoneSection.scrollTop = 0;
   });
@@ -484,7 +474,6 @@ function init() {
       const url = link.getAttribute("data-sheet-url");
       appointmentSection.classList.add("hidden");
       timezoneSection.classList.add("hidden");
-      aiAssistantSection.classList.add("hidden");
       spreadsheetTitle.textContent = title;
       spreadsheetFallback.href = url;
       spreadsheetFrame.src = url;
@@ -497,61 +486,6 @@ function init() {
   spreadsheetCloseBtn.addEventListener("click", () => {
     spreadsheetSection.classList.add("hidden");
     spreadsheetFrame.src = "";
-  });
-
-  aiAssistantTriggerBtn.addEventListener("click", () => {
-    appointmentSection.classList.add("hidden");
-    timezoneSection.classList.add("hidden");
-    spreadsheetSection.classList.add("hidden");
-    aiAssistantSection.classList.remove("hidden");
-    aiChatInput.focus();
-  });
-
-  aiAssistantCloseBtn.addEventListener("click", () => {
-    aiAssistantSection.classList.add("hidden");
-  });
-
-  aiChatForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const question = aiChatInput.value.trim();
-    if (!question || aiChatForm.classList.contains("is-loading")) return;
-    if (!aiChatApiUrl) {
-      showToast("AI search is not configured yet");
-      return;
-    }
-
-    const userMessage = document.createElement("div");
-    userMessage.className = "ai-message ai-message-user";
-    userMessage.textContent = question;
-    aiChat.appendChild(userMessage);
-    aiChatInput.value = "";
-    aiChatForm.classList.add("is-loading");
-    aiChatStatus.textContent = "Searching the web...";
-    aiChat.scrollTop = aiChat.scrollHeight;
-
-    try {
-      const response = await fetch(`${aiChatApiUrl}/api/chat`, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ question })
-      });
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Search failed");
-      const assistantMessage = document.createElement("div");
-      assistantMessage.className = "ai-message ai-message-assistant";
-      assistantMessage.textContent = data.answer;
-      aiChat.appendChild(assistantMessage);
-    } catch (error) {
-      const errorMessage = document.createElement("div");
-      errorMessage.className = "ai-message ai-message-error";
-      errorMessage.textContent = "The AI search service is currently unavailable. Please try again later.";
-      aiChat.appendChild(errorMessage);
-      showToast(error.message);
-    } finally {
-      aiChatForm.classList.remove("is-loading");
-      aiChatStatus.textContent = "Web search enabled";
-      aiChat.scrollTop = aiChat.scrollHeight;
-    }
   });
 
   loadScripts().then((scripts) => {

@@ -384,125 +384,6 @@ body {
   background: #f8fafb;
 }
 
-.ai-assistant-section {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  display: flex;
-  width: min(100%, 680px);
-  height: 100vh;
-  padding: 24px;
-  flex-direction: column;
-  overflow-y: auto;
-  background: var(--white);
-  box-shadow: 8px 0 28px rgba(0, 0, 0, 0.18);
-}
-
-.ai-assistant-section.hidden {
-  display: none;
-}
-
-.ai-chat {
-  display: flex;
-  min-height: 0;
-  flex: 1;
-  padding: 20px;
-  flex-direction: column;
-  gap: 12px;
-  overflow-y: auto;
-  border: 1px solid #c8e5f3;
-  background: #f8fafb;
-}
-
-.ai-message {
-  max-width: 88%;
-  padding: 12px 14px;
-  border-radius: 12px;
-  font-size: 13px;
-  line-height: 1.6;
-  white-space: pre-wrap;
-}
-
-.ai-message-assistant {
-  align-self: flex-start;
-  color: #243442;
-  background: #fff;
-  border: 1px solid #dbe7ed;
-}
-
-.ai-message-user {
-  align-self: flex-end;
-  color: #fff;
-  background: #187773;
-}
-
-.ai-message-error {
-  align-self: flex-start;
-  color: #8a3d32;
-  background: #fff3f0;
-  border: 1px solid #efc8bf;
-}
-
-.ai-chat-form {
-  padding: 14px;
-  border: 1px solid #c8e5f3;
-  border-top: 0;
-  background: #fff;
-}
-
-.ai-chat-form textarea {
-  display: block;
-  width: 100%;
-  min-height: 74px;
-  padding: 11px;
-  border: 1px solid #d1e0e6;
-  border-radius: 7px;
-  color: #243442;
-  background: #fbfdfe;
-  font: inherit;
-  font-size: 13px;
-  resize: vertical;
-}
-
-.ai-chat-form textarea:focus {
-  outline: 2px solid rgba(40, 167, 161, 0.22);
-  border-color: var(--accent);
-}
-
-.ai-chat-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.ai-chat-controls span {
-  color: #718694;
-  font-size: 11px;
-}
-
-.ai-send-button {
-  padding: 10px 14px;
-  border: 0;
-  border-radius: 6px;
-  color: #fff;
-  background: #187773;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.ai-send-button:hover {
-  background: #12625f;
-}
-
-.ai-chat-form.is-loading .ai-send-button {
-  cursor: wait;
-  opacity: 0.65;
-}
-
 .appointment-heading {
   position: relative;
   display: flex;
@@ -1048,9 +929,6 @@ body {
   transform: translateY(-2px);
 }
 
-.ai-assistant-trigger {
-  background: #187773;
-}
 
 .fab {
   width: 44px;
