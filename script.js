@@ -11,6 +11,7 @@ const appointmentSection = document.getElementById("appointment");
 const timezoneTriggerBtn = document.getElementById("timezone-trigger");
 const timezoneCloseBtn = document.getElementById("timezone-close");
 const timezoneSection = document.getElementById("timezone-checker");
+const scriptEditsStorageKey = "sdr-script-library-edits";
 const spreadsheetSection = document.getElementById("spreadsheet-viewer");
 const spreadsheetTitle = document.getElementById("spreadsheet-title");
 const spreadsheetFallback = document.getElementById("spreadsheet-fallback");
@@ -28,7 +29,9 @@ let state = {
   lastCopiedText: "",
   isListening: false,
   suggestions: [],
-  autoListen: false
+  autoListen: false,
+  scriptEdits: JSON.parse(localStorage.getItem(scriptEditsStorageKey) || "{}"),
+  editingId: null
 };
 
 let recognition = null;
@@ -268,7 +271,8 @@ function filterScripts() {
     const query = state.searchQuery.toLowerCase();
     if (!query) return true;
 
-    const searchText = `${script.title} ${script.content} ${script.category} ${script.keywords.join(" ")}`.toLowerCase();
+    const editedScript = state.scriptEdits[script.id] || {};
+    const searchText = `${editedScript.title ?? script.title} ${editedScript.content ?? script.content} ${script.category} ${script.keywords.join(" ")}`.toLowerCase();
     return searchText.includes(query);
   });
 }
@@ -291,17 +295,35 @@ function renderScripts() {
 
   scriptContainer.innerHTML = visibleScripts
     .map((script) => {
+      const editedScript = state.scriptEdits[script.id] || {};
+      const title = editedScript.title ?? script.title;
+      const content = editedScript.content ?? script.content;
       const isOpen = state.expandAll
         ? !state.collapsedIds.has(script.id)
         : state.openCardId === script.id;
+      const isEditing = state.editingId === script.id;
       return `
         <div class="script-card ${isOpen ? "open" : ""}" data-id="${script.id}">
-          <div class="script-title">${script.title}</div>
-          <div class="script-category">${script.category}</div>
-          <div class="script-content">${script.content}</div>
+          ${isEditing ? `
+            <label class="editor-label" for="edit-title-${script.id}">Title</label>
+            <input class="script-editor-title" id="edit-title-${script.id}" value="${escapeHtml(title)}" />
+            <label class="editor-label" for="edit-content-${script.id}">Script</label>
+            <textarea class="script-editor-content" id="edit-content-${script.id}" rows="10">${escapeHtml(content)}</textarea>
+          ` : `
+            <div class="script-title">${escapeHtml(title)}</div>
+            <div class="script-category">${escapeHtml(script.category)}</div>
+            <div class="script-content">${escapeHtml(content)}</div>
+          `}
           <div class="script-actions">
-            <button class="action-btn copy-btn" data-id="${script.id}">📋 Copy</button>
-            <button class="action-btn close-btn" data-id="${script.id}">✕ Close</button>
+            ${isEditing ? `
+              <button class="action-btn save-btn" data-id="${script.id}">Save</button>
+              <button class="action-btn cancel-edit-btn" data-id="${script.id}">Cancel</button>
+              <button class="action-btn reset-btn" data-id="${script.id}">Reset</button>
+            ` : `
+              <button class="action-btn copy-btn" data-id="${script.id}">📋 Copy</button>
+              <button class="action-btn edit-btn" data-id="${script.id}">✎ Edit</button>
+              <button class="action-btn close-btn" data-id="${script.id}">✕ Close</button>
+            `}
           </div>
         </div>
       `;
@@ -352,10 +374,59 @@ function attachEventListeners() {
       const id = btn.getAttribute("data-id");
       const script = state.scripts.find((s) => s.id === id);
       if (script) {
-        navigator.clipboard.writeText(script.content);
+        const editedScript = state.scriptEdits[id] || {};
+        navigator.clipboard.writeText(editedScript.content ?? script.content);
         state.lastCopiedText = script.title;
         showToast("✅ Copied: " + script.title);
       }
+    });
+  });
+
+  document.querySelectorAll(".edit-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      state.editingId = btn.getAttribute("data-id");
+      renderScripts();
+      document.querySelector(".script-editor-title")?.focus();
+    });
+  });
+
+  document.querySelectorAll(".save-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const id = btn.getAttribute("data-id");
+      const script = state.scripts.find((item) => item.id === id);
+      const title = document.getElementById(`edit-title-${id}`).value.trim();
+      const content = document.getElementById(`edit-content-${id}`).value.trim();
+      if (!script || !title || !content) {
+        showToast("Title and script cannot be empty");
+        return;
+      }
+      state.scriptEdits[id] = { title, content };
+      localStorage.setItem(scriptEditsStorageKey, JSON.stringify(state.scriptEdits));
+      state.editingId = null;
+      renderScripts();
+      showToast("Script saved on this device");
+    });
+  });
+
+  document.querySelectorAll(".cancel-edit-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      state.editingId = null;
+      renderScripts();
+    });
+  });
+
+  document.querySelectorAll(".reset-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const id = btn.getAttribute("data-id");
+      delete state.scriptEdits[id];
+      localStorage.setItem(scriptEditsStorageKey, JSON.stringify(state.scriptEdits));
+      state.editingId = null;
+      renderScripts();
+      showToast("Original script restored");
     });
   });
 
