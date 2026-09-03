@@ -11,6 +11,12 @@ const appointmentSection = document.getElementById("appointment");
 const timezoneTriggerBtn = document.getElementById("timezone-trigger");
 const timezoneCloseBtn = document.getElementById("timezone-close");
 const timezoneSection = document.getElementById("timezone-checker");
+const spreadsheetSection = document.getElementById("spreadsheet-viewer");
+const spreadsheetTitle = document.getElementById("spreadsheet-title");
+const spreadsheetFallback = document.getElementById("spreadsheet-fallback");
+const spreadsheetFrame = document.getElementById("spreadsheet-frame");
+const spreadsheetCloseBtn = document.getElementById("spreadsheet-close");
+const sheetLinks = document.querySelectorAll("[data-sheet-url]");
 
 let state = {
   scripts: [],
@@ -371,6 +377,7 @@ function attachEventListeners() {
 function init() {
   appointmentTriggerBtn.addEventListener("click", () => {
     timezoneSection.classList.add("hidden");
+    spreadsheetSection.classList.add("hidden");
     appointmentSection.classList.remove("hidden");
     appointmentSection.scrollTop = 0;
   });
@@ -381,12 +388,33 @@ function init() {
 
   timezoneTriggerBtn.addEventListener("click", () => {
     appointmentSection.classList.add("hidden");
+    spreadsheetSection.classList.add("hidden");
     timezoneSection.classList.remove("hidden");
     timezoneSection.scrollTop = 0;
   });
 
   timezoneCloseBtn.addEventListener("click", () => {
     timezoneSection.classList.add("hidden");
+  });
+
+  sheetLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const title = link.getAttribute("data-sheet-title");
+      const url = link.getAttribute("data-sheet-url");
+      appointmentSection.classList.add("hidden");
+      timezoneSection.classList.add("hidden");
+      spreadsheetTitle.textContent = title;
+      spreadsheetFallback.href = url;
+      spreadsheetFrame.src = url;
+      spreadsheetFrame.title = title;
+      spreadsheetSection.classList.remove("hidden");
+      spreadsheetSection.scrollTop = 0;
+    });
+  });
+
+  spreadsheetCloseBtn.addEventListener("click", () => {
+    spreadsheetSection.classList.add("hidden");
+    spreadsheetFrame.src = "";
   });
 
   loadScripts().then((scripts) => {

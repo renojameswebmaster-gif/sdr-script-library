@@ -81,6 +81,19 @@
       <iframe class="timezone-frame" src="https://renojameswebmaster-gif.github.io/timezone-map-site/" title="US Time Zone Checker" loading="lazy"></iframe>
     </section>
 
+    <section id="spreadsheet-viewer" class="spreadsheet-section hidden" aria-labelledby="spreadsheet-title">
+      <div class="appointment-heading spreadsheet-heading">
+        <div>
+          <p class="appointment-kicker">Featured workspace</p>
+          <h1 id="spreadsheet-title">Spreadsheet</h1>
+          <p class="appointment-subtitle">View and manage your Google Sheet here.</p>
+        </div>
+        <a id="spreadsheet-fallback" class="appointment-fallback" href="#">Open in Google Sheets</a>
+        <button id="spreadsheet-close" class="appointment-close" type="button" aria-label="Close spreadsheet">&times;</button>
+      </div>
+      <iframe id="spreadsheet-frame" class="spreadsheet-frame" title="Google Spreadsheet" loading="lazy"></iframe>
+    </section>
+
     <!-- Main Content -->
     <main class="content">
       <div id="scripts-container" class="scripts-container"></div>
@@ -94,9 +107,9 @@
       <button id="copy-toast" class="fab" title="Last action">📋</button>
     </div>
     <div class="left-floating-actions" aria-label="Featured spreadsheets">
-      <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1NnmwgU5bx7uOttzYkY2uyVcdQ2e26kelIKxH7o2I45w/edit?gid=1071544471#gid=1071544471">Appointment tracker</a>
-      <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1ztwlLqeJgrCAJXojjCdEVTy0vRvQSlalXS_5bG3L1Qo/edit?gid=1568061563#gid=1568061563">TIME SHEET</a>
-      <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1iW25PvV26ocEhkbaPYnieHL-UWu6jXQoOCQFusNyuB0/edit?pli=1&amp;gid=1406586916#gid=1406586916">EMPLOYEE DATA</a>
+      <button class="sheet-link" type="button" data-sheet-title="Appointment tracker" data-sheet-url="https://docs.google.com/spreadsheets/d/1NnmwgU5bx7uOttzYkY2uyVcdQ2e26kelIKxH7o2I45w/edit?gid=1071544471#gid=1071544471">Appointment tracker</button>
+      <button class="sheet-link" type="button" data-sheet-title="TIME SHEET" data-sheet-url="https://docs.google.com/spreadsheets/d/1ztwlLqeJgrCAJXojjCdEVTy0vRvQSlalXS_5bG3L1Qo/edit?gid=1568061563#gid=1568061563">TIME SHEET</button>
+      <button class="sheet-link" type="button" data-sheet-title="EMPLOYEE DATA" data-sheet-url="https://docs.google.com/spreadsheets/d/1iW25PvV26ocEhkbaPYnieHL-UWu6jXQoOCQFusNyuB0/edit?pli=1&amp;gid=1406586916#gid=1406586916">EMPLOYEE DATA</button>
     </div>
     <!-- Toast Notification -->
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
