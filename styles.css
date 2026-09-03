@@ -329,7 +329,7 @@ body {
   top: 0;
   left: 0;
   z-index: 20;
-  width: min(100%, 860px);
+  width: min(100%, 680px);
   height: 100vh;
   padding: 24px;
   overflow-y: auto;
@@ -344,8 +344,8 @@ body {
 .spreadsheet-frame {
   display: block;
   width: 100%;
-  height: calc(100vh - 132px);
-  min-height: 620px;
+  height: calc(100vh - 168px);
+  min-height: 460px;
   border: 1px solid #c8e5f3;
   border-radius: 0 0 8px 8px;
   background: #f8fafb;
