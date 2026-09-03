@@ -9,10 +9,21 @@ const port = Number(process.env.PORT || 3000);
 const frontendUrl = (process.env.FRONTEND_URL || "http://localhost:5500")
   .trim()
   .replace(/^['"]|['"]$/g, "")
-  .replace(/[\r\n]/g, "");
+  .replace(/[\s\u0000-\u001f\u007f]/g, "");
 const isProduction = process.env.NODE_ENV === "production";
 
-app.use(cors({ origin: frontendUrl, credentials: true }));
+app.use(cors({
+  origin: (requestOrigin, callback) => {
+    if (!requestOrigin) return callback(null, true);
+    try {
+      const allowedOrigin = new URL(frontendUrl).origin;
+      return callback(null, requestOrigin === allowedOrigin);
+    } catch {
+      return callback(null, false);
+    }
+  },
+  credentials: true
+}));
 app.use(express.json());
 app.use(session({
   name: "sdr.sid",
