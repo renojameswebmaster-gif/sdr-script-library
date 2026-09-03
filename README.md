@@ -25,3 +25,20 @@ python -m http.server 8000
 
 Then visit http://localhost:8000.
 
+## Public AI search assistant
+
+The website includes a public "Ask AI" assistant that uses OpenAI web search. The browser never receives the OpenAI API key. Deploy the `server` directory as a Node service, set `OPENAI_API_KEY` in its environment, and allow requests from `https://renojameswebmaster-gif.github.io`.
+
+For Render, use the root `render.yaml` configuration. Set the `OPENAI_API_KEY` secret in the Render dashboard, then deploy the service at `https://sdr-script-library-api.onrender.com`. Public users are limited to 10 searches per minute per IP address.
+
+To run the assistant locally:
+
+```bash
+cd server
+npm install
+copy .env.example .env
+npm start
+```
+
+Set `window.SDR_CHAT_API_URL` in `index.html` to the deployed server URL if it changes.
+

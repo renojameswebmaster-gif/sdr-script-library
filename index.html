@@ -94,6 +94,27 @@
       <iframe id="spreadsheet-frame" class="spreadsheet-frame" title="Google Spreadsheet" loading="lazy"></iframe>
     </section>
 
+    <section id="ai-assistant" class="ai-assistant-section hidden" aria-labelledby="ai-assistant-title">
+      <div class="appointment-heading ai-assistant-heading">
+        <div>
+          <p class="appointment-kicker">Public search assistant</p>
+          <h1 id="ai-assistant-title">Ask the web</h1>
+          <p class="appointment-subtitle">Ask a question and get a current answer with web sources.</p>
+        </div>
+        <button id="ai-assistant-close" class="appointment-close" type="button" aria-label="Close AI assistant">&times;</button>
+      </div>
+      <div class="ai-chat" id="ai-chat" aria-live="polite">
+        <div class="ai-message ai-message-assistant">Hi. What would you like me to search for?</div>
+      </div>
+      <form id="ai-chat-form" class="ai-chat-form">
+        <textarea id="ai-chat-input" rows="3" maxlength="1200" placeholder="Ask about a practice, tool, industry, or anything you need to research..." aria-label="Ask the AI search assistant"></textarea>
+        <div class="ai-chat-controls">
+          <span id="ai-chat-status">Web search enabled</span>
+          <button class="ai-send-button" type="submit">Search with AI</button>
+        </div>
+      </form>
+    </section>
+
     <!-- Main Content -->
     <main class="content">
       <div id="scripts-container" class="scripts-container"></div>
@@ -110,10 +131,12 @@
       <button class="sheet-link" type="button" data-sheet-title="Appointment tracker" data-sheet-url="https://docs.google.com/spreadsheets/d/1NnmwgU5bx7uOttzYkY2uyVcdQ2e26kelIKxH7o2I45w/edit?gid=1071544471#gid=1071544471">Appointment tracker</button>
       <button class="sheet-link" type="button" data-sheet-title="TIME SHEET" data-sheet-url="https://docs.google.com/spreadsheets/d/1ztwlLqeJgrCAJXojjCdEVTy0vRvQSlalXS_5bG3L1Qo/edit?gid=1568061563#gid=1568061563">TIME SHEET</button>
       <button class="sheet-link" type="button" data-sheet-title="EMPLOYEE DATA" data-sheet-url="https://docs.google.com/spreadsheets/d/1iW25PvV26ocEhkbaPYnieHL-UWu6jXQoOCQFusNyuB0/edit?pli=1&amp;gid=1406586916#gid=1406586916">EMPLOYEE DATA</button>
+      <button id="ai-assistant-trigger" class="sheet-link ai-assistant-trigger" type="button">Ask AI</button>
     </div>
     <!-- Toast Notification -->
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-    <script src="script.js?v=41"></script>
+    <script>window.SDR_CHAT_API_URL = "https://sdr-script-library-api.onrender.com";</script>
+    <script src="script.js?v=44"></script>
   </body>
 </html>
