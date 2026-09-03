@@ -125,6 +125,10 @@ app.get("/health", (_req, res) => {
   res.json({ ok: true, service: "sdr-script-library-server" });
 });
 
+app.get("/", (_req, res) => {
+  res.type("html").send(`<!doctype html><html lang="en"><head><meta charset="utf-8"><title>SDR Script Library API</title><style>body{font-family:system-ui,sans-serif;max-width:680px;margin:80px auto;padding:24px;color:#243442}code{padding:3px 6px;background:#eef3f6;border-radius:4px}a{color:#187773}</style></head><body><h1>SDR Script Library API</h1><p>The integration backend is running.</p><p>Health: <a href="/health"><code>/health</code></a></p></body></html>`);
+});
+
 app.get("/auth/:provider/start", (req, res, next) => {
   try {
     const { provider } = req.params;
