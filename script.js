@@ -36,7 +36,7 @@ let recognition = null;
 document.querySelectorAll("[data-app-launch]").forEach((link) => {
   link.addEventListener("click", () => {
     const appName = link.getAttribute("data-app-launch");
-    link.textContent = `Opening ${appName}...`;
+    link.textContent = `Opening ${appName} in new tab...`;
     link.classList.add("is-loading");
     link.setAttribute("aria-busy", "true");
   });
