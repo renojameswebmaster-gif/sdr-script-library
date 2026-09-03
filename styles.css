@@ -929,6 +929,10 @@ body {
   transform: translateY(-2px);
 }
 
+.chatgpt-trigger {
+  background: #111827;
+}
+
 
 .fab {
   width: 44px;
