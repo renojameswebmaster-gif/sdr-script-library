@@ -6,7 +6,10 @@ import session from "express-session";
 
 const app = express();
 const port = Number(process.env.PORT || 3000);
-const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5500";
+const frontendUrl = (process.env.FRONTEND_URL || "http://localhost:5500")
+  .trim()
+  .replace(/^['"]|['"]$/g, "")
+  .replace(/[\r\n]/g, "");
 const isProduction = process.env.NODE_ENV === "production";
 
 app.use(cors({ origin: frontendUrl, credentials: true }));
