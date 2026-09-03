@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=38" />
+    <link rel="stylesheet" href="styles.css?v=39" />
   </head>
   <body>
     <!-- Header -->
@@ -92,9 +92,15 @@
       </div>
       <div class="blocked-app-card">
         <div class="blocked-app-icon">☎</div>
-        <h2>Open RingCentral</h2>
-        <p>Use the official RingCentral web app for your calls, contacts, and workspace.</p>
-        <a class="same-tab-launch ringcentral-launch" data-app-launch="RingCentral" href="https://app.ringcentral.com/" target="_blank" rel="noopener noreferrer">Launch RingCentral</a>
+        <h2>RingCentral workspace</h2>
+        <p id="ringcentral-status">Connect RingCentral to view your calls, contacts, and presence here.</p>
+        <a class="same-tab-launch ringcentral-launch" data-auth-provider="ringcentral" href="http://localhost:3000/auth/ringcentral/start">Connect RingCentral</a>
+        <div class="integration-grid" data-provider="ringcentral">
+          <div><span>Presence</span><strong id="ringcentral-presence">Not connected</strong></div>
+          <div><span>Recent calls</span><strong id="ringcentral-calls">Connect to load</strong></div>
+          <div><span>Contacts</span><strong id="ringcentral-contacts">Connect to load</strong></div>
+        </div>
+        <div id="ringcentral-data" class="integration-data" aria-live="polite"></div>
       </div>
     </section>
 
@@ -109,9 +115,15 @@
       </div>
       <div class="blocked-app-card">
         <div class="blocked-app-icon slack-card-icon">S</div>
-        <h2>Open Slack</h2>
-        <p>Use the official Slack web app for your messages, channels, and team workspace.</p>
-        <a class="same-tab-launch slack-launch" data-app-launch="Slack" href="https://app.slack.com/client/" target="_blank" rel="noopener noreferrer">Launch Slack</a>
+        <h2>Slack workspace</h2>
+        <p id="slack-status">Connect Slack to view channels, messages, and presence here.</p>
+        <a class="same-tab-launch slack-launch" data-auth-provider="slack" href="http://localhost:3000/auth/slack/start">Connect Slack</a>
+        <div class="integration-grid" data-provider="slack">
+          <div><span>Presence</span><strong id="slack-presence">Not connected</strong></div>
+          <div><span>Channels</span><strong id="slack-channels">Connect to load</strong></div>
+          <div><span>Messages</span><strong id="slack-messages">Connect to load</strong></div>
+        </div>
+        <div id="slack-data" class="integration-data" aria-live="polite"></div>
       </div>
     </section>
 
@@ -135,6 +147,6 @@
     <!-- Toast Notification -->
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-    <script src="script.js?v=38"></script>
+    <script src="script.js?v=39"></script>
   </body>
 </html>

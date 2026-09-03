@@ -48,6 +48,33 @@ function redirectToFrontend(res, path) {
   res.redirect(`${frontendUrl}${path}`);
 }
 
+function requireAuth(req, provider) {
+  const tokenData = req.session.tokens?.[provider];
+  if (!tokenData?.access_token) {
+    const error = new Error(`${provider} is not connected`);
+    error.statusCode = 401;
+    throw error;
+  }
+  return tokenData;
+}
+
+async function providerRequest(url, tokenData, options = {}) {
+  const response = await fetch(url, {
+    ...options,
+    headers: {
+      authorization: `Bearer ${tokenData.access_token}`,
+      ...(options.headers || {})
+    }
+  });
+  const data = await response.json();
+  if (!response.ok || data.error || data.errorCode) {
+    const error = new Error(data.error?.message || data.message || "Provider request failed");
+    error.statusCode = response.status;
+    throw error;
+  }
+  return data;
+}
+
 async function exchangeCode(provider, code) {
   const isSlack = provider === "slack";
   const endpoint = isSlack
@@ -143,7 +170,78 @@ app.get("/auth/:provider/callback", async (req, res, next) => {
 });
 
 app.get("/api/session", (req, res) => {
-  res.json({ connected: req.session.connected || null });
+  res.json({
+    connected: req.session.connected || null,
+    providers: Object.fromEntries(Object.keys(req.session.tokens || {}).map((provider) => [provider, true]))
+  });
+});
+
+app.get("/api/slack/channels", async (req, res, next) => {
+  try {
+    const token = requireAuth(req, "slack");
+    res.json(await providerRequest("https://slack.com/api/conversations.list?exclude_archived=true&limit=100", token));
+  } catch (error) { next(error); }
+});
+
+app.get("/api/slack/messages", async (req, res, next) => {
+  try {
+    const token = requireAuth(req, "slack");
+    const channel = encodeURIComponent(req.query.channel || "");
+    if (!channel) return res.status(400).json({ error: "channel is required" });
+    res.json(await providerRequest(`https://slack.com/api/conversations.history?channel=${channel}&limit=50`, token));
+  } catch (error) { next(error); }
+});
+
+app.post("/api/slack/messages", async (req, res, next) => {
+  try {
+    const token = requireAuth(req, "slack");
+    if (!req.body.channel || !req.body.text) return res.status(400).json({ error: "channel and text are required" });
+    res.json(await providerRequest("https://slack.com/api/chat.postMessage", token, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ channel: req.body.channel, text: req.body.text })
+    }));
+  } catch (error) { next(error); }
+});
+
+app.get("/api/slack/presence", async (req, res, next) => {
+  try {
+    const token = requireAuth(req, "slack");
+    const user = encodeURIComponent(req.query.user || "me");
+    res.json(await providerRequest(`https://slack.com/api/users.getPresence?user=${user}`, token));
+  } catch (error) { next(error); }
+});
+
+app.get("/api/ringcentral/account", async (req, res, next) => {
+  try {
+    const token = requireAuth(req, "ringcentral");
+    const base = process.env.RINGCENTRAL_SERVER_URL || "https://platform.ringcentral.com";
+    res.json(await providerRequest(`${base}/restapi/v1.0/account/~/extension/~`, token));
+  } catch (error) { next(error); }
+});
+
+app.get("/api/ringcentral/calls", async (req, res, next) => {
+  try {
+    const token = requireAuth(req, "ringcentral");
+    const base = process.env.RINGCENTRAL_SERVER_URL || "https://platform.ringcentral.com";
+    res.json(await providerRequest(`${base}/restapi/v1.0/account/~/extension/~/call-log?perPage=50`, token));
+  } catch (error) { next(error); }
+});
+
+app.get("/api/ringcentral/contacts", async (req, res, next) => {
+  try {
+    const token = requireAuth(req, "ringcentral");
+    const base = process.env.RINGCENTRAL_SERVER_URL || "https://platform.ringcentral.com";
+    res.json(await providerRequest(`${base}/restapi/v1.0/account/~/extension/~/address-book/contact?perPage=50`, token));
+  } catch (error) { next(error); }
+});
+
+app.get("/api/ringcentral/presence", async (req, res, next) => {
+  try {
+    const token = requireAuth(req, "ringcentral");
+    const base = process.env.RINGCENTRAL_SERVER_URL || "https://platform.ringcentral.com";
+    res.json(await providerRequest(`${base}/restapi/v1.0/account/~/extension/~/presence`, token));
+  } catch (error) { next(error); }
 });
 
 app.post("/api/logout", (req, res) => {

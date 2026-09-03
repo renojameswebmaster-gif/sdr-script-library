@@ -399,6 +399,63 @@ body {
   opacity: 0.72;
 }
 
+.integration-grid {
+  display: grid;
+  width: min(100%, 520px);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.integration-grid div {
+  padding: 12px;
+  border: 1px solid #d8e1e8;
+  border-radius: 6px;
+  background: var(--white);
+  text-align: left;
+}
+
+.integration-grid span,
+.integration-grid strong {
+  display: block;
+}
+
+.integration-grid span {
+  color: #7b8b97;
+  font-size: 11px;
+}
+
+.integration-grid strong {
+  margin-top: 4px;
+  color: #253e4e;
+  font-size: 13px;
+}
+
+.integration-data {
+  width: min(100%, 520px);
+  margin-top: 18px;
+  padding: 14px;
+  border-top: 1px solid #d8e1e8;
+  color: var(--text-light);
+  text-align: left;
+}
+
+.integration-data:empty {
+  display: none;
+}
+
+.integration-data h3 {
+  margin: 8px 0;
+  color: #253e4e;
+  font-size: 12px;
+}
+
+.integration-data p {
+  margin: 6px 0;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
 .ringcentral-launch {
   background: #205c9b;
 }
@@ -665,6 +722,10 @@ body {
   .appointment-fallback {
     width: 100%;
     text-align: center;
+  }
+
+  .integration-grid {
+    grid-template-columns: 1fr;
   }
 
   .calendly-frame {

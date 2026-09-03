@@ -17,6 +17,7 @@ const ringcentralSection = document.getElementById("ringcentral");
 const slackTriggerBtn = document.getElementById("slack-trigger");
 const slackCloseBtn = document.getElementById("slack-close");
 const slackSection = document.getElementById("slack");
+const apiBase = window.SDR_API_URL || "http://localhost:3000";
 
 let state = {
   scripts: [],
@@ -33,6 +34,15 @@ let state = {
 
 let recognition = null;
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
 document.querySelectorAll("[data-app-launch]").forEach((link) => {
   link.addEventListener("click", () => {
     const appName = link.getAttribute("data-app-launch");
@@ -41,6 +51,47 @@ document.querySelectorAll("[data-app-launch]").forEach((link) => {
     link.setAttribute("aria-busy", "true");
   });
 });
+
+document.querySelectorAll("[data-auth-provider]").forEach((link) => {
+  link.href = `${apiBase}/auth/${link.getAttribute("data-auth-provider")}/start`;
+});
+
+async function loadIntegrationData() {
+  try {
+    const sessionResponse = await fetch(`${apiBase}/api/session`, { credentials: "include" });
+    if (!sessionResponse.ok) return;
+    const session = await sessionResponse.json();
+    if (session.providers?.slack) {
+      document.getElementById("slack-status").textContent = "Slack is connected to this dashboard.";
+      const [channels, presence] = await Promise.all([
+        fetch(`${apiBase}/api/slack/channels`, { credentials: "include" }).then((response) => response.json()),
+        fetch(`${apiBase}/api/slack/presence`, { credentials: "include" }).then((response) => response.json())
+      ]);
+      document.getElementById("slack-channels").textContent = `${channels.channels?.length || 0} available`;
+      document.getElementById("slack-presence").textContent = presence.presence || "available";
+      const channel = channels.channels?.[0];
+      if (channel) {
+        const messages = await fetch(`${apiBase}/api/slack/messages?channel=${encodeURIComponent(channel.id)}`, { credentials: "include" }).then((response) => response.json());
+        document.getElementById("slack-messages").textContent = `${messages.messages?.length || 0} recent`;
+        document.getElementById("slack-data").innerHTML = `<h3>#${escapeHtml(channel.name)}</h3>${(messages.messages || []).slice(0, 8).map((message) => `<p>${escapeHtml(message.text || "(message)")}</p>`).join("")}`;
+      }
+    }
+    if (session.providers?.ringcentral) {
+      document.getElementById("ringcentral-status").textContent = "RingCentral is connected to this dashboard.";
+      const [calls, contacts, presence] = await Promise.all([
+        fetch(`${apiBase}/api/ringcentral/calls`, { credentials: "include" }).then((response) => response.json()),
+        fetch(`${apiBase}/api/ringcentral/contacts`, { credentials: "include" }).then((response) => response.json()),
+        fetch(`${apiBase}/api/ringcentral/presence`, { credentials: "include" }).then((response) => response.json())
+      ]);
+      document.getElementById("ringcentral-calls").textContent = `${calls.records?.length || 0} recent`;
+      document.getElementById("ringcentral-contacts").textContent = `${contacts.records?.length || 0} contacts`;
+      document.getElementById("ringcentral-presence").textContent = presence.presence || "available";
+      document.getElementById("ringcentral-data").innerHTML = `<h3>Recent calls</h3>${(calls.records || []).slice(0, 8).map((call) => `<p>${escapeHtml(call.from?.phoneNumber || "Unknown")} to ${escapeHtml(call.to?.phoneNumber || "Unknown")} · ${escapeHtml(call.result || "call")}</p>`).join("")}<h3>Contacts</h3>${(contacts.records || []).slice(0, 8).map((contact) => `<p>${escapeHtml(`${contact.firstName || ""} ${contact.lastName || ""}`)} ${escapeHtml(contact.homePhone || contact.mobilePhone || "")}</p>`).join("")}`;
+    }
+  } catch (error) {
+    console.warn("Integration server unavailable", error);
+  }
+}
 
 async function loadScripts() {
   try {
@@ -366,6 +417,7 @@ function attachEventListeners() {
 }
 
 function init() {
+  loadIntegrationData();
   appointmentTriggerBtn.addEventListener("click", () => {
     timezoneSection.classList.add("hidden");
     ringcentralSection.classList.add("hidden");

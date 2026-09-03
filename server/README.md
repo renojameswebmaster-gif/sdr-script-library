@@ -23,6 +23,15 @@ For Render, use these callback URLs after deployment:
 
 Set `FRONTEND_URL` to the deployed SDR Script Library URL. Never commit `.env` or provider secrets.
 
+After Render gives the backend a URL, set `window.SDR_API_URL` before `script.js` loads in the frontend, for example:
+
+```html
+<script>window.SDR_API_URL = "https://YOUR-RENDER-SERVICE.onrender.com";</script>
+<script src="script.js"></script>
+```
+
+The current frontend defaults to `http://localhost:3000` for local development until this production URL is configured.
+
 ## Current routes
 
 - `GET /auth/slack/start`
