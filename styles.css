@@ -836,6 +836,7 @@ body {
 }
 
 .left-floating-actions {
+  position: fixed;
   display: flex;
   flex-direction: column;
   gap: 8px;
