@@ -327,14 +327,14 @@ body {
 .spreadsheet-section {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   z-index: 20;
   width: min(100%, 860px);
   height: 100vh;
   padding: 24px;
   overflow-y: auto;
   background: var(--white);
-  box-shadow: -8px 0 28px rgba(0, 0, 0, 0.18);
+  box-shadow: 8px 0 28px rgba(0, 0, 0, 0.18);
 }
 
 .spreadsheet-section.hidden {
