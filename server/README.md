@@ -40,3 +40,5 @@ The current frontend defaults to `http://localhost:3000` for local development u
 - `GET /api/session`
 - `POST /api/logout`
 - `GET /health`
+
+Slack scopes must be added under **Bot Token Scopes**, not User Token Scopes: `chat:write`, `channels:read`, `channels:history`, and `users:read`.

@@ -139,7 +139,7 @@ app.get("/auth/:provider/start", (req, res, next) => {
       requireConfig(["SLACK_CLIENT_ID", "SLACK_REDIRECT_URI"]);
       const params = new URLSearchParams({
         client_id: process.env.SLACK_CLIENT_ID,
-        user_scope: process.env.SLACK_SCOPES || "openid,profile,email",
+        scope: process.env.SLACK_SCOPES || "chat:write,channels:read,channels:history,users:read",
         redirect_uri: process.env.SLACK_REDIRECT_URI,
         state
       });

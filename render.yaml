@@ -20,7 +20,7 @@ services:
       - key: SLACK_REDIRECT_URI
         sync: false
       - key: SLACK_SCOPES
-        value: openid,profile,email,chat:write,channels:read,channels:history,users:read
+        value: chat:write,channels:read,channels:history,users:read
       - key: RINGCENTRAL_CLIENT_ID
         sync: false
       - key: RINGCENTRAL_CLIENT_SECRET
