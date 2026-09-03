@@ -836,9 +836,33 @@ body {
 }
 
 .left-floating-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   bottom: 24px;
   left: 24px;
   z-index: 15;
+}
+
+.sheet-link {
+  display: block;
+  width: 156px;
+  padding: 11px 12px;
+  border-radius: 8px;
+  color: #fff;
+  background: #263746;
+  box-shadow: 0 5px 14px rgba(17, 35, 48, 0.18);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.sheet-link:hover {
+  background: #187773;
+  transform: translateY(-2px);
 }
 
 .fab {
