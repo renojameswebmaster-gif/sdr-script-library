@@ -81,61 +81,6 @@
       <iframe class="timezone-frame" src="https://renojameswebmaster-gif.github.io/timezone-map-site/" title="US Time Zone Checker" loading="lazy"></iframe>
     </section>
 
-    <section id="ringcentral" class="ringcentral-section hidden" aria-labelledby="ringcentral-title">
-      <div class="appointment-heading">
-        <div>
-          <p class="appointment-kicker">Featured application</p>
-          <h1 id="ringcentral-title">RingCentral</h1>
-          <p class="appointment-subtitle">Official RingCentral web application.</p>
-        </div>
-        <button id="ringcentral-close" class="appointment-close" type="button" aria-label="Close RingCentral">&times;</button>
-      </div>
-      <div class="blocked-app-card">
-        <div class="blocked-app-icon">☎</div>
-        <h2>RingCentral workspace</h2>
-        <p id="ringcentral-status">Connect RingCentral to view your calls, contacts, and presence here.</p>
-        <a class="same-tab-launch ringcentral-launch" data-auth-provider="ringcentral" href="http://localhost:3000/auth/ringcentral/start">Connect RingCentral</a>
-        <div class="integration-grid" data-provider="ringcentral">
-          <div><span>Presence</span><strong id="ringcentral-presence">Not connected</strong></div>
-          <div><span>Recent calls</span><strong id="ringcentral-calls">Connect to load</strong></div>
-          <div><span>Contacts</span><strong id="ringcentral-contacts">Connect to load</strong></div>
-        </div>
-        <div id="ringcentral-data" class="integration-data" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section id="slack" class="slack-section hidden" aria-labelledby="slack-title">
-      <div class="appointment-heading">
-        <div>
-          <p class="appointment-kicker">Featured application</p>
-          <h1 id="slack-title">Slack</h1>
-          <p class="appointment-subtitle">Official Slack web application.</p>
-        </div>
-        <button id="slack-close" class="appointment-close" type="button" aria-label="Close Slack">&times;</button>
-      </div>
-      <div class="blocked-app-card">
-        <div class="blocked-app-icon slack-card-icon">S</div>
-        <h2>Slack workspace</h2>
-        <p id="slack-status">Connect Slack to view channels, messages, and presence here.</p>
-        <a class="same-tab-launch slack-launch" data-auth-provider="slack" href="http://localhost:3000/auth/slack/start">Connect Slack</a>
-        <div class="integration-grid" data-provider="slack">
-          <div><span>Presence</span><strong id="slack-presence">Not connected</strong></div>
-          <div><span>Channels</span><strong id="slack-channels">Connect to load</strong></div>
-          <div><span>Messages</span><strong id="slack-messages">Connect to load</strong></div>
-        </div>
-        <div class="integration-workspace" id="slack-workspace">
-          <label for="slack-channel-select">Channel</label>
-          <select id="slack-channel-select" disabled><option>Connect Slack to load channels</option></select>
-          <div id="slack-data" class="integration-data" aria-live="polite"></div>
-          <form id="slack-message-form" class="message-form">
-            <textarea id="slack-message-input" rows="3" placeholder="Write a Slack message..." disabled></textarea>
-            <button class="same-tab-launch slack-launch" type="submit" disabled>Send message</button>
-          </form>
-          <div id="slack-users" class="integration-data" aria-live="polite"></div>
-        </div>
-      </div>
-    </section>
-
     <!-- Main Content -->
     <main class="content">
       <div id="scripts-container" class="scripts-container"></div>
@@ -148,15 +93,9 @@
       <button id="voice-trigger" class="fab" title="Voice script search">🎙️</button>
       <button id="copy-toast" class="fab" title="Last action">📋</button>
     </div>
-    <div class="left-floating-actions">
-      <button id="slack-trigger" class="fab slack-trigger" title="Open Slack" aria-label="Open Slack">S</button>
-      <button id="ringcentral-trigger" class="fab ringcentral-trigger" title="Open RingCentral" aria-label="Open RingCentral">☎</button>
-    </div>
-
     <!-- Toast Notification -->
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-    <script>window.SDR_API_URL = "https://sdr-script-library.onrender.com";</script>
     <script src="script.js?v=41"></script>
   </body>
 </html>

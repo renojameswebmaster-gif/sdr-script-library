@@ -11,13 +11,6 @@ const appointmentSection = document.getElementById("appointment");
 const timezoneTriggerBtn = document.getElementById("timezone-trigger");
 const timezoneCloseBtn = document.getElementById("timezone-close");
 const timezoneSection = document.getElementById("timezone-checker");
-const ringcentralTriggerBtn = document.getElementById("ringcentral-trigger");
-const ringcentralCloseBtn = document.getElementById("ringcentral-close");
-const ringcentralSection = document.getElementById("ringcentral");
-const slackTriggerBtn = document.getElementById("slack-trigger");
-const slackCloseBtn = document.getElementById("slack-close");
-const slackSection = document.getElementById("slack");
-const apiBase = window.SDR_API_URL || "http://localhost:3000";
 
 let state = {
   scripts: [],
@@ -50,78 +43,6 @@ document.querySelectorAll("[data-app-launch]").forEach((link) => {
     link.classList.add("is-loading");
     link.setAttribute("aria-busy", "true");
   });
-});
-
-document.querySelectorAll("[data-auth-provider]").forEach((link) => {
-  link.href = `${apiBase}/auth/${link.getAttribute("data-auth-provider")}/start`;
-});
-
-async function loadIntegrationData() {
-  try {
-    const sessionResponse = await fetch(`${apiBase}/api/session`, { credentials: "include" });
-    if (!sessionResponse.ok) return;
-    const session = await sessionResponse.json();
-    if (session.providers?.slack) {
-      document.getElementById("slack-status").textContent = "Slack is connected to this dashboard.";
-      const [channelsResult, presenceResult, usersResult] = await Promise.allSettled([
-        fetch(`${apiBase}/api/slack/channels`, { credentials: "include" }).then((response) => response.json()),
-        fetch(`${apiBase}/api/slack/presence`, { credentials: "include" }).then((response) => response.json()),
-        fetch(`${apiBase}/api/slack/users`, { credentials: "include" }).then((response) => response.json())
-      ]);
-      const channels = channelsResult.status === "fulfilled" ? channelsResult.value : { channels: [] };
-      const presence = presenceResult.status === "fulfilled" ? presenceResult.value : {};
-      const users = usersResult.status === "fulfilled" ? usersResult.value : { members: [] };
-      document.getElementById("slack-channels").textContent = `${channels.channels?.length || 0} available`;
-      document.getElementById("slack-presence").textContent = presence.presence || "available";
-      const channelSelect = document.getElementById("slack-channel-select");
-      channelSelect.innerHTML = (channels.channels || []).map((channel) => `<option value="${escapeHtml(channel.id)}">#${escapeHtml(channel.name)}</option>`).join("") || "<option>No channels available</option>";
-      channelSelect.disabled = !channels.channels?.length;
-      document.querySelector("#slack-message-form textarea").disabled = !channels.channels?.length;
-      document.querySelector("#slack-message-form button").disabled = !channels.channels?.length;
-      const loadChannelMessages = async () => {
-        const messages = await fetch(`${apiBase}/api/slack/messages?channel=${encodeURIComponent(channelSelect.value)}`, { credentials: "include" }).then((response) => response.json());
-        document.getElementById("slack-messages").textContent = `${messages.messages?.length || 0} recent`;
-        document.getElementById("slack-data").innerHTML = `<h3>Messages</h3>${(messages.messages || []).slice().reverse().map((message) => `<p>${escapeHtml(message.text || "(message)")}</p>`).join("") || "<p>No messages in this channel.</p>"}`;
-      };
-      channelSelect.addEventListener("change", loadChannelMessages);
-      if (channels.channels?.length) await loadChannelMessages();
-      document.getElementById("slack-users").innerHTML = `<h3>Workspace users</h3>${(users.members || []).filter((user) => !user.deleted && !user.is_bot).slice(0, 20).map((user) => `<p>${escapeHtml(user.real_name || user.name)} · ${user.presence || "available"}</p>`).join("")}`;
-    }
-    if (session.providers?.ringcentral) {
-      document.getElementById("ringcentral-status").textContent = "RingCentral is connected to this dashboard.";
-      const [calls, contacts, presence] = await Promise.all([
-        fetch(`${apiBase}/api/ringcentral/calls`, { credentials: "include" }).then((response) => response.json()),
-        fetch(`${apiBase}/api/ringcentral/contacts`, { credentials: "include" }).then((response) => response.json()),
-        fetch(`${apiBase}/api/ringcentral/presence`, { credentials: "include" }).then((response) => response.json())
-      ]);
-      document.getElementById("ringcentral-calls").textContent = `${calls.records?.length || 0} recent`;
-      document.getElementById("ringcentral-contacts").textContent = `${contacts.records?.length || 0} contacts`;
-      document.getElementById("ringcentral-presence").textContent = presence.presence || "available";
-      document.getElementById("ringcentral-data").innerHTML = `<h3>Recent calls</h3>${(calls.records || []).slice(0, 8).map((call) => `<p>${escapeHtml(call.from?.phoneNumber || "Unknown")} to ${escapeHtml(call.to?.phoneNumber || "Unknown")} · ${escapeHtml(call.result || "call")}</p>`).join("")}<h3>Contacts</h3>${(contacts.records || []).slice(0, 8).map((contact) => `<p>${escapeHtml(`${contact.firstName || ""} ${contact.lastName || ""}`)} ${escapeHtml(contact.homePhone || contact.mobilePhone || "")}</p>`).join("")}`;
-    }
-  } catch (error) {
-    console.warn("Integration server unavailable", error);
-  }
-}
-
-document.getElementById("slack-message-form").addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const channel = document.getElementById("slack-channel-select").value;
-  const input = document.getElementById("slack-message-input");
-  const button = event.currentTarget.querySelector("button");
-  if (!channel || !input.value.trim()) return;
-  button.disabled = true;
-  try {
-    const response = await fetch(`${apiBase}/api/slack/messages`, { method: "POST", credentials: "include", headers: { "content-type": "application/json" }, body: JSON.stringify({ channel, text: input.value.trim() }) });
-    if (!response.ok) throw new Error("Message could not be sent");
-    input.value = "";
-    showToast("Slack message sent");
-    window.location.reload();
-  } catch (error) {
-    showToast(error.message);
-  } finally {
-    button.disabled = false;
-  }
 });
 
 async function loadScripts() {
@@ -448,11 +369,8 @@ function attachEventListeners() {
 }
 
 function init() {
-  loadIntegrationData();
   appointmentTriggerBtn.addEventListener("click", () => {
     timezoneSection.classList.add("hidden");
-    ringcentralSection.classList.add("hidden");
-    slackSection.classList.add("hidden");
     appointmentSection.classList.remove("hidden");
     appointmentSection.scrollTop = 0;
   });
@@ -463,38 +381,12 @@ function init() {
 
   timezoneTriggerBtn.addEventListener("click", () => {
     appointmentSection.classList.add("hidden");
-    ringcentralSection.classList.add("hidden");
-    slackSection.classList.add("hidden");
     timezoneSection.classList.remove("hidden");
     timezoneSection.scrollTop = 0;
   });
 
   timezoneCloseBtn.addEventListener("click", () => {
     timezoneSection.classList.add("hidden");
-  });
-
-  ringcentralTriggerBtn.addEventListener("click", () => {
-    appointmentSection.classList.add("hidden");
-    timezoneSection.classList.add("hidden");
-    slackSection.classList.add("hidden");
-    ringcentralSection.classList.remove("hidden");
-    ringcentralSection.scrollTop = 0;
-  });
-
-  ringcentralCloseBtn.addEventListener("click", () => {
-    ringcentralSection.classList.add("hidden");
-  });
-
-  slackTriggerBtn.addEventListener("click", () => {
-    appointmentSection.classList.add("hidden");
-    timezoneSection.classList.add("hidden");
-    ringcentralSection.classList.add("hidden");
-    slackSection.classList.remove("hidden");
-    slackSection.scrollTop = 0;
-  });
-
-  slackCloseBtn.addEventListener("click", () => {
-    slackSection.classList.add("hidden");
   });
 
   loadScripts().then((scripts) => {
