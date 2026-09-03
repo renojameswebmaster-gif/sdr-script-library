@@ -456,6 +456,48 @@ body {
   line-height: 1.45;
 }
 
+.integration-workspace {
+  width: min(100%, 520px);
+  margin-top: 24px;
+  text-align: left;
+}
+
+.integration-workspace label {
+  display: block;
+  margin-bottom: 6px;
+  color: #527184;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.integration-workspace select,
+.message-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d8e1e8;
+  border-radius: 6px;
+  color: #253e4e;
+  background: var(--white);
+  font: inherit;
+  font-size: 13px;
+}
+
+.message-form {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.message-form button {
+  border: 0;
+  cursor: pointer;
+}
+
+.message-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 .ringcentral-launch {
   background: #205c9b;
 }

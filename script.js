@@ -63,18 +63,29 @@ async function loadIntegrationData() {
     const session = await sessionResponse.json();
     if (session.providers?.slack) {
       document.getElementById("slack-status").textContent = "Slack is connected to this dashboard.";
-      const [channels, presence] = await Promise.all([
+      const [channelsResult, presenceResult, usersResult] = await Promise.allSettled([
         fetch(`${apiBase}/api/slack/channels`, { credentials: "include" }).then((response) => response.json()),
-        fetch(`${apiBase}/api/slack/presence`, { credentials: "include" }).then((response) => response.json())
+        fetch(`${apiBase}/api/slack/presence`, { credentials: "include" }).then((response) => response.json()),
+        fetch(`${apiBase}/api/slack/users`, { credentials: "include" }).then((response) => response.json())
       ]);
+      const channels = channelsResult.status === "fulfilled" ? channelsResult.value : { channels: [] };
+      const presence = presenceResult.status === "fulfilled" ? presenceResult.value : {};
+      const users = usersResult.status === "fulfilled" ? usersResult.value : { members: [] };
       document.getElementById("slack-channels").textContent = `${channels.channels?.length || 0} available`;
       document.getElementById("slack-presence").textContent = presence.presence || "available";
-      const channel = channels.channels?.[0];
-      if (channel) {
-        const messages = await fetch(`${apiBase}/api/slack/messages?channel=${encodeURIComponent(channel.id)}`, { credentials: "include" }).then((response) => response.json());
+      const channelSelect = document.getElementById("slack-channel-select");
+      channelSelect.innerHTML = (channels.channels || []).map((channel) => `<option value="${escapeHtml(channel.id)}">#${escapeHtml(channel.name)}</option>`).join("") || "<option>No channels available</option>";
+      channelSelect.disabled = !channels.channels?.length;
+      document.querySelector("#slack-message-form textarea").disabled = !channels.channels?.length;
+      document.querySelector("#slack-message-form button").disabled = !channels.channels?.length;
+      const loadChannelMessages = async () => {
+        const messages = await fetch(`${apiBase}/api/slack/messages?channel=${encodeURIComponent(channelSelect.value)}`, { credentials: "include" }).then((response) => response.json());
         document.getElementById("slack-messages").textContent = `${messages.messages?.length || 0} recent`;
-        document.getElementById("slack-data").innerHTML = `<h3>#${escapeHtml(channel.name)}</h3>${(messages.messages || []).slice(0, 8).map((message) => `<p>${escapeHtml(message.text || "(message)")}</p>`).join("")}`;
-      }
+        document.getElementById("slack-data").innerHTML = `<h3>Messages</h3>${(messages.messages || []).slice().reverse().map((message) => `<p>${escapeHtml(message.text || "(message)")}</p>`).join("") || "<p>No messages in this channel.</p>"}`;
+      };
+      channelSelect.addEventListener("change", loadChannelMessages);
+      if (channels.channels?.length) await loadChannelMessages();
+      document.getElementById("slack-users").innerHTML = `<h3>Workspace users</h3>${(users.members || []).filter((user) => !user.deleted && !user.is_bot).slice(0, 20).map((user) => `<p>${escapeHtml(user.real_name || user.name)} · ${user.presence || "available"}</p>`).join("")}`;
     }
     if (session.providers?.ringcentral) {
       document.getElementById("ringcentral-status").textContent = "RingCentral is connected to this dashboard.";
@@ -92,6 +103,26 @@ async function loadIntegrationData() {
     console.warn("Integration server unavailable", error);
   }
 }
+
+document.getElementById("slack-message-form").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const channel = document.getElementById("slack-channel-select").value;
+  const input = document.getElementById("slack-message-input");
+  const button = event.currentTarget.querySelector("button");
+  if (!channel || !input.value.trim()) return;
+  button.disabled = true;
+  try {
+    const response = await fetch(`${apiBase}/api/slack/messages`, { method: "POST", credentials: "include", headers: { "content-type": "application/json" }, body: JSON.stringify({ channel, text: input.value.trim() }) });
+    if (!response.ok) throw new Error("Message could not be sent");
+    input.value = "";
+    showToast("Slack message sent");
+    window.location.reload();
+  } catch (error) {
+    showToast(error.message);
+  } finally {
+    button.disabled = false;
+  }
+});
 
 async function loadScripts() {
   try {

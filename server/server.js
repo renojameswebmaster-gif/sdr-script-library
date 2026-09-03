@@ -232,6 +232,13 @@ app.get("/api/slack/presence", async (req, res, next) => {
   } catch (error) { next(error); }
 });
 
+app.get("/api/slack/users", async (req, res, next) => {
+  try {
+    const token = requireAuth(req, "slack");
+    res.json(await providerRequest("https://slack.com/api/users.list?limit=200", token));
+  } catch (error) { next(error); }
+});
+
 app.get("/api/ringcentral/account", async (req, res, next) => {
   try {
     const token = requireAuth(req, "ringcentral");

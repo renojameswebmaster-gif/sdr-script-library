@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=40" />
+    <link rel="stylesheet" href="styles.css?v=41" />
   </head>
   <body>
     <!-- Header -->
@@ -123,7 +123,16 @@
           <div><span>Channels</span><strong id="slack-channels">Connect to load</strong></div>
           <div><span>Messages</span><strong id="slack-messages">Connect to load</strong></div>
         </div>
-        <div id="slack-data" class="integration-data" aria-live="polite"></div>
+        <div class="integration-workspace" id="slack-workspace">
+          <label for="slack-channel-select">Channel</label>
+          <select id="slack-channel-select" disabled><option>Connect Slack to load channels</option></select>
+          <div id="slack-data" class="integration-data" aria-live="polite"></div>
+          <form id="slack-message-form" class="message-form">
+            <textarea id="slack-message-input" rows="3" placeholder="Write a Slack message..." disabled></textarea>
+            <button class="same-tab-launch slack-launch" type="submit" disabled>Send message</button>
+          </form>
+          <div id="slack-users" class="integration-data" aria-live="polite"></div>
+        </div>
       </div>
     </section>
 
@@ -148,6 +157,6 @@
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
     <script>window.SDR_API_URL = "https://sdr-script-library.onrender.com";</script>
-    <script src="script.js?v=40"></script>
+    <script src="script.js?v=41"></script>
   </body>
 </html>
