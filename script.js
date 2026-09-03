@@ -33,6 +33,15 @@ let state = {
 
 let recognition = null;
 
+document.querySelectorAll("[data-app-launch]").forEach((link) => {
+  link.addEventListener("click", () => {
+    const appName = link.getAttribute("data-app-launch");
+    link.textContent = `Opening ${appName}...`;
+    link.classList.add("is-loading");
+    link.setAttribute("aria-busy", "true");
+  });
+});
+
 async function loadScripts() {
   try {
     const timestamp = Math.floor(Date.now() / 1000);

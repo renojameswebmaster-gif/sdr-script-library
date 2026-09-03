@@ -394,6 +394,11 @@ body {
   text-decoration: none;
 }
 
+.same-tab-launch.is-loading {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 .ringcentral-launch {
   background: #205c9b;
 }
