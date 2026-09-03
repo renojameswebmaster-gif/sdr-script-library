@@ -100,10 +100,11 @@ async function exchangeCode(provider, code) {
 
   const response = await fetch(endpoint, { method: "POST", headers, body });
   const data = await response.json();
-  if (!response.ok || (isSlack && !data.ok) || !data.access_token) {
+  const accessToken = data.access_token || data.authed_user?.access_token;
+  if (!response.ok || (isSlack && !data.ok) || !accessToken) {
     throw new Error(`OAuth token exchange failed for ${provider}`);
   }
-  return data;
+  return { ...data, access_token: accessToken };
 }
 
 app.get("/health", (_req, res) => {
