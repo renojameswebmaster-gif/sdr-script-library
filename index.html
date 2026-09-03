@@ -94,19 +94,6 @@
       <iframe id="spreadsheet-frame" class="spreadsheet-frame" title="Google Spreadsheet" loading="lazy"></iframe>
     </section>
 
-    <section id="chatgpt-viewer" class="spreadsheet-section hidden" aria-labelledby="chatgpt-title">
-      <div class="appointment-heading spreadsheet-heading">
-        <div>
-          <p class="appointment-kicker">Featured tool</p>
-          <h1 id="chatgpt-title">ChatGPT</h1>
-          <p class="appointment-subtitle">Use ChatGPT for research and questions.</p>
-        </div>
-        <a class="appointment-fallback" href="https://chatgpt.com/">Open ChatGPT</a>
-        <button id="chatgpt-close" class="appointment-close" type="button" aria-label="Close ChatGPT">&times;</button>
-      </div>
-      <iframe class="spreadsheet-frame" src="https://chatgpt.com/" title="ChatGPT" loading="lazy"></iframe>
-    </section>
-
     <!-- Main Content -->
     <main class="content">
       <div id="scripts-container" class="scripts-container"></div>
@@ -123,7 +110,7 @@
       <button class="sheet-link" type="button" data-sheet-title="Appointment tracker" data-sheet-url="https://docs.google.com/spreadsheets/d/1NnmwgU5bx7uOttzYkY2uyVcdQ2e26kelIKxH7o2I45w/edit?gid=1071544471#gid=1071544471">Appointment tracker</button>
       <button class="sheet-link" type="button" data-sheet-title="TIME SHEET" data-sheet-url="https://docs.google.com/spreadsheets/d/1ztwlLqeJgrCAJXojjCdEVTy0vRvQSlalXS_5bG3L1Qo/edit?gid=1568061563#gid=1568061563">TIME SHEET</button>
       <button class="sheet-link" type="button" data-sheet-title="EMPLOYEE DATA" data-sheet-url="https://docs.google.com/spreadsheets/d/1iW25PvV26ocEhkbaPYnieHL-UWu6jXQoOCQFusNyuB0/edit?pli=1&amp;gid=1406586916#gid=1406586916">EMPLOYEE DATA</button>
-      <button id="chatgpt-trigger" class="sheet-link chatgpt-trigger" type="button">ChatGPT</button>
+      <a class="sheet-link chatgpt-trigger" href="https://chatgpt.com/">ChatGPT</a>
     </div>
     <!-- Toast Notification -->
     <div id="toast" class="toast" role="status" aria-live="polite"></div>

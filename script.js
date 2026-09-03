@@ -18,10 +18,6 @@ const spreadsheetFallback = document.getElementById("spreadsheet-fallback");
 const spreadsheetFrame = document.getElementById("spreadsheet-frame");
 const spreadsheetCloseBtn = document.getElementById("spreadsheet-close");
 const sheetLinks = document.querySelectorAll("[data-sheet-url]");
-const chatgptSection = document.getElementById("chatgpt-viewer");
-const chatgptCloseBtn = document.getElementById("chatgpt-close");
-const chatgptFrame = chatgptSection.querySelector("iframe");
-const chatgptTriggerBtn = document.getElementById("chatgpt-trigger");
 
 let state = {
   scripts: [],
@@ -453,7 +449,6 @@ function init() {
   appointmentTriggerBtn.addEventListener("click", () => {
     timezoneSection.classList.add("hidden");
     spreadsheetSection.classList.add("hidden");
-    chatgptSection.classList.add("hidden");
     appointmentSection.classList.remove("hidden");
     appointmentSection.scrollTop = 0;
   });
@@ -465,7 +460,6 @@ function init() {
   timezoneTriggerBtn.addEventListener("click", () => {
     appointmentSection.classList.add("hidden");
     spreadsheetSection.classList.add("hidden");
-    chatgptSection.classList.add("hidden");
     timezoneSection.classList.remove("hidden");
     timezoneSection.scrollTop = 0;
   });
@@ -480,7 +474,6 @@ function init() {
       const url = link.getAttribute("data-sheet-url");
       appointmentSection.classList.add("hidden");
       timezoneSection.classList.add("hidden");
-      chatgptSection.classList.add("hidden");
       spreadsheetTitle.textContent = title;
       spreadsheetFallback.href = url;
       spreadsheetFrame.src = url;
@@ -493,20 +486,6 @@ function init() {
   spreadsheetCloseBtn.addEventListener("click", () => {
     spreadsheetSection.classList.add("hidden");
     spreadsheetFrame.src = "";
-  });
-
-  chatgptTriggerBtn.addEventListener("click", () => {
-    appointmentSection.classList.add("hidden");
-    timezoneSection.classList.add("hidden");
-    spreadsheetSection.classList.add("hidden");
-    chatgptFrame.src = "https://chatgpt.com/";
-    chatgptSection.classList.remove("hidden");
-    chatgptSection.scrollTop = 0;
-  });
-
-  chatgptCloseBtn.addEventListener("click", () => {
-    chatgptSection.classList.add("hidden");
-    chatgptFrame.src = "";
   });
 
   loadScripts().then((scripts) => {
