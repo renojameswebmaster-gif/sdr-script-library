@@ -12,6 +12,7 @@ const frontendUrl = (process.env.FRONTEND_URL || "http://localhost:5500")
   .replace(/[\s\u0000-\u001f\u007f]/g, "");
 const isProduction = process.env.NODE_ENV === "production";
 
+app.set("trust proxy", 1);
 app.use(cors({
   origin: (requestOrigin, callback) => {
     if (!requestOrigin) return callback(null, true);
@@ -32,7 +33,7 @@ app.use(session({
   saveUninitialized: false,
   cookie: {
     httpOnly: true,
-    sameSite: isProduction ? "none" : "lax",
+    sameSite: "lax",
     secure: isProduction
   }
 }));
