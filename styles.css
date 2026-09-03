@@ -437,6 +437,13 @@ body {
   background: #187773;
 }
 
+.ai-message-error {
+  align-self: flex-start;
+  color: #8a3d32;
+  background: #fff3f0;
+  border: 1px solid #efc8bf;
+}
+
 .ai-chat-form {
   padding: 14px;
   border: 1px solid #c8e5f3;

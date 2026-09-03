@@ -542,6 +542,10 @@ function init() {
       assistantMessage.textContent = data.answer;
       aiChat.appendChild(assistantMessage);
     } catch (error) {
+      const errorMessage = document.createElement("div");
+      errorMessage.className = "ai-message ai-message-error";
+      errorMessage.textContent = "The AI search service is currently unavailable. Please try again later.";
+      aiChat.appendChild(errorMessage);
       showToast(error.message);
     } finally {
       aiChatForm.classList.remove("is-loading");
